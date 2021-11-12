@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/yo-taiwan/static/css/main.4ed66e6e.chunk.css",
+    "main.js": "/yo-taiwan/static/js/main.aef5e5e4.chunk.js",
+    "main.js.map": "/yo-taiwan/static/js/main.aef5e5e4.chunk.js.map",
+    "runtime-main.js": "/yo-taiwan/static/js/runtime-main.5f110607.js",
+    "runtime-main.js.map": "/yo-taiwan/static/js/runtime-main.5f110607.js.map",
+    "static/js/2.6a68ca28.chunk.js": "/yo-taiwan/static/js/2.6a68ca28.chunk.js",
+    "static/js/2.6a68ca28.chunk.js.map": "/yo-taiwan/static/js/2.6a68ca28.chunk.js.map",
+    "index.html": "/yo-taiwan/index.html",
+    "static/css/main.4ed66e6e.chunk.css.map": "/yo-taiwan/static/css/main.4ed66e6e.chunk.css.map",
+    "static/js/2.6a68ca28.chunk.js.LICENSE.txt": "/yo-taiwan/static/js/2.6a68ca28.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5f110607.js",
+    "static/js/2.6a68ca28.chunk.js",
+    "static/css/main.4ed66e6e.chunk.css",
+    "static/js/main.aef5e5e4.chunk.js"
+  ]
+}
