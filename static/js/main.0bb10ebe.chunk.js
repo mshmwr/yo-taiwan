@@ -1,0 +1,2 @@
+(this["webpackJsonpyo-taiwan"]=this["webpackJsonpyo-taiwan"]||[]).push([[0],{11:function(n,t,e){"use strict";e.r(t);var c=e(1),i=e.n(c),o=e(3),r=e.n(o),a=(e(8),e(9),e(0));var s=function(){return Object(a.jsx)("div",{children:"Home page"})};r.a.render(Object(a.jsx)(i.a.StrictMode,{children:Object(a.jsx)(s,{})}),document.getElementById("root"))},8:function(n,t,e){},9:function(n,t,e){}},[[11,1,2]]]);
+//# sourceMappingURL=main.0bb10ebe.chunk.js.map
