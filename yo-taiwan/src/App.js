@@ -5,10 +5,13 @@ import SearchingResult from "./pages/SearchingResult";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" exact element={<HomePage />} />
-      <Route path="/searchingResult" element={<SearchingResult />} />
-    </Routes>
+    <div>
+      HomePage
+      <Routes>
+        <Route path="/" exact element={<HomePage />} />
+        <Route path="/searchingResult" element={<SearchingResult />} />
+      </Routes>
+    </div>
   );
 }
 
