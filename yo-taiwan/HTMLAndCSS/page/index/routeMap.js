@@ -89,6 +89,7 @@ const renderMap = function (loc, view) {
         "pk.eyJ1IjoiZWxzYTI3MDAiLCJhIjoiY2t2cXFjdmVqOGhzZDMxcXdnZjVjN3Z2ZiJ9.v1URgFZJDg6nNZ5nj5VgXQ",
     }
   ).addTo(mymap);
+
   let geojsonFeature = {
     name: "busRoute",
     geometry: {

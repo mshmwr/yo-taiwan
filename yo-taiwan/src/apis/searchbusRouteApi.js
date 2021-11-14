@@ -1,11 +1,11 @@
 import axios from "axios";
 import { getAuthorizationHeader } from "./axios";
-const doSearch = async (top = 30) => {
+const doBusRouteSearch = async () => {
   let res = null;
   try {
     await axios
       .get(
-        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=contains(Address%2C%20'%E8%8A%B1%E8%93%AE')&$top=${top}&$format=JSON`,
+        "https://ptx.transportdata.tw/MOTC/v2/Tourism/Bus/Route/TaiwanTrip?$format=JSON",
         {
           headers: getAuthorizationHeader(),
         }
@@ -22,4 +22,4 @@ const doSearch = async (top = 30) => {
   return res;
 };
 
-export { doSearch };
+export { doBusRouteSearch };
