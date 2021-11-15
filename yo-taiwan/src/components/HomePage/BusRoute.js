@@ -1,9 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { doBusRouteShp } from "../../apis/searchApiRouteShp";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-const BusRoute = () => {
-  const RenderMap = () => {
+const BusRoute = ({ selectBusRoute }) => {
+  const [busRouteShp, setbusRouteShp] = useState();
+  useEffect(() => {
+    async function fetchData() {
+      setbusRouteShp(await doBusRouteShp(selectBusRoute));
+    }
+    fetchData();
+  }, [selectBusRoute]);
+
+  const RenderMap = (loc) => {
     useEffect(() => {
       let container = L.DomUtil.get("map");
       if (container != null) {
@@ -11,13 +20,13 @@ const BusRoute = () => {
       }
       map();
     }, []);
-
     const map = () => {
+      const midcoord = loc[Math.round(loc.length / 2)];
+      const scale = 12 * loc.length * 0.59;
       let map;
       if (!map) {
-        map = L.map("map").setView([24, 121], 12);
+        map = L.map("map").setView(midcoord, scale);
       }
-
       L.tileLayer(
         "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
         {
@@ -31,14 +40,28 @@ const BusRoute = () => {
             "pk.eyJ1IjoiZWxzYTI3MDAiLCJhIjoiY2t2cXFjdmVqOGhzZDMxcXdnZjVjN3Z2ZiJ9.v1URgFZJDg6nNZ5nj5VgXQ",
         }
       ).addTo(map);
+      L.polyline(loc).addTo(map);
     };
   };
-  RenderMap();
+
+  RenderMap([
+    //測試座標
+    [24.88114, 121.28804],
+    [24.88114, 121.2804],
+  ]);
 
   return (
     <div
       id="map"
-      style={{ height: "500px", width: "1200px", margin: "20px auto" }}
+      style={{
+        height: "500px",
+        width: "1200px",
+        margin: "20px auto",
+        display: "block",
+        position: "absolute",
+        top: "40px",
+        right: "35px",
+      }}
     ></div>
   );
 };

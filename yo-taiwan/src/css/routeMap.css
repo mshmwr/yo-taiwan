@@ -215,7 +215,6 @@ q {
   border-radius: 20px;
   border: none;
   margin: 0 auto;
-  background-image: url("../../static/image/hero_image.png");
 }
 
 .hero_section img {
@@ -452,7 +451,7 @@ q {
   width: 1200px;
   padding-top: 60px;
   margin: 0 auto;
-  /* margin-bottom: 150px; */
+  margin-bottom: 600px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -465,7 +464,6 @@ q {
   background: #c8eff8;
   opacity: 0.25;
   border-radius: 0px 0px 5px 5px;
-  background-image: url("../../static/icon/bus_pattern.svg");
   position: relative;
 }
 .block_tab_group {

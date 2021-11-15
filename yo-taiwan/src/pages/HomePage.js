@@ -4,6 +4,7 @@ import LandScape from "../components/HomePage/LandScape";
 import Bus from "../components/HomePage/Bus";
 import BusRoute from "../components/HomePage/BusRoute";
 import Footer from "../components/Common/footer";
+import "../css/routeMap.css";
 
 function HomePage() {
   return (
@@ -11,10 +12,7 @@ function HomePage() {
       <Header />
       <Hero />
       <LandScape />
-      <Bus>
-        <BusRoute />
-      </Bus>
-
+      <Bus />
       <Footer />
     </div>
   );
