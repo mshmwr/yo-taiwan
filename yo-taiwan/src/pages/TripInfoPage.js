@@ -1,6 +1,6 @@
-import Header from "../components/HomePage/Header";
+import Header from "../components/Common/Header";
 import LandScape from "../components/HomePage/LandScape";
-import Footer from "../components/HomePage/footer";
+import Footer from "../components/Common/footer";
 import TripInfoContent from "../components/TripInfoPage/tripInfoContent";
 import TripInfoMenu from "../components/TripInfoPage/tripInfoMenu";
 

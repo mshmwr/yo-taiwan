@@ -15,7 +15,8 @@ const TripInfoMenu = () => {
   return (
     <div className="tripInfo_menu_section">
       <div className="breadcrumb">
-        首頁 > 觀光景點 > <span>六十石山金針花海</span>
+        {`首頁 > 觀光景點 >`}
+        <span>六十石山金針花海</span>
       </div>
       <div className="tripInfo_menu">
         <div className="tripInfo_menu_img">

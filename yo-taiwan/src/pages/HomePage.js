@@ -1,9 +1,9 @@
-import Header from "../components/HomePage/Header";
+import Header from "../components/Common/Header";
 import Hero from "../components/HomePage/Hero";
 import LandScape from "../components/HomePage/LandScape";
 import Bus from "../components/HomePage/Bus";
 import BusRoute from "../components/HomePage/BusRoute";
-import Footer from "../components/HomePage/footer";
+import Footer from "../components/Common/footer";
 
 function HomePage() {
   return (
@@ -11,8 +11,10 @@ function HomePage() {
       <Header />
       <Hero />
       <LandScape />
-      <Bus />
-      <BusRoute />
+      <Bus>
+        <BusRoute />
+      </Bus>
+
       <Footer />
     </div>
   );
