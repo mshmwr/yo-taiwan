@@ -1,12 +1,12 @@
 import React from "react";
 import search from "../../images/icon/search.png";
 
-const Header = () => {
+const HeaderSearch = () => {
   return (
-    <div class="trip_search_field1">
+    <div className="trip_search_field1">
       <input
         type="text"
-        class="search_field_input"
+        className="search_field_input1"
         placeholder="請輸入目的地、景點等關鍵字"
       />
       <img src={search} alt="search"></img>
@@ -14,4 +14,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderSearch;

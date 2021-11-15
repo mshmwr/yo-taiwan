@@ -1,11 +1,11 @@
 import axios from "axios";
 import { getAuthorizationHeader } from "./axios";
-const doBusRouteSearch = async () => {
+const doBusRouteSearch = async (busName = "") => {
   let res = null;
   try {
     await axios
       .get(
-        "https://ptx.transportdata.tw/MOTC/v2/Tourism/Bus/Route/TaiwanTrip?$format=JSON",
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/Bus/Route/TaiwanTrip/${busName}?$format=JSON`,
         {
           headers: getAuthorizationHeader(),
         }
