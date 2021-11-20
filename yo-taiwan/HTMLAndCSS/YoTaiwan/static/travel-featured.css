@@ -156,29 +156,100 @@ color: #74D1E7;
 }
 /* ------------------------------ nav_menu ------------------------------ */
 
-/* ------------------------------ searching_result ------------------------------ */
-.title_group{
- width: 1200px;
- margin: 0 auto;
- margin-top: 60px;
+/* ------------------------------ breadcrumb ------------------------------ */
+.breadcrumb{
+    width: 1200px;
+    padding-top: 30px;
+    margin: 0 auto;
 }
-.section_title_blue{
-  width: 100%;
+.second_layer{
+  color: #FFD77C;
   font-weight: 700;
-  font-size: 24px;
-  color: #74D1E7;
-  margin-bottom: 25px;
-}
-.section_title{
-  width: 100%;
-  font-weight: 700;
-  font-size: 24px;
-  color: #666;
-  margin-bottom: 25px;
 }
 
-/* ------------------------------ searching_result ------------------------------ */
+/* ------------------------------ breadcrumb ------------------------------ */
 
+/* ------------------------------ topic_tab ------------------------------ */
+.topic_tab{
+  width: 1200px;
+  /* height: 72px; */
+  margin: 0 auto;
+  margin-top: 40px;
+  border-bottom: 1px solid #E5E5E5;
+  display: flex;
+  justify-content: flex-start;
+}
+.topic_tab img{
+  width: 20px;
+  height: auto;
+  margin-right: 5px;
+}
+.selected_tab{
+  height: 44px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.tab_bar{
+  width: 100%;
+  height: 5px;
+  background-color: #FFD77C;
+  position: absolute;
+  bottom: -2.5px;
+}
+.default_tab{
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+/* ------------------------------ topic_tab ------------------------------ */
+
+/* ------------------------------ section_topic ------------------------------ */
+.main_section{
+  width: 1200px;
+  height: 345px;
+  border-radius: 20px;
+  background-image: url(./image/img_camping.png);
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 115px;
+  padding-bottom: 115px;
+}
+.section_topic{
+  width: 100%;
+  font-size: 44px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-align: center;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+
+}
+.section_subtitle{
+  width: auto;
+  padding:8px 35px 8px 35px;
+  font-weight: 400;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 215, 124, 0.8);
+  border-radius: 5px;
+}
+/* ------------------------------ section_topic ------------------------------ */
 
 /* ------------------------------ landscape_section ------------------------------ */
 .section_title{
@@ -282,12 +353,12 @@ color: #74D1E7;
 /* ------------------------------ landscape_section ------------------------------ */
 
 
-/* ------------------------------ footer ------------------------------ */
 footer{
-  background: #373F41;
- padding-top: 30px;
- padding-bottom: 30px;
- text-align: center;
- margin-top: 60px;
-}
-/* ------------------------------ footer ------------------------------ */
+    background: #373F41;
+   padding-top: 30px;
+   padding-bottom: 30px;
+   text-align: center;
+   margin-top: 60px;
+  }
+
+
