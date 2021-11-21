@@ -37,10 +37,9 @@ const Hero = () => {
               placeholder="請輸入目的地、景點、公車路線等關鍵字"
               onChange={(e) => setinput(e.target.value)}
             />
-
-            <i className="fas fa-search" onClick={clickSearch}>
-              icon
-            </i>
+            <button class="search_btn" onClick={clickSearch}>
+              搜尋
+            </button>
           </div>
         </div>
       </div>

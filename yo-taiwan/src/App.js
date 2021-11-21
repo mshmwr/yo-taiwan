@@ -17,7 +17,7 @@ function App() {
           element={<SearchingResult />}
         />
         <Route path="/tripInfoPage" element={<TripInfoPage />} />
-        <Route path="/yoBike" exact element={<YoBikePage />} />
+        <Route exact path="/yoBike" element={<YoBikePage />} />
       </Routes>
     </div>
   );
