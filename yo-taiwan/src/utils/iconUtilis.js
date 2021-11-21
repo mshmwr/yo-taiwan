@@ -3,7 +3,9 @@ import { ReactComponent as IconWeatherRainy } from "../images/icon/rainy.svg";
 import { ReactComponent as IconWeatherCloudy } from "../images/icon/cloudy.svg";
 import { ReactComponent as IconBus } from "../images/icon/bus.svg";
 import { ReactComponent as IconLocation } from "../images/icon/location.svg";
+import { ReactComponent as IconMyLocation } from "../images/icon/my_location.svg";
 import { ReactComponent as IconYoTaiwanLogo } from "../images/icon/YoTaiwan_logo.svg";
+import { ReactComponent as IconYoBikeLogo } from "../images/icon/YoBike_logo.svg";
 
 function getWeatherIcon(weather = null) {
   switch (weather) {
@@ -26,8 +28,24 @@ function getBusIcon() {
 function getLocationIcon() {
   return <IconLocation alt="location" />;
 }
+
+function getMyLocationIcon() {
+  return <IconMyLocation alt="my_location" />;
+}
+
 function getyoTaiwanLogoIcon() {
   return <IconYoTaiwanLogo alt="YoTaiwanLogo" />;
 }
 
-export { getWeatherIcon, getBusIcon, getLocationIcon, getyoTaiwanLogoIcon };
+function getYoBikeLogoIcon() {
+  return <IconYoBikeLogo alt="YoBikeLogo" />;
+}
+
+export {
+  getWeatherIcon,
+  getBusIcon,
+  getLocationIcon,
+  getMyLocationIcon,
+  getyoTaiwanLogoIcon,
+  getYoBikeLogoIcon,
+};
