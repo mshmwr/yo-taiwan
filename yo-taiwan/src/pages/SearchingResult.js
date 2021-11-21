@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { doSearch } from "../apis/searchApi";
+import Header from "../components/Common/Header";
 import { splitAddressToCityAndDistrict } from "../utils/addressUtils";
 import {
   getWeatherIcon,
@@ -21,6 +22,7 @@ function SearchingResult({ keywords = null }) {
 
   return (
     <div className="">
+      <Header />
       {keywords === null ? "empty" : `「${keywords}」搜尋結果如下：`}
       <div class="landscape_section">
         {searchResult &&
