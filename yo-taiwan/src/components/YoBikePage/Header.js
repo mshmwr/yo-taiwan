@@ -4,35 +4,35 @@ import { getYoBikeLogoIcon } from "../../utils/iconUtilis";
 
 const Header = () => {
   return (
-    <div class="header">
-      <div class="header_container">
+    <div className="header">
+      <div className="header_container">
         <Link to="/yoBike">{getYoBikeLogoIcon()}</Link>
-        <div class="nav_menu">
-          <a href="/yoBike" class="menu_rentbike">
+        <div className="nav_menu">
+          <Link to="/" className="menu_rentbike">
             租/還車即時資訊
             <img
-              class="wave_yellow_long"
+              className="wave_yellow_long"
               src="./static/icon/wave_yellow_long.png"
               alt=""
             />
-          </a>
-          <a href="/yoBike" class="menu_routeinfo">
+          </Link>
+          <Link to="/" className="menu_routeinfo">
             路線資訊
             <img
-              class="wave_yellow"
+              className="wave_yellow"
               src="./static/icon/wave_yellow.png"
               alt=""
             />
-          </a>
-          <a href="/yoBike" class="menu_landscape">
+          </Link>
+          <Link to="/" className="menu_landscape">
             觀光景點
             <img
-              class="wave_yellow"
+              className="wave_yellow"
               src="./static/icon/wave_yellow.png"
               alt=""
             />
-          </a>
-          <button class="btn_callforaction">今天想去哪？</button>
+          </Link>
+          <button className="btn_callforaction">今天想去哪？</button>
         </div>
       </div>
     </div>

@@ -27,7 +27,7 @@ const Header = ({ showSearch }) => {
             特色美食
             <img className="wave_pink" src={wavePink} alt="wave_Pink" />
           </Link>
-          <Link to="/" className="menu_traffic">
+          <Link to="/yoBike" className="menu_traffic">
             交通資訊
             <img className="wave_blue2" src={waveBlue} alt="wave_blue" />
           </Link>
