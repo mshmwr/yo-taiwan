@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/yo-taiwan/static/css/main.c2c548ae.chunk.css",
+    "main.css": "/yo-taiwan/static/css/main.995760fc.chunk.css",
     "main.js": "/yo-taiwan/static/js/main.a436943e.chunk.js",
     "main.js.map": "/yo-taiwan/static/js/main.a436943e.chunk.js.map",
     "runtime-main.js": "/yo-taiwan/static/js/runtime-main.5f110607.js",
@@ -10,7 +10,7 @@
     "static/js/2.54390473.chunk.js.map": "/yo-taiwan/static/js/2.54390473.chunk.js.map",
     "index.html": "/yo-taiwan/index.html",
     "static/css/2.b4ebbe46.chunk.css.map": "/yo-taiwan/static/css/2.b4ebbe46.chunk.css.map",
-    "static/css/main.c2c548ae.chunk.css.map": "/yo-taiwan/static/css/main.c2c548ae.chunk.css.map",
+    "static/css/main.995760fc.chunk.css.map": "/yo-taiwan/static/css/main.995760fc.chunk.css.map",
     "static/js/2.54390473.chunk.js.LICENSE.txt": "/yo-taiwan/static/js/2.54390473.chunk.js.LICENSE.txt",
     "static/media/YoBike_logo.37e5bd9d.svg": "/yo-taiwan/static/media/YoBike_logo.37e5bd9d.svg",
     "static/media/YoTaiwan_logo.8b53193c.svg": "/yo-taiwan/static/media/YoTaiwan_logo.8b53193c.svg",
@@ -28,7 +28,7 @@
     "static/js/runtime-main.5f110607.js",
     "static/css/2.b4ebbe46.chunk.css",
     "static/js/2.54390473.chunk.js",
-    "static/css/main.c2c548ae.chunk.css",
+    "static/css/main.995760fc.chunk.css",
     "static/js/main.a436943e.chunk.js"
   ]
 }
