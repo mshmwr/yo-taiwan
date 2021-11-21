@@ -10,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<HomePage />} />
         <Route path="/searchingResult" element={<SearchingResult />} />
+        <Route path="/searchingResult/:keyword" element={<SearchingResult />} />
         <Route path="/tripInfoPage" element={<TripInfoPage />} />
       </Routes>
     </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { doSearch } from "../apis/searchApi";
 import Header from "../components/Common/Header";
 import { splitAddressToCityAndDistrict } from "../utils/addressUtils";
@@ -10,9 +11,10 @@ import {
 
 // TODO: 分頁功能
 
-function SearchingResult({ keywords = null }) {
+function SearchingResult() {
   const [searchResult, setsearchResult] = useState();
   const [showSearch, setshowSearch] = useState("hide");
+  const { keyword } = useParams();
 
   useEffect(() => {
     async function fetchData() {
@@ -25,7 +27,7 @@ function SearchingResult({ keywords = null }) {
   return (
     <div className="">
       <Header showSearch={showSearch} />
-      {keywords === null ? "empty" : `「${keywords}」搜尋結果如下：`}
+      {keyword === undefined ? "empty" : `「${keyword}」搜尋結果如下：`}
       <div class="landscape_section">
         {searchResult &&
           searchResult.map((item) => {
