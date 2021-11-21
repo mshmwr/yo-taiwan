@@ -12,17 +12,19 @@ import {
 
 function SearchingResult({ keywords = null }) {
   const [searchResult, setsearchResult] = useState();
+  const [showSearch, setshowSearch] = useState("hide");
 
   useEffect(() => {
     async function fetchData() {
       setsearchResult(await doSearch());
     }
     fetchData();
+    setshowSearch("show");
   }, []);
 
   return (
     <div className="">
-      <Header />
+      <Header showSearch={showSearch} />
       {keywords === null ? "empty" : `「${keywords}」搜尋結果如下：`}
       <div class="landscape_section">
         {searchResult &&
