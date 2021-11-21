@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+  const [input, setinput] = useState("");
+  const clickSearch = () => {
+    if (input === "") {
+      return;
+    }
+    navigate(`/searchingResult/${input}`);
+  };
+
   return (
     <div className="hero_section">
       <div className="hero_title">立即開始你的美好假期</div>
@@ -20,8 +30,12 @@ const Hero = () => {
               type="text"
               className="search_field_input"
               placeholder="請輸入目的地、景點、公車路線等關鍵字"
+              onChange={(e) => setinput(e.target.value)}
             />
-            <i className="fas fa-search"></i>
+
+            <i className="fas fa-search" onClick={clickSearch}>
+              icon
+            </i>
           </div>
         </div>
       </div>
