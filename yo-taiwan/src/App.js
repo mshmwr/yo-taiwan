@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import TripInfoPage from "./pages/TripInfoPage";
 import SearchingResult from "./pages/SearchingResult";
+import YoBikePage from "./pages/YoBikePage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/searchingResult" element={<SearchingResult />} />
         <Route path="/searchingResult/:keyword" element={<SearchingResult />} />
         <Route path="/tripInfoPage" element={<TripInfoPage />} />
+        <Route path="/yoBike" exact element={<YoBikePage />} />
       </Routes>
     </div>
   );
