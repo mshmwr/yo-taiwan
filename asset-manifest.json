@@ -1,31 +1,34 @@
 {
   "files": {
-    "main.css": "/yo-taiwan/static/css/main.7ca0df6d.chunk.css",
-    "main.js": "/yo-taiwan/static/js/main.bb4b102c.chunk.js",
-    "main.js.map": "/yo-taiwan/static/js/main.bb4b102c.chunk.js.map",
+    "main.css": "/yo-taiwan/static/css/main.c2c548ae.chunk.css",
+    "main.js": "/yo-taiwan/static/js/main.18372337.chunk.js",
+    "main.js.map": "/yo-taiwan/static/js/main.18372337.chunk.js.map",
     "runtime-main.js": "/yo-taiwan/static/js/runtime-main.5f110607.js",
     "runtime-main.js.map": "/yo-taiwan/static/js/runtime-main.5f110607.js.map",
     "static/css/2.b4ebbe46.chunk.css": "/yo-taiwan/static/css/2.b4ebbe46.chunk.css",
-    "static/js/2.21b651db.chunk.js": "/yo-taiwan/static/js/2.21b651db.chunk.js",
-    "static/js/2.21b651db.chunk.js.map": "/yo-taiwan/static/js/2.21b651db.chunk.js.map",
+    "static/js/2.54390473.chunk.js": "/yo-taiwan/static/js/2.54390473.chunk.js",
+    "static/js/2.54390473.chunk.js.map": "/yo-taiwan/static/js/2.54390473.chunk.js.map",
     "index.html": "/yo-taiwan/index.html",
     "static/css/2.b4ebbe46.chunk.css.map": "/yo-taiwan/static/css/2.b4ebbe46.chunk.css.map",
-    "static/css/main.7ca0df6d.chunk.css.map": "/yo-taiwan/static/css/main.7ca0df6d.chunk.css.map",
-    "static/js/2.21b651db.chunk.js.LICENSE.txt": "/yo-taiwan/static/js/2.21b651db.chunk.js.LICENSE.txt",
+    "static/css/main.c2c548ae.chunk.css.map": "/yo-taiwan/static/css/main.c2c548ae.chunk.css.map",
+    "static/js/2.54390473.chunk.js.LICENSE.txt": "/yo-taiwan/static/js/2.54390473.chunk.js.LICENSE.txt",
+    "static/media/YoBike_logo.37e5bd9d.svg": "/yo-taiwan/static/media/YoBike_logo.37e5bd9d.svg",
     "static/media/YoTaiwan_logo.8b53193c.svg": "/yo-taiwan/static/media/YoTaiwan_logo.8b53193c.svg",
     "static/media/bus.17377ece.svg": "/yo-taiwan/static/media/bus.17377ece.svg",
     "static/media/index.css": "/yo-taiwan/static/media/hero_image.0e0be012.png",
     "static/media/cloudy.bb1e141c.svg": "/yo-taiwan/static/media/cloudy.bb1e141c.svg",
+    "static/media/yoBike.css": "/yo-taiwan/static/media/hero_img.18581ca0.png",
     "static/media/landscape_hualian.3052e3aa.png": "/yo-taiwan/static/media/landscape_hualian.3052e3aa.png",
     "static/media/location.6fe26833.svg": "/yo-taiwan/static/media/location.6fe26833.svg",
+    "static/media/my_location.fca4641c.svg": "/yo-taiwan/static/media/my_location.fca4641c.svg",
     "static/media/rainy.ab1339b7.svg": "/yo-taiwan/static/media/rainy.ab1339b7.svg",
     "static/media/sunny.0282ec5e.svg": "/yo-taiwan/static/media/sunny.0282ec5e.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.5f110607.js",
     "static/css/2.b4ebbe46.chunk.css",
-    "static/js/2.21b651db.chunk.js",
-    "static/css/main.7ca0df6d.chunk.css",
-    "static/js/main.bb4b102c.chunk.js"
+    "static/js/2.54390473.chunk.js",
+    "static/css/main.c2c548ae.chunk.css",
+    "static/js/main.18372337.chunk.js"
   ]
 }
