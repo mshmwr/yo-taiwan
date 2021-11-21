@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SearchBusRoute from "./SearchBusRoute";
+import BusRouteMap from "./BusRouteMap";
+import { doBusRouteSearch } from "../../apis/searchbusRouteApi";
 
 const Bus = () => {
   const [selectRegion, setselectRegion] = useState("北部");
   const [selectCity, setselectCity] = useState("Taoyuan");
+  const [selectBusRoute, setselectBusRoute] = useState("測試傳遞");
+  const [searchBusRoute, setsearchBusRoute] = useState();
   const DistrictBusData = [
     {
       region: "北部",
@@ -52,6 +56,23 @@ const Bus = () => {
       ],
     },
   ];
+  const searchBusRouteShpArray = [];
+  //將searchBusRoute搜尋資料傳遞到這裡，在將路線座標傳進BusRouteMap
+  useEffect(() => {
+    async function fetchData() {
+      setsearchBusRoute(await doBusRouteSearch());
+    }
+    fetchData();
+  }, []);
+
+  function BusRouteCheck(searchBusRoute) {
+    const districtBusRoute = searchBusRoute.filter((route) =>
+      (!route.City ? "" : route.City).includes(selectCity)
+    );
+
+    searchBusRouteShpArray.push(districtBusRoute.map((name) => name));
+    return districtBusRoute.map((name) => name.TaiwanTripName.Zh_tw);
+  }
 
   function handleClick(e) {
     setselectRegion(e.target.innerHTML);
@@ -59,6 +80,10 @@ const Bus = () => {
   function handleCityClick(e) {
     setselectCity(e.target.getAttribute("value"));
   }
+
+  const getBusRoute = (e) => {
+    setselectBusRoute(e.target.innerHTML);
+  };
 
   return (
     <div>
@@ -95,7 +120,15 @@ const Bus = () => {
           })}
         </div>
         <div className="btn_busroute_group">
-          <SearchBusRoute selectCity={selectCity} />
+          <SearchBusRoute
+            selectCity={selectCity}
+            handleRouteMap={getBusRoute}
+            handleBusRouteCheck={BusRouteCheck}
+            searchBusRoute={searchBusRoute}
+          />
+        </div>
+        <div className="bus_route">
+          <BusRouteMap selectBusRoute={selectBusRoute} />
         </div>
       </div>
     </div>

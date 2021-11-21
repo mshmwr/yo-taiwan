@@ -2,6 +2,7 @@ import axios from "axios";
 import { getAuthorizationHeader } from "./axios";
 const doBusRouteShp = async (busName = "") => {
   let resresult = null;
+  let busStopName = null;
   try {
     await axios
       .get(
@@ -35,7 +36,8 @@ const doBusRouteShp = async (busName = "") => {
                   .reverse()
                   .map((val) => Number(val))
               );
-            return resresult;
+            busName = busRouteData.Zh_tw;
+            return [resresult, busStopName];
           })
           .catch(function (error) {
             console.log(error);
@@ -47,7 +49,6 @@ const doBusRouteShp = async (busName = "") => {
   } catch (error) {
     alert("GET Error!!" + error);
   }
-
   return resresult;
 };
 
