@@ -2,6 +2,10 @@ const cityTitleList = ["市", "縣"];
 const distTitleList = ["市", "鎮", "鄉", "區"];
 
 const splitAddressToCityAndDistrict = (address) => {
+  if (!address) {
+    return "null";
+  }
+
   const getTitleIndex = (address, titleList) => {
     for (let i = 0; i < titleList.length; i++) {
       const index = address.indexOf(titleList[i]);

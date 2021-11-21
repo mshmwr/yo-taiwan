@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { doSearch } from "../apis/searchApi";
+import { doSearchName } from "../apis/searchApi";
 import Header from "../components/Common/Header";
 import { splitAddressToCityAndDistrict } from "../utils/addressUtils";
 import {
@@ -18,17 +18,18 @@ function SearchingResult() {
 
   useEffect(() => {
     async function fetchData() {
-      setsearchResult(await doSearch());
+      setsearchResult(await doSearchName(keyword));
     }
     fetchData();
     setshowSearch("show");
-  }, []);
+  }, [keyword]);
 
   return (
     <div className="">
       <Header showSearch={showSearch} />
       {keyword === undefined ? "empty" : `「${keyword}」搜尋結果如下：`}
       <div class="landscape_section">
+        {console.log(searchResult)}
         {searchResult &&
           searchResult.map((item) => {
             return (
