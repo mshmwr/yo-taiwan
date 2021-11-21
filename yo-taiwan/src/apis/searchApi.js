@@ -23,10 +23,6 @@ const doSearch = async (top = 30) => {
 };
 
 const doSearchName = async (name = "", top = 30) => {
-  console.log(name);
-  console.log(
-    `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=contains(Name%2C'${name}')&$top=${top}&$format=JSON`
-  );
   let res = null;
   try {
     await axios
