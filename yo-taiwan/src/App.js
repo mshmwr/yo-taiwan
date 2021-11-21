@@ -1,4 +1,5 @@
 import "./css/reset.css";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import TripInfoPage from "./pages/TripInfoPage";
@@ -11,7 +12,10 @@ function App() {
       <Routes>
         <Route path="/" exact element={<HomePage />} />
         <Route path="/searchingResult" element={<SearchingResult />} />
-        <Route path="/searchingResult/:keyword" element={<SearchingResult />} />
+        <Route
+          path="/searchingResult/:keywords"
+          element={<SearchingResult />}
+        />
         <Route path="/tripInfoPage" element={<TripInfoPage />} />
         <Route path="/yoBike" exact element={<YoBikePage />} />
       </Routes>

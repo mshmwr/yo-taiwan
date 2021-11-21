@@ -22,12 +22,12 @@ const doSearch = async (top = 30) => {
   return res;
 };
 
-const doSearchName = async (name = "", top = 30) => {
+const doSearchName = async (name = "", address = "", top = 30) => {
   let res = null;
   try {
     await axios
       .get(
-        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=contains(Name%2C'${name}')&$top=${top}&$format=JSON`,
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=contains(Name%2C'${name}') and contains(Address%2C'${address}')&$top=${top}&$format=JSON`,
         {
           headers: getAuthorizationHeader(),
         }
