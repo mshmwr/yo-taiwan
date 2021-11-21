@@ -9,30 +9,42 @@ import {
   getLocationIcon,
 } from "../utils/iconUtilis";
 import "../css/searchingResult.css";
+import { keywordSplitWithPlus } from "../utils/stringUtils";
 
 // TODO: 分頁功能
 
 function SearchingResult() {
   const [searchResult, setsearchResult] = useState();
-  const [showSearch, setshowSearch] = useState("hide");
-  const { keyword } = useParams();
+  const { keywords } = useParams();
 
   useEffect(() => {
     async function fetchData() {
-      setsearchResult(await doSearchName(keyword));
+      const keywordArr = keywordSplitWithPlus(keywords);
+      let keyword = keywordArr[0];
+      if (keywordArr.length === 1) {
+        setsearchResult(await doSearchName(keyword));
+      } else {
+        let address = keywordArr[1];
+        setsearchResult(await doSearchName(keyword, address));
+      }
     }
     fetchData();
-    setshowSearch("show");
-  }, [keyword]);
+  }, [keywords]);
 
   return (
     <>
-      <Header showSearch={showSearch} />
+      <Header showSearch="show" />
       <div class="title_group">
-        {keyword === undefined ? (
+        {keywords === undefined ? (
           "no input"
         ) : (
-          <span class="section_title_blue">「{keyword}」</span>
+          <span class="section_title_blue">
+            「
+            {keywordSplitWithPlus(keywords)[0] !== ""
+              ? keywords
+              : keywords.replace("+", "")}
+            」
+          </span>
         )}
         <span class="section_title">搜尋結果如下：</span>
       </div>

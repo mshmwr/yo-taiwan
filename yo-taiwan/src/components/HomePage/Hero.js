@@ -4,11 +4,16 @@ import { useNavigate } from "react-router-dom";
 const Hero = () => {
   const navigate = useNavigate();
   const [input, setinput] = useState("");
+  const [dropdownAddress, setdropdownAddress] = useState("");
   const clickSearch = () => {
-    if (input === "") {
+    if (input === "" && dropdownAddress === "") {
       return;
     }
-    navigate(`/searchingResult/${input}`);
+    if (dropdownAddress === "") {
+      navigate(`/searchingResult/${input}`);
+    } else {
+      navigate(`/searchingResult/${input}+${dropdownAddress}`);
+    }
   };
 
   return (
