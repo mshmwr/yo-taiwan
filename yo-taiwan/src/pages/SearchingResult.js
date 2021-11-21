@@ -8,6 +8,7 @@ import {
   getBusIcon,
   getLocationIcon,
 } from "../utils/iconUtilis";
+import "../css/searchingResult.css";
 
 // TODO: 分頁功能
 
@@ -25,11 +26,17 @@ function SearchingResult() {
   }, [keyword]);
 
   return (
-    <div className="">
+    <>
       <Header showSearch={showSearch} />
-      {keyword === undefined ? "empty" : `「${keyword}」搜尋結果如下：`}
+      <div class="title_group">
+        {keyword === undefined ? (
+          "no input"
+        ) : (
+          <span class="section_title_blue">「{keyword}」</span>
+        )}
+        <span class="section_title">搜尋結果如下：</span>
+      </div>
       <div class="landscape_section">
-        {console.log(searchResult)}
         {searchResult &&
           searchResult.map((item) => {
             return (
@@ -64,7 +71,7 @@ function SearchingResult() {
             );
           })}
       </div>
-    </div>
+    </>
   );
 }
 
