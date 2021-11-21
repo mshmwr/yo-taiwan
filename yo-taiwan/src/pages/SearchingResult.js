@@ -30,7 +30,7 @@ function SearchingResult() {
       <Header showSearch={showSearch} />
       <div class="title_group">
         {keyword === undefined ? (
-          "empty"
+          "no input"
         ) : (
           <span class="section_title_blue">「{keyword}」</span>
         )}
