@@ -6,12 +6,12 @@ import wavePink from "../../images/icon/wave_pink.png";
 import { getyoTaiwanLogoIcon } from "../../utils/iconUtilis";
 import HeaderSearch from "./HeaderSearch";
 
-const Header = (showSearch) => {
+const Header = ({ showSearch }) => {
   return (
     <div className="header">
       <div className="header_container">
         <Link to="/">{getyoTaiwanLogoIcon()}</Link>
-        <div className={showSearch.showSearch === "show" ? "show" : "hide"}>
+        <div className={showSearch === "show" ? "show" : "hide"}>
           <HeaderSearch />
         </div>
         <div className="nav_menu">
