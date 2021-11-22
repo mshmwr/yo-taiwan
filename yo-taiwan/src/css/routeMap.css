@@ -409,7 +409,6 @@
   cursor: pointer;
 }
 .btn_busroute_group {
-  position: absolute;
   width: 100%;
   margin-left: 36px;
   bottom: 10%;
@@ -439,7 +438,8 @@
   height: 400px;
   margin: 0 auto;
   background-color: #cccccc;
-  margin-top: 30px;
+  position: absolute;
+  margin-top: 280px;
 }
 
 /* ------------------------------ bus_section ------------------------------ */
