@@ -10,7 +10,8 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" exact element={<HomePage />} />
+        {/* <Route path="/" exact element={<HomePage />} /> */}
+        <Route path="/" exact element={<YoBikePage />} />
         <Route path="/searchingResult" element={<SearchingResult />} />
         <Route
           path="/searchingResult/:keywords"
