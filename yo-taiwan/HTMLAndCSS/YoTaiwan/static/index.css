@@ -82,17 +82,14 @@ blockquote, q {
     text-decoration: none;
     position: relative;
 }
-.wave_blue1{
-  position: absolute;
-  top: 30px;
-  right: 5px;
-  display: none;
-}
 .menu_landscape:hover{
 color: #74D1E7;
 }
-.menu_landscape:after{
-  color: #74D1E7;
+.menu_landscape:hover::after{
+  content:url(./icon/wave_blue.png);
+  position: absolute;
+  top: 20px;
+  right: 5px;
 }
 
 
@@ -101,16 +98,15 @@ color: #74D1E7;
   text-decoration: none;
   position: relative;
 }
-.wave_yellow{
-  position: absolute;
-  top: 30px;
-  right: 5px;
-  display: none;
-}
 .menu_fair:hover{
   color:#FFD77C;
 }
-
+.menu_fair:hover::after{
+  content: url(./icon/wave_yellow.png);
+  position: absolute;
+  top: 20px;
+  right: 5px;
+}
 
 .menu_food {
   margin-right: 40px;
@@ -120,11 +116,11 @@ color: #74D1E7;
 .menu_food:hover{
   color: #FF8B7C;
 }
-.wave_pink{
+.menu_food:hover::after{
+  content: url(./icon/wave_pink.png);
   position: absolute;
-  top: 30px;
+  top: 20px;
   right: 5px;
-  display: none;
 }
 
 .menu_traffic {
@@ -135,14 +131,53 @@ color: #74D1E7;
 .menu_traffic:hover{
   color: #74D1E7;
 }
-.wave_blue2{
+.menu_traffic:hover::after{
+  content: url(./icon/wave_blue.png);
   position: absolute;
-  top: 30px;
+  top: 20px;
   right: 5px;
-  display: none;
 }
 
-
+/* -------------- dropdown -------------- */
+.menu_dropdown_1,.menu_dropdown_2{
+  width: 175px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  position: absolute;
+  left: -50px;
+  top: 40px;
+  padding: 15px 30px 15px 30px;
+  display: none;
+}
+.menu_dropdown_1 li{
+    padding: 9px 0 9px 0;
+    display: flex;
+    align-items: center;
+}
+.menu_dropdown_1 li img{
+  padding-right: 12px;
+}
+.menu_dropdown_1 li:hover{
+  color: #FFD77C;
+  font-weight: 700;
+}
+.menu_dropdown_2 li{
+  padding: 9px 0 9px 0;
+  display: flex;
+  align-items: center;
+}
+.menu_dropdown_2 li img{
+padding-right: 12px;
+}
+.menu_dropdown_2 li:hover{
+color: #74D1E7;
+font-weight: 700;
+}
+.nav_menu a:hover>ul{
+  display: block;
+}
+/* -------------- dropdown -------------- */
 
 .btn_callforaction{
     background-color: #74D1E7;
@@ -213,59 +248,67 @@ color: #74D1E7;
     display: flex;
     padding: 20px;
     align-items: center;
+
 }
 
+/* -------------- dropdown -------------- */
 .search_box_dropdown{
     width: 148px;
-    border-right: 1px solid #E5E5E5;
+    /* border-right: 1px solid #E5E5E5; */
     color: #A0A5AA;
     position: relative;
     cursor: pointer;
 }
+.search_box_dropdown:hover>ul{
+  display: block;
+}
 
 .default_option{
-    text-transform: uppercase;
-    padding-left:12px ;
-    font-size: 16px;
-    color: #737B7D;
-    margin: 0 auto;
-  }
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-left:12px ;
+  font-size: 16px;
+  color: #737B7D;
+  margin: 0 auto;
+}
 
-  .search_box_dropdown ul{
-    position: absolute;
-    top: 70px;
-    left: -10px;
-    background: #fff;
-    width: 150px;
-    border-radius: 5px;
-    padding: 20px;
-    display: none;
-    box-shadow: 8px 8px 6px -10px #b3c6ff;
-  }
+.search_box_dropdown ul{
+  position: absolute;
+  top: 60px;
+  left: -20px;
+  background: #fff;
+  width: 125px;
+  height: 200px;
+  border-radius: 10px;
+  padding: 20px;
+  display: none;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+  overflow: scroll;
+}
 
-  .search_box_dropdown ul.active{
-    display: block;
-  }
+.search_box_dropdown ul li{
+  padding-bottom: 20px;
+}
+.search_box_dropdown ul li:last-child{
+  padding-bottom: 0;
+}
 
-  .search_box_dropdown ul li{
-    padding-bottom: 20px;
-  }
-  .search_box_dropdown ul li:last-child{
-    padding-bottom: 0;
-  }
+.search_box_dropdown ul li:hover{
+  color: #74D1E7;
+}
 
-  .search_box_dropdown ul li:hover{
-    color: #6f768d;
-  }
+.search_box_dropdown:before{
+  content: "";
+  position: absolute;
+  top: 28px;
+  right: 10px;
+  border: 6px solid;
+  border-color:  #74D1E7 transparent transparent transparent;
+}
 
-  .search_box_dropdown:before{
-    content: "";
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    border: 6px solid;
-    border-color:  #74D1E7 transparent transparent transparent;
-  }
+/* -------------- dropdown -------------- */
+
 
   .search_field{
     width: 100%;
@@ -281,6 +324,7 @@ color: #74D1E7;
     padding-left: 20px;
     padding-right: 38px;
     color: #737B7D;
+    border-left: 1px solid #E5E5E5;
   }
   .search_field_input::placeholder{
     color: #A0A5AA;
