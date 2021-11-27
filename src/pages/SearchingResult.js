@@ -14,7 +14,7 @@ import { keywordSplitWithPlus } from "../utils/stringUtils";
 // TODO: 分頁功能
 
 function SearchingResult() {
-  const [searchResult, setsearchResult] = useState();
+  const [searchResult, setsearchResult] = useState([]);
   const { keywords } = useParams();
 
   useEffect(() => {
@@ -34,11 +34,11 @@ function SearchingResult() {
   return (
     <>
       <Header showSearch="show" />
-      <div class="title_group">
+      <div className="title_group">
         {keywords === undefined ? (
           "no input"
         ) : (
-          <span class="section_title_blue">
+          <span className="section_title_blue">
             「
             {keywordSplitWithPlus(keywords)[0] !== ""
               ? keywords
@@ -46,42 +46,43 @@ function SearchingResult() {
             」
           </span>
         )}
-        <span class="section_title">搜尋結果如下：</span>
+        <span className="section_title">搜尋結果如下：</span>
       </div>
-      <div class="landscape_section">
-        {searchResult &&
-          searchResult.map((item) => {
-            return (
-              <a
-                key={item.ID}
-                href="/#"
-                style={{ textDecoration: "none" }}
-                target="_blank"
-              >
-                <div className="landscape_block">
-                  <div className="image_block">
-                    <img alt={item.Name} src={item.Picture.PictureUrl1} />
-                  </div>
-                  <div className="content_block">
-                    {item.Name}
-                    {item?.Bus && (
-                      <div className="tag_bus">
-                        {getBusIcon()}
-                        {item.Bus}
-                      </div>
-                    )}
-
-                    <div className="tag_location">
-                      {getLocationIcon()}
-                      {splitAddressToCityAndDistrict(item.Address)}
+      <div className="landscape_section">
+        {searchResult.length !== 0
+          ? searchResult.map((item) => {
+              return (
+                <a
+                  key={item.ID}
+                  href="/#"
+                  style={{ textDecoration: "none" }}
+                  target="_blank"
+                >
+                  <div className="landscape_block">
+                    <div className="image_block">
+                      <img alt={item.Name} src={item.Picture.PictureUrl1} />
                     </div>
-                    <div className="weather">{getWeatherIcon("sunny")}</div>
-                    {/* TODO: 天氣icon要接天氣預報api */}
+                    <div className="content_block">
+                      {item.Name}
+                      {item?.Bus && (
+                        <div className="tag_bus">
+                          {getBusIcon()}
+                          {item.Bus}
+                        </div>
+                      )}
+
+                      <div className="tag_location">
+                        {getLocationIcon()}
+                        {splitAddressToCityAndDistrict(item.Address)}
+                      </div>
+                      <div className="weather">{getWeatherIcon("sunny")}</div>
+                      {/* TODO: 天氣icon要接天氣預報api */}
+                    </div>
                   </div>
-                </div>
-              </a>
-            );
-          })}
+                </a>
+              );
+            })
+          : "無相關搜尋結果"}
       </div>
     </>
   );
