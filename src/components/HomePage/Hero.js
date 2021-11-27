@@ -66,7 +66,7 @@ const Hero = () => {
               placeholder="請輸入目的地、景點、公車路線等關鍵字"
               onChange={(e) => setinput(e.target.value)}
             />
-            <button class="search_btn" onClick={clickSearch}>
+            <button className="search_btn" onClick={clickSearch}>
               搜尋
             </button>
           </div>
