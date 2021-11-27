@@ -28,7 +28,6 @@ const Hero = () => {
   const [input, setinput] = useState("");
   const [dropdownDistrict, setdropdownDistrict] = useState("");
   const clickDropdown = (e) => {
-    console.log(e);
     setdropdownDistrict(e.target.getAttribute("value"));
   };
   const clickSearch = () => {
