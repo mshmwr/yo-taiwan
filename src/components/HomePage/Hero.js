@@ -1,18 +1,44 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const DistrictListData = [
+  "不分縣市",
+  "宜蘭縣",
+  "基隆市",
+  "台北市",
+  "新北市",
+  "桃園市",
+  "新竹縣",
+  "臺中市",
+  "苗栗縣",
+  "彰化縣",
+  "南投縣",
+  "雲林縣",
+  "高雄市",
+  "臺南市",
+  "嘉義市",
+  "嘉義縣",
+  "屏東縣",
+  "花蓮縣",
+  "臺東縣",
+];
+
 const Hero = () => {
   const navigate = useNavigate();
   const [input, setinput] = useState("");
-  const [dropdownAddress, setdropdownAddress] = useState("");
+  const [dropdownDistrict, setdropdownDistrict] = useState("");
+  const clickDropdown = (e) => {
+    console.log(e);
+    setdropdownDistrict(e.target.getAttribute("value"));
+  };
   const clickSearch = () => {
-    if (input === "" && dropdownAddress === "") {
+    if (input === "" && dropdownDistrict === "") {
       return;
     }
-    if (dropdownAddress === "") {
+    if (dropdownDistrict === "") {
       navigate(`/searchingResult/${input}`);
     } else {
-      navigate(`/searchingResult/${input}+${dropdownAddress}`);
+      navigate(`/searchingResult/${input}+${dropdownDistrict}`);
     }
   };
 
@@ -23,11 +49,15 @@ const Hero = () => {
       <div className="search_section">
         <div className="search_box">
           <div className="search_box_dropdown">
-            <div className="default_option">不分縣市</div>
+            <div className="default_option">
+              {dropdownDistrict === "" ? DistrictListData[0] : dropdownDistrict}
+            </div>
             <ul>
-              <li>基隆市</li>
-              <li>台北市</li>
-              <li>新北市</li>
+              {DistrictListData.map((city) => (
+                <li key={city} value={city} onClick={clickDropdown}>
+                  {city}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="search_field">
