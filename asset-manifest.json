@@ -1,21 +1,20 @@
 {
   "files": {
-    "main.css": "/yo-taiwan/static/css/main.8189ca28.chunk.css",
-    "main.js": "/yo-taiwan/static/js/main.ac2e634d.chunk.js",
-    "main.js.map": "/yo-taiwan/static/js/main.ac2e634d.chunk.js.map",
+    "main.css": "/yo-taiwan/static/css/main.67227bcd.chunk.css",
+    "main.js": "/yo-taiwan/static/js/main.29f30f8a.chunk.js",
+    "main.js.map": "/yo-taiwan/static/js/main.29f30f8a.chunk.js.map",
     "runtime-main.js": "/yo-taiwan/static/js/runtime-main.5f110607.js",
     "runtime-main.js.map": "/yo-taiwan/static/js/runtime-main.5f110607.js.map",
-    "static/js/2.6a51f9bf.chunk.js": "/yo-taiwan/static/js/2.6a51f9bf.chunk.js",
-    "static/js/2.6a51f9bf.chunk.js.map": "/yo-taiwan/static/js/2.6a51f9bf.chunk.js.map",
+    "static/js/2.a39c4ef1.chunk.js": "/yo-taiwan/static/js/2.a39c4ef1.chunk.js",
+    "static/js/2.a39c4ef1.chunk.js.map": "/yo-taiwan/static/js/2.a39c4ef1.chunk.js.map",
     "index.html": "/yo-taiwan/index.html",
-    "static/css/main.8189ca28.chunk.css.map": "/yo-taiwan/static/css/main.8189ca28.chunk.css.map",
-    "static/js/2.6a51f9bf.chunk.js.LICENSE.txt": "/yo-taiwan/static/js/2.6a51f9bf.chunk.js.LICENSE.txt",
+    "static/css/main.67227bcd.chunk.css.map": "/yo-taiwan/static/css/main.67227bcd.chunk.css.map",
+    "static/js/2.a39c4ef1.chunk.js.LICENSE.txt": "/yo-taiwan/static/js/2.a39c4ef1.chunk.js.LICENSE.txt",
     "static/media/YoBike_logo.37e5bd9d.svg": "/yo-taiwan/static/media/YoBike_logo.37e5bd9d.svg",
     "static/media/YoTaiwan_logo.8b53193c.svg": "/yo-taiwan/static/media/YoTaiwan_logo.8b53193c.svg",
     "static/media/bus.17377ece.svg": "/yo-taiwan/static/media/bus.17377ece.svg",
     "static/media/index.css": "/yo-taiwan/static/media/hero_image.0e0be012.png",
     "static/media/cloudy.bb1e141c.svg": "/yo-taiwan/static/media/cloudy.bb1e141c.svg",
-    "static/media/yoBike.css": "/yo-taiwan/static/media/hero_img.18581ca0.png",
     "static/media/landscape_hualian.3052e3aa.png": "/yo-taiwan/static/media/landscape_hualian.3052e3aa.png",
     "static/media/location.6fe26833.svg": "/yo-taiwan/static/media/location.6fe26833.svg",
     "static/media/my_location.fca4641c.svg": "/yo-taiwan/static/media/my_location.fca4641c.svg",
@@ -24,8 +23,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.5f110607.js",
-    "static/js/2.6a51f9bf.chunk.js",
-    "static/css/main.8189ca28.chunk.css",
-    "static/js/main.ac2e634d.chunk.js"
+    "static/js/2.a39c4ef1.chunk.js",
+    "static/css/main.67227bcd.chunk.css",
+    "static/js/main.29f30f8a.chunk.js"
   ]
 }
