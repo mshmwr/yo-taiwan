@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import waveBlue from "../../images/icon/wave_blue.png";
 import waveYellow from "../../images/icon/wave_yellow.png";
@@ -9,29 +9,9 @@ import SelectBar from "./selectBar";
 import { SelectBarTraffic } from "./selectBar";
 
 const Header = ({ showSearch }) => {
-  const [showSelect, setshowSelect] = useState("hide");
-  const [showSelectTraffic, setshowSelectTraffic] = useState("hide");
-  function MouseOverSelect() {
-    setshowSelect("show");
-  }
-  function ClickSelect() {
-    setshowSelect("hide");
-  }
-  function MouseUpSelect() {
-    setshowSelect("show");
-  }
-  function MouseOverSelectTraffic() {
-    setshowSelectTraffic("show");
-  }
-  function ClickSelectTraffic() {
-    setshowSelectTraffic("hide");
-  }
-  function MouseUpSelectTraffic() {
-    setshowSelectTraffic("show");
-  }
   return (
     <div className="header">
-      <div className="header_container" onClick={ClickSelectTraffic}>
+      <div className="header_container">
         <Link to="/">{getyoTaiwanLogoIcon()}</Link>
         <div className={showSearch === "show" ? "show" : "hide"}>
           <HeaderSearch />
@@ -41,37 +21,21 @@ const Header = ({ showSearch }) => {
             觀光景點
             <img className="wave_blue1" src={waveBlue} alt="wave_blue" />
           </Link>
-          <Link
-            to="/"
-            className="menu_fair"
-            onMouseOver={MouseOverSelect}
-            onMouseUp={MouseUpSelect}
-            onClick={ClickSelect}
-          >
+          <Link to="/" className="menu_fair">
             主題旅遊
             <img className="wave_yellow" src={waveYellow} alt="wave_Yellow" />
+            <SelectBar />
           </Link>
           <Link to="/" className="menu_food">
             特色美食
             <img className="wave_pink" src={wavePink} alt="wave_Pink" />
           </Link>
-          <Link
-            to="/"
-            className="menu_traffic"
-            onMouseOver={MouseOverSelectTraffic}
-            onMouseUp={MouseUpSelectTraffic}
-            onClick={ClickSelectTraffic}
-          >
+          <Link to="/" className="menu_traffic">
             交通資訊
             <img className="wave_blue2" src={waveBlue} alt="wave_blue" />
+            <SelectBarTraffic />
           </Link>
           <button className="btn_callforaction">今天想去哪？</button>
-          <div className={showSelect === "show" ? "show" : "hide"}>
-            <SelectBar />
-          </div>
-          <div className={showSelectTraffic === "show" ? "show" : "hide"}>
-            <SelectBarTraffic />
-          </div>
         </div>
       </div>
     </div>
