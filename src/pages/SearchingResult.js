@@ -11,8 +11,6 @@ import {
 import "../css/searchingResult.css";
 import { keywordSplitWithPlus } from "../utils/stringUtils";
 
-// TODO: 分頁功能
-
 function SearchingResult() {
   const [searchResult, setsearchResult] = useState([]);
   const { keywords } = useParams();
@@ -76,7 +74,6 @@ function SearchingResult() {
                         {splitAddressToCityAndDistrict(item.Address)}
                       </div>
                       <div className="weather">{getWeatherIcon("sunny")}</div>
-                      {/* TODO: 天氣icon要接天氣預報api */}
                     </div>
                   </div>
                 </a>
