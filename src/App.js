@@ -15,7 +15,7 @@ function App() {
           path="/searchingResult/:keywords"
           element={<SearchingResult />}
         />
-        <Route path="/tripInfoPage" element={<TripInfoPage />} />
+        <Route path="/tripInfoPage/:id" element={<TripInfoPage />} />
       </Routes>
     </div>
   );
