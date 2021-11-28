@@ -1,33 +1,3 @@
-* {
-  box-sizing: border-box;
-  font-family: "Noto Sans TC";
-  font-size: 16px;
-  color: #666;
-  font-weight: 400;
-  scroll-padding-top: 88px;
-}
-
-.header1 {
-  width: 100%;
-  height: 88px;
-  color: #ffffff;
-  border-bottom: #e4e6e8 1px solid;
-}
-
-.header_container {
-  width: 1200px;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  align-items: center;
-}
-
-.header_container > img {
-  width: 231px;
-  height: 32px;
-}
-
 .trip_search_field1 {
   position: relative;
 }
@@ -62,7 +32,7 @@
 .wave_blue1 {
   position: absolute;
   top: 30px;
-  right: 5px;
+  right: 0;
   display: none;
 }
 .menu_landscape:hover {

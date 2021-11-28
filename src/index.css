@@ -41,7 +41,7 @@
   content: url(./images/icon/wave_blue.png);
   position: absolute;
   top: 20px;
-  right: 5px;
+  right: 0;
 }
 
 .menu_fair {
@@ -56,7 +56,7 @@
   content: url(./images/icon/wave_yellow.png);
   position: absolute;
   top: 20px;
-  right: 5px;
+  right: 0;
 }
 
 .menu_food {
@@ -71,7 +71,7 @@
   content: url(./images/icon/wave_pink.png);
   position: absolute;
   top: 20px;
-  right: 5px;
+  right: 0;
 }
 
 .menu_traffic {
@@ -86,7 +86,7 @@
   content: url(./images/icon/wave_blue.png);
   position: absolute;
   top: 20px;
-  right: 5px;
+  right: 0;
 }
 
 /* -------------- dropdown -------------- */
@@ -217,7 +217,6 @@
   height: 60px;
   display: flex;
   align-items: center;
-  padding-left: 12px;
   font-size: 16px;
   color: #737b7d;
   margin: 0 auto;
@@ -226,7 +225,7 @@
 .search_box_dropdown ul {
   position: absolute;
   top: 60px;
-  left: -20px;
+  left: -10px;
   background: #fff;
   width: 125px;
   height: 200px;
@@ -263,6 +262,7 @@
   width: 100%;
   height: 100%;
   position: relative;
+  display: contents;
 }
 
 .search_field_input {
@@ -278,6 +278,9 @@
 .search_field_input::placeholder {
   color: #a0a5aa;
   font-weight: 400;
+}
+.search_field_input:focus{
+  outline: none;
 }
 .search_btn {
   width: 100px;
