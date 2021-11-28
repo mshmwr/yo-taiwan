@@ -1,14 +1,9 @@
 import React from "react";
-import {
-  Marker,
-  MapContainer,
-  TileLayer,
-  Popup,
-  Polyline,
-} from "react-leaflet";
+import { MapContainer, TileLayer, Polyline } from "react-leaflet";
 
 const MapLayer = ({ geoFeature }) => {
   console.log(geoFeature);
+
   return (
     <div>
       <MapContainer
@@ -24,16 +19,9 @@ const MapLayer = ({ geoFeature }) => {
           accessToken="pk.eyJ1IjoiZWxzYTI3MDAiLCJhIjoiY2t2cXFjdmVqOGhzZDMxcXdnZjVjN3Z2ZiJ9.v1URgFZJDg6nNZ5nj5VgXQ"
         />
 
-        {geoFeature.marker.map((marker) => {
-          return (
-            <Marker position={marker} pathOptions={geoFeature.markOptions}>
-              <Popup>{geoFeature.popup}</Popup>
-            </Marker>
-          );
-        })}
         {geoFeature.polyline === undefined ? null : (
           <Polyline
-            pathOptions={geoFeature.limeOptions}
+            pathOptions={geoFeature.pathOptions}
             positions={geoFeature.polyline}
           />
         )}

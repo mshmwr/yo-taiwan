@@ -6,7 +6,7 @@ import { doBusRouteSearch } from "../../apis/searchbusRouteApi";
 const Bus = () => {
   const [selectRegion, setselectRegion] = useState("北部");
   const [selectCity, setselectCity] = useState("Taoyuan");
-  const [selectBusRoute, setselectBusRoute] = useState("測試傳遞");
+  const [selectBusRoute, setselectBusRoute] = useState();
   const [searchBusRoute, setsearchBusRoute] = useState();
   const DistrictBusData = [
     {
@@ -128,7 +128,20 @@ const Bus = () => {
           />
         </div>
         <div className="bus_route">
-          <BusRouteMap selectBusRoute={selectBusRoute} />
+          {!selectBusRoute ? (
+            <img
+              src="https://img.icons8.com/external-itim2101-lineal-color-itim2101/64/000000/external-map-travel-itim2101-lineal-color-itim2101.png"
+              style={{
+                position: "absolute",
+                top: "35%",
+                left: "45%",
+                height: "25%",
+              }}
+              alt="mapIcon"
+            ></img>
+          ) : (
+            <BusRouteMap selectBusRoute={selectBusRoute} />
+          )}
         </div>
       </div>
     </div>

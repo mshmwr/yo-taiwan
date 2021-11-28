@@ -4,19 +4,31 @@ import Footer from "../components/Common/footer";
 import TripInfoContent from "../components/TripInfoPage/tripInfoContent";
 import TripInfoMenu from "../components/TripInfoPage/tripInfoMenu";
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { doSearchTripId } from "../apis/searchApiTripId";
 
 function TripInfoPage() {
   const [showSearch, setshowSearch] = useState("hide");
+  const [tripInfo, settripInfo] = useState();
+  const { id } = useParams();
+  console.log(id);
+
   useEffect(() => {
     setshowSearch("show");
-  }, []);
+
+    async function fetchData() {
+      settripInfo(await doSearchTripId(id));
+    }
+    fetchData();
+  }, [id]);
+  console.log(tripInfo);
   return (
     <div>
       <div className="header1">
-        <Header showSearch={showSearch} />
+        <Header showSearch={!showSearch ? undefined : showSearch} />
       </div>
-      <TripInfoMenu />
-      <TripInfoContent />
+      <TripInfoMenu tripInfo={!tripInfo ? undefined : tripInfo} />
+      <TripInfoContent tripInfo={!tripInfo ? undefined : tripInfo} />
       <LandScape />
       <LandScape />
       <Footer />

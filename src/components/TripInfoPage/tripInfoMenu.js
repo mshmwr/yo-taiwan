@@ -11,17 +11,21 @@ import sunny from "../../images/icon/sunny.svg";
 import bus from "../../images/icon/bus.png";
 import "../../css/tripInfo.css";
 
-const TripInfoMenu = () => {
+const TripInfoMenu = ({ tripInfo }) => {
+  console.log(tripInfo);
   return (
     <div className="tripInfo_menu_section">
       <div className="breadcrumb">
         {`首頁 > 觀光景點 >`}
-        <span>六十石山金針花海</span>
+        <span>{tripInfo ? tripInfo[0].ScenicSpotName : null}</span>
       </div>
       <div className="tripInfo_menu">
         <div className="tripInfo_menu_img">
           <div className="full-view">
-            <img src={landscapeHualian} alt="landscapeHualian" />
+            <img
+              src={tripInfo ? tripInfo[0].Picture.PictureUrl1 : null}
+              alt="landscapePicture"
+            />
             <div className="btn_next_trip">
               <img src={btnLeft} alt="btnLeft" />
               <img src={btnRight} alt="btnright" />
@@ -34,25 +38,35 @@ const TripInfoMenu = () => {
           </div>
         </div>
         <div className="tripInfo_menu_text">
-          <span className="menu_title">六十石山金針花海</span>
+          <span className="menu_title">
+            {tripInfo ? tripInfo[0].ScenicSpotName : null}
+          </span>
           <div className="menu_text">
             <div className="list">
               <ul>
                 <li>
                   <img src={location} alt="location" />
-                  地址：花蓮縣富里鄉竹田村
+                  {tripInfo ? `地址：${tripInfo[0].Address}` : null}
                 </li>
                 <li>
                   <img src={phone} alt="phone" />
-                  電話：03-1234567
+                  {tripInfo ? `電話：${tripInfo[0].Phone}` : null}
                 </li>
                 <li>
                   <img src={time} alt="time" />
-                  開放時間：全天
+                  {tripInfo
+                    ? `開放時間:${tripInfo[0].OpenTime.replace(/星/g, "\n星")}`
+                    : null}
                 </li>
                 <li>
                   <img src={ticket} alt="ticket" />
-                  票價資訊：免費
+                  {tripInfo
+                    ? `票價資訊：${
+                        tripInfo[0].TicketInfo === undefined
+                          ? "無票價資訊"
+                          : tripInfo[0].TicketInfo
+                      }`
+                    : null}
                 </li>
               </ul>
             </div>
@@ -73,7 +87,7 @@ const TripInfoMenu = () => {
             </div>
           </div>
           <div className="describe_text">
-            六十石山、赤科山、太麻里山為花東縱谷三大金針栽植區，也是每年8月至9月賞金針花海的好去處。六十石山位在富里鄉竹田村東側海拔約800公尺的海岸山脈上，經過一段蜿蜒的山路後，眼前出現無邊無際的田野景致，幾座農舍、涼亭散落在金黃色的金針花田間，形成一幅樸質的田園畫作。
+            {tripInfo ? tripInfo[0].Description : null}
           </div>
         </div>
       </div>

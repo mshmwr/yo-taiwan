@@ -17,7 +17,6 @@ const LandScape = () => {
     }
     fetchData();
   }, []);
-  console.log(setLandScapeItem);
   return (
     <div className="landscape_section">
       <span className="section_title">想去哪玩？</span>
@@ -25,7 +24,12 @@ const LandScape = () => {
       {LandScapeItem &&
         LandScapeItem.map((item) => {
           return (
-            <Link to="/tripInfoPage" style={{ textDecoration: "none" }}>
+            <Link
+              to={{
+                pathname: `/tripInfoPage/${item.ScenicSpotID}`,
+              }}
+              style={{ textDecoration: "none" }}
+            >
               <div>
                 <div className="landscape_block">
                   <div className="image_block">

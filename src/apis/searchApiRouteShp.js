@@ -2,7 +2,7 @@ import axios from "axios";
 import { getAuthorizationHeader } from "./axios";
 const doBusRouteShp = async (busName = "") => {
   let resresult = null;
-  let busStopName = null;
+
   try {
     await axios
       .get(
@@ -17,7 +17,10 @@ const doBusRouteShp = async (busName = "") => {
         //reqBusRoute
         return axios
           .get(
-            "https://ptx.transportdata.tw/MOTC/v2/Tourism/Bus/Shape/TaiwanTrip?$format=JSON"
+            "https://ptx.transportdata.tw/MOTC/v2/Tourism/Bus/Shape/TaiwanTrip?$format=JSON",
+            {
+              headers: getAuthorizationHeader(),
+            }
           )
           .then(function (res) {
             const busRouteData = res.data.find(
@@ -36,8 +39,7 @@ const doBusRouteShp = async (busName = "") => {
                   .reverse()
                   .map((val) => Number(val))
               );
-            busName = busRouteData.Zh_tw;
-            return [resresult, busStopName];
+            return resresult;
           })
           .catch(function (error) {
             console.log(error);
