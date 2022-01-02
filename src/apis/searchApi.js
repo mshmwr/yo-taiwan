@@ -1,6 +1,6 @@
 import axios from "axios";
 import { getAuthorizationHeader } from "./axios";
-const doSearch = async (top = 30) => {
+const doSearch = async (top = 40) => {
   let res = null;
   try {
     await axios
