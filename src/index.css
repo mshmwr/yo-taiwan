@@ -403,8 +403,17 @@
   top: 50%;
   right: -20px;
   cursor: pointer;
+  z-index: 1;
 }
 
+.btn_prev {
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  cursor: pointer;
+  transform: scaleX(-1);
+  z-index: 1;
+}
 /* ------------------------------ landscape_section ------------------------------ */
 
 /* ------------------------------ bus_section ------------------------------ */
