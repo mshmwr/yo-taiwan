@@ -1,18 +1,18 @@
-import { ReactComponent as IconWeatherSunny } from "../images/icon/sunny.svg";
-import { ReactComponent as IconWeatherRainy } from "../images/icon/rainy.svg";
-import { ReactComponent as IconWeatherCloudy } from "../images/icon/cloudy.svg";
-import { ReactComponent as IconBus } from "../images/icon/bus.svg";
-import { ReactComponent as IconLocation } from "../images/icon/location.svg";
-import { ReactComponent as IconMyLocation } from "../images/icon/my_location.svg";
-import { ReactComponent as IconYoTaiwanLogo } from "../images/icon/YoTaiwan_logo.svg";
-import { ReactComponent as IconYoBikeLogo } from "../images/icon/YoBike_logo.svg";
-import { ReactComponent as IconCamping } from "../images/icon/camping.svg";
-import { ReactComponent as IconTemple } from "../images/icon/temple.svg";
-import { ReactComponent as IconOnsen } from "../images/icon/onsen.svg";
-import { ReactComponent as IconDiving } from "../images/icon/diving.svg";
-import { ReactComponent as IconBook } from "../images/icon/book.svg";
-import { ReactComponent as IconBicycle } from "../images/icon/dropdown_bicycle.svg";
-import { ReactComponent as IconBusSelect } from "../images/icon/dropdown_bus.svg";
+import { ReactComponent as IconWeatherSunny } from "../asset/icon/sunny.svg";
+import { ReactComponent as IconWeatherRainy } from "../asset/icon/rainy.svg";
+import { ReactComponent as IconWeatherCloudy } from "../asset/icon/cloudy.svg";
+import { ReactComponent as IconBus } from "../asset/icon/bus.svg";
+import { ReactComponent as IconLocation } from "../asset/icon/location.svg";
+import { ReactComponent as IconMyLocation } from "../asset/icon/my_location.svg";
+import { ReactComponent as IconYoTaiwanLogo } from "../asset/icon/YoTaiwan_logo.svg";
+import { ReactComponent as IconYoBikeLogo } from "../asset/icon/YoBike_logo.svg";
+import { ReactComponent as IconCamping } from "../asset/icon/camping.svg";
+import { ReactComponent as IconTemple } from "../asset/icon/temple.svg";
+import { ReactComponent as IconOnsen } from "../asset/icon/onsen.svg";
+import { ReactComponent as IconDiving } from "../asset/icon/diving.svg";
+import { ReactComponent as IconBook } from "../asset/icon/book.svg";
+import { ReactComponent as IconBicycle } from "../asset/icon/dropdown_bicycle.svg";
+import { ReactComponent as IconBusSelect } from "../asset/icon/dropdown_bus.svg";
 
 function getWeatherIcon(weather = null) {
   switch (weather) {

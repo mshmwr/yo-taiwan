@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getAuthorizationHeader } from "./axios";
+import { getAuthorizationHeader } from "../utils/axios";
 const doSearchTripId = async (Id) => {
   let res = null;
   console.log(Id);
