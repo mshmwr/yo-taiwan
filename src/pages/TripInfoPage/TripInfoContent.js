@@ -1,7 +1,6 @@
 import React from "react";
 
 const TripInfoContent = ({ tripInfo }) => {
-  console.log(tripInfo);
   return (
     <div className="tripInfo_content_section">
       <span className="content_title">景點介紹</span>

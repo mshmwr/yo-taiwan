@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SearchBusRoute from "./SearchBusRoute";
-import BusRouteMap from "./BusRouteMap";
+import BusRouteMap from "../HomePage/busMap/BusRouteMap";
 import { doBusRouteSearch } from "../../apis/searchbusRouteApi";
 import "./bus.css";
 
