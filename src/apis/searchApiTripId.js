@@ -2,11 +2,11 @@ import axios from "axios";
 import { getAuthorizationHeader } from "./axios";
 const doSearchTripId = async (Id) => {
   let res = null;
-  console.log(Id);
+
   try {
     await axios
       .get(
-        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=ID eq '${Id}'`,
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=ScenicSpotID eq '${Id}'`,
         {
           headers: getAuthorizationHeader(),
         }
@@ -20,7 +20,6 @@ const doSearchTripId = async (Id) => {
   } catch (error) {
     alert("GET Error!!" + error);
   }
-  console.log(res);
 
   return res;
 };
