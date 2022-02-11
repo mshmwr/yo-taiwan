@@ -11,17 +11,15 @@ function TripInfoPage() {
   const [showSearch, setshowSearch] = useState("hide");
   const [tripInfo, settripInfo] = useState();
   const { id } = useParams();
-  console.log(id);
 
   useEffect(() => {
     setshowSearch("show");
-
     async function fetchData() {
       settripInfo(await doSearchTripId(id));
     }
     fetchData();
   }, [id]);
-  console.log(tripInfo);
+
   return (
     <div>
       <div className="header1">

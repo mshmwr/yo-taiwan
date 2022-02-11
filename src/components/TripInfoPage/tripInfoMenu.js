@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import btnLeft from "../../images/icon/btn_next_left.png";
 import btnRight from "../../images/icon/btn_next_right.png";
-import landscapeHualian from "../../images/image/landscape_hualian.png";
 import location from "../../images/icon/location.png";
 import phone from "../../images/icon/phone.png";
 import time from "../../images/icon/time.png";
@@ -12,7 +11,24 @@ import bus from "../../images/icon/bus.png";
 import "../../css/tripInfo.css";
 
 const TripInfoMenu = ({ tripInfo }) => {
-  console.log(tripInfo);
+  const [imgBtn, setImgBtn] = useState(0);
+
+  let picArray = Array(3).fill(
+    "https://user-images.githubusercontent.com/89368918/148541385-5f1bffa5-80f1-4faa-8d93-2945a568c917.png"
+  );
+  if (tripInfo) {
+    let img = Object.values(tripInfo[0].Picture).filter((p) =>
+      p.includes("http")
+    );
+    for (let i = 0; i < img.length; i++) {
+      picArray[i] = img[i];
+    }
+  }
+
+  if (imgBtn > 2) setImgBtn(2);
+  if (imgBtn < 0) setImgBtn(0);
+  let index = imgBtn;
+
   return (
     <div className="tripInfo_menu_section">
       <div className="breadcrumb">
@@ -22,19 +38,35 @@ const TripInfoMenu = ({ tripInfo }) => {
       <div className="tripInfo_menu">
         <div className="tripInfo_menu_img">
           <div className="full-view">
-            <img
-              src={tripInfo ? tripInfo[0].Picture.PictureUrl1 : null}
-              alt="landscapePicture"
-            />
+            <img src={picArray[index]} alt="landscapePicture" />
+
             <div className="btn_next_trip">
-              <img src={btnLeft} alt="btnLeft" />
-              <img src={btnRight} alt="btnright" />
+              <img
+                src={btnLeft}
+                alt="btnLeft"
+                onClick={() => {
+                  setImgBtn(imgBtn - 1);
+                }}
+              />
+              <img
+                src={btnRight}
+                alt="btnright"
+                onClick={() => {
+                  setImgBtn(imgBtn + 1);
+                }}
+              />
             </div>
           </div>
           <div className="section-view">
-            <img src={landscapeHualian} alt="landscapeHualian" />
-            <img src={landscapeHualian} alt="landscapeHualian" />
-            <img src={landscapeHualian} alt="landscapeHualian" />
+            {picArray.map((p, i) => {
+              if (i === index) {
+                return <img src={p} alt="landscapeimage" />;
+              } else {
+                return (
+                  <img src={p} alt="landscapeimage" className="selected-img" />
+                );
+              }
+            })}
           </div>
         </div>
         <div className="tripInfo_menu_text">
