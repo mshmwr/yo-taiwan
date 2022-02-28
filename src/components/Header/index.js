@@ -36,7 +36,7 @@ const Header = ({ showSearch }) => {
             <img className="wave_blue2" src={waveBlue} alt="wave_blue" />
             <SelectBarTraffic />
           </Link>
-          <button className="btn_callforaction">今天想去哪？</button>
+          <button className="btn_callForAction">今天想去哪？</button>
         </div>
       </div>
     </div>

@@ -7,25 +7,27 @@
   letter-spacing: 0.10000000149011612px;
   text-align: left;
   padding: 30px 0px;
-}
-.breadcrumb span {
-  color: #74d1e7;
+  span {
+    color: #74d1e7;
+  }
 }
 
-.tripInfo_menu_section {
-  width: 1200px;
-  height: 632px;
-  border-radius: 20px;
-  margin: 0 auto;
-}
 .tripInfo_menu {
   display: flex;
+
+  &_section {
+    width: 1200px;
+    height: 632px;
+    border-radius: 20px;
+    margin: 0 auto;
+  }
+
+  &_text {
+    width: 626px;
+    margin: 15px;
+  }
 }
-/* ----tripInfo_menu_text ---- */
-.tripInfo_menu_text {
-  width: 626px;
-  margin: 15px;
-}
+
 .menu_title {
   font-family: Noto Sans TC;
   font-size: 32px;
@@ -38,26 +40,29 @@
 }
 .menu_text {
   display: flex;
+  .list {
+    margin-top: 20px;
+    justify-content: space-between;
+    font-family: Noto Sans TC;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0.10000000149011612px;
+    text-align: left;
+  }
 }
-.menu_text .list {
-  margin-top: 20px;
-  justify-content: space-between;
-  font-family: Noto Sans TC;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 40px;
-  letter-spacing: 0.10000000149011612px;
-  text-align: left;
-}
-.list li {
-  padding-right: 50px;
-}
-.list img {
-  width: 20px;
-  height: 20px;
-  margin-right: 15px;
-  vertical-align: middle;
+
+.list {
+  li {
+    padding-right: 50px;
+  }
+  img {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    vertical-align: middle;
+  }
 }
 
 .describe_text {
@@ -71,8 +76,7 @@
   text-align: left;
   color: rgba(102, 102, 102, 1);
 }
-/* ----tripInfo_menu_text ---- */
-/* ----tripInfo_menu_img ---- */
+
 .tripInfo_menu_img {
   border-radius: 20px;
   margin: 15px;
@@ -86,17 +90,17 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+  img {
+    height: 115px;
+    width: 170px;
+  }
 }
 
-.full-view img {
-  height: 377px;
-}
 .full-view {
   position: relative;
-}
-.section-view img {
-  height: 115px;
-  width: 170px;
+  img {
+    height: 377px;
+  }
 }
 
 .selected-img {
@@ -111,15 +115,15 @@
   width: 530px;
   display: flex;
   justify-content: space-between;
-}
-.btn_next_trip img {
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-}
-.btn_next_trip img:active {
-  width: 50px;
-  height: 50px;
-}
 
-/* ----tripInfo_menu_img ---- */
+  img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    &:active {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
