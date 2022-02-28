@@ -1,4 +1,5 @@
 import React from "react";
+import "./TripInfoContent.scss";
 
 const TripInfoContent = ({ tripInfo }) => {
   return (

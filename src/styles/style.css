@@ -142,7 +142,7 @@
 
 /* -------------- dropdown -------------- */
 
-.btn_callforaction {
+.btn_callForAction {
   background-color: #74d1e7;
   width: 134px;
   height: 42px;
@@ -423,7 +423,6 @@ footer {
   text-align: center;
   margin-top: 60px;
 }
-
 
 .title_group {
   width: 1200px;
