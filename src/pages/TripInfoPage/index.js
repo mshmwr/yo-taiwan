@@ -6,6 +6,7 @@ import TripInfoMenu from "../../components/TripInfoMenu";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { doSearchTripId } from "../../apis/searchApiTripId";
+import "./style.scss";
 
 function TripInfoPage() {
   const [showSearch, setshowSearch] = useState("hide");

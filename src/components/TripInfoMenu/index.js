@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import btnLeft from "../../asset/icon/btn_next_left.png";
 import btnRight from "../../asset/icon/btn_next_right.png";
-import landscapeHualian from "../../asset/images/landscape_hualian.png";
 import location from "../../asset/icon/location.png";
 import phone from "../../asset/icon/phone.png";
 import time from "../../asset/icon/time.png";
@@ -9,7 +8,7 @@ import ticket from "../../asset/icon/ticket.png";
 import weather from "../../asset/icon/weather.png";
 import sunny from "../../asset/icon/sunny.svg";
 import bus from "../../asset/icon/bus.png";
-import "./tripInfo.css";
+import "./style.scss";
 
 const TripInfoMenu = ({ tripInfo }) => {
   const [imgBtn, setImgBtn] = useState(0);

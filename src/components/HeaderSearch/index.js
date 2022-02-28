@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import search from "../../asset/icon/search.png";
+import "./style.scss";
 
 const HeaderSearch = () => {
   const navigate = useNavigate();

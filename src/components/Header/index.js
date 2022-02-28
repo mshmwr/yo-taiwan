@@ -7,6 +7,7 @@ import { getyoTaiwanLogoIcon } from "../../utils/iconUtilis";
 import HeaderSearch from "../HeaderSearch";
 import SelectBar from "../SelectBar";
 import { SelectBarTraffic } from "../SelectBar";
+import "./style.scss";
 
 const Header = ({ showSearch }) => {
   return (
