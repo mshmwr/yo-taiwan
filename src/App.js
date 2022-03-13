@@ -5,6 +5,7 @@ import TripInfoPage from "./pages/TripInfoPage";
 import SearchingResult from "./pages/SearchingResult";
 import "./styles/reset.css";
 import "./styles/style.css";
+import "./styles/variables.scss";
 
 function App() {
   return (
