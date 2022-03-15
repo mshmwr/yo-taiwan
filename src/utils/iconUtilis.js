@@ -13,6 +13,7 @@ import { ReactComponent as IconDiving } from "../asset/icon/diving.svg";
 import { ReactComponent as IconBook } from "../asset/icon/book.svg";
 import { ReactComponent as IconBicycle } from "../asset/icon/dropdown_bicycle.svg";
 import { ReactComponent as IconBusSelect } from "../asset/icon/dropdown_bus.svg";
+import { ReactComponent as IconNearbyFood } from "../asset/icon/nearby_food.svg";
 
 function getWeatherIcon(weather = null) {
   switch (weather) {
@@ -72,6 +73,10 @@ function getYoBikeLogoIcon() {
   return <IconYoBikeLogo alt="YoBikeLogo" />;
 }
 
+function getNearbyFoodIcon() {
+  return <IconNearbyFood alt="NearbyFood" />;
+}
+
 export {
   getWeatherIcon,
   getBusIcon,
@@ -86,4 +91,5 @@ export {
   getIconBook,
   getIconBicycle,
   getIconBusSelect,
+  getNearbyFoodIcon,
 };
