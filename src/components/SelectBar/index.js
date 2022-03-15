@@ -12,7 +12,7 @@ import {
 
 const SelectBar = () => {
   return (
-    <ul class="menu_dropdown_1">
+    <ul className="menu_dropdown_1">
       <li>
         <div>
           <Link to="/" className="a">
@@ -46,7 +46,7 @@ const SelectBar = () => {
 
 export const SelectBarTraffic = () => {
   return (
-    <ul class="menu_dropdown_2">
+    <ul className="menu_dropdown_2">
       <li>
         <div>
           <a href="https://mshmwr.github.io/yo-bike" className="a">

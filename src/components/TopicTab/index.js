@@ -21,7 +21,7 @@ const TopicTab = () => {
       icon: getCampingIcon(),
       sectionImg: campingSection,
       word: "# 與三五好友一起呼吸大自然",
-      keywords: ["露營"]
+      keywords: ["露營"],
     },
     {
       name: "古蹟巡禮",
@@ -93,8 +93,8 @@ const TopicTab = () => {
           backgroundImage: `url(${tabs[selectedTab].sectionImg})`,
         }}
       >
-        <div class="section_topic">{tabs[selectedTab].name}</div>
-        <div class="section_subtitle">{tabs[selectedTab].word}</div>
+        <div className="section_topic">{tabs[selectedTab].name}</div>
+        <div className="section_subtitle">{tabs[selectedTab].word}</div>
       </div>
       <SearchingResult searchTopic={tabs[selectedTab]} />
     </div>
