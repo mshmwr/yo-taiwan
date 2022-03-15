@@ -6,6 +6,7 @@ import TravelFeaturedPage from "./pages/TravelFeaturedPage";
 import SearchingResult from "./pages/SearchingResult";
 import "./styles/reset.css";
 import "./styles/style.css";
+import "./styles/variables.scss";
 
 function App() {
   return (
