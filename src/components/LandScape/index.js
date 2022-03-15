@@ -12,16 +12,16 @@ import btn_next from "../../asset/icon/btn_next.png";
 const landscapeQuantity = 5;
 
 const LandScape = () => {
-  const [totalPage, settotalPage] = useState(0);
+  const [totalPage, setTotalPage] = useState(0);
 
-  const [currentPage, setcurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
   const [LandScapeItem, setLandScapeItem] = useState([]);
 
   const handleClickNext = () => {
-    setcurrentPage((prev) => prev + 1);
+    setCurrentPage((prev) => prev + 1);
   };
   const handleClickPrev = () => {
-    setcurrentPage((prev) => prev - 1);
+    setCurrentPage((prev) => prev - 1);
   };
 
   useEffect(() => {
@@ -34,8 +34,8 @@ const LandScape = () => {
   useEffect(() => {
     async function fetchData() {
       const landscapes = await getLandScapeAll(currentPage * landscapeQuantity);
-      console.log("len, ", landscapes.length);
-      settotalPage(Math.ceil(landscapes.length / landscapeQuantity));
+      if (landscapes)
+        setTotalPage(Math.ceil(landscapes.length / landscapeQuantity));
     }
     fetchData();
   }, []);
