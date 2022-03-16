@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./hero.scss";
 
 const DistrictListData = [
   "不分縣市",
@@ -42,13 +43,13 @@ const Hero = () => {
   };
 
   return (
-    <div className="hero_section">
-      <div className="hero_title">立即開始你的美好假期</div>
-      <div className="hero_subtitle">跟著 YoTaiwan 一起遊台灣！</div>
-      <div className="search_section">
-        <div className="search_box">
-          <div className="search_box_dropdown">
-            <div className="default_option">
+    <div className="heroSection">
+      <div className="title">立即開始你的美好假期</div>
+      <div className="subtitle">跟著 YoTaiwan 一起遊台灣！</div>
+      <div className="searchSection">
+        <div className="searchBox">
+          <div className="dropdown">
+            <div className="defaultOption">
               {dropdownDistrict === "" ? DistrictListData[0] : dropdownDistrict}
             </div>
             <ul>
@@ -59,14 +60,14 @@ const Hero = () => {
               ))}
             </ul>
           </div>
-          <div className="search_field">
+          <div className="searchField">
             <input
               type="text"
-              className="search_field_input"
+              className="input"
               placeholder="請輸入目的地、景點、公車路線等關鍵字"
               onChange={(e) => setinput(e.target.value)}
             />
-            <button className="search_btn" onClick={clickSearch}>
+            <button className="searchBtn" onClick={clickSearch}>
               搜尋
             </button>
           </div>

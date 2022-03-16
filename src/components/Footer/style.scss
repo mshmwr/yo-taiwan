@@ -1,0 +1,26 @@
+@import "../../styles/variables.scss";
+
+footer{
+    background: $color-greyscale-800;
+    text-align: center;
+    .line1{
+        padding-top: 32px;
+        margin-bottom: 12px;
+        color: $color-text-white;
+        font: {
+            weight: 400;
+            size: 14px;
+        };
+    }
+    .line2{
+        padding-bottom: 32px;
+        color: $color-text-white;
+        font: {
+            weight: 400;
+            size: 14px;
+        };
+        a{
+            color: $color-primary-default;
+        }
+    }
+}

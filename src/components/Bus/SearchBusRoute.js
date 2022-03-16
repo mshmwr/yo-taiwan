@@ -11,13 +11,13 @@ const SearchBusRoute = ({
       <div>
         {!searchBusRoute ||
         handleBusRouteCheck(searchBusRoute)[0] === undefined ? (
-          <span className="btn_busroute_default">無台灣好行公車路線</span>
+          <span className="btnBusroute">無台灣好行公車路線</span>
         ) : (
           <div>
             {handleBusRouteCheck(searchBusRoute).map((Route, index) => (
               <span
                 key={index}
-                className="btn_busroute_default"
+                className="btnBusroute"
                 onClick={handleRouteMap}
               >
                 {Route}
