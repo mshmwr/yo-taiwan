@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SearchBusRoute from "./SearchBusRoute";
 import BusRouteMap from "./busMap/BusRouteMap";
 import { doBusRouteSearch } from "../../apis/searchbusRouteApi";
-import "./bus.css";
+import "./style.scss";
 
 const Bus = () => {
   const [selectRegion, setselectRegion] = useState("北部");
@@ -88,14 +88,14 @@ const Bus = () => {
 
   return (
     <div>
-      <div className="bus_section">
-        <span className="section_title">台灣好行公車路線</span>
-        <div className="block_tab_group">
+      <div className="busSection">
+        <span className="sectionTitle">台灣好行公車路線</span>
+        <div className="tabGroup">
           {DistrictBusData.map((r, index) => {
             return (
               <div
                 key={index}
-                className="block_tab_default"
+                className="tab"
                 onClick={handleClick}
               >
                 {r.region}
@@ -103,32 +103,35 @@ const Bus = () => {
             );
           })}
         </div>
-        <div className="bus_block"></div>
-        <div className="btn_countires_group">
-          {DistrictBusData.filter(
-            (r) => r.region === selectRegion
-          )[0].cities.map((cities, index) => {
-            return (
-              <span
-                key={index}
-                className="btn_country_default"
-                value={cities[1]}
-                onClick={handleCityClick}
-              >
-                {cities[0]}
-              </span>
-            );
-          })}
+        <div className="block">
+          <div className="btnCountiresGroup">
+            {DistrictBusData.filter(
+              (r) => r.region === selectRegion
+            )[0].cities.map((cities, index) => {
+              return (
+                <span
+                  key={index}
+                  className="btnCountry"
+                  value={cities[1]}
+                  onClick={handleCityClick}
+                >
+                  {cities[0]}
+                </span>
+              );
+            })}
+          </div>
+          <div className="btnBusrouteGroup">
+            <SearchBusRoute
+              selectCity={selectCity}
+              handleRouteMap={getBusRoute}
+              handleBusRouteCheck={BusRouteCheck}
+              searchBusRoute={searchBusRoute}
+            />
         </div>
-        <div className="btn_busroute_group">
-          <SearchBusRoute
-            selectCity={selectCity}
-            handleRouteMap={getBusRoute}
-            handleBusRouteCheck={BusRouteCheck}
-            searchBusRoute={searchBusRoute}
-          />
+
         </div>
-        <div className="bus_route">
+      
+        <div className="busRoute">
           {!selectBusRoute ? (
             <img
               src="https://img.icons8.com/external-itim2101-lineal-color-itim2101/64/000000/external-map-travel-itim2101-lineal-color-itim2101.png"

@@ -8,6 +8,7 @@ import {
 } from "../../utils/iconUtilis";
 import { splitAddressToCityAndDistrict } from "../../utils/addressUtils";
 import btn_next from "../../asset/icon/btn_next.png";
+// import './style.scss';
 
 const landscapeQuantity = 5;
 
@@ -42,7 +43,7 @@ const LandScape = () => {
 
   return (
     <div className="landscape_section">
-      <span className="section_title">想去哪玩？</span>
+      <span className="sectionTitle">想去哪玩？</span>
       {!!currentPage && (
         <div className="btn_prev" onClick={handleClickPrev}>
           <img src={btn_next} alt="btn_prev" />

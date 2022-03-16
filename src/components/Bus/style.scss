@@ -1,0 +1,120 @@
+@import '../../styles/variables.scss';
+
+.busSection{
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 60px;
+    margin-bottom: 600px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    .sectionTitle{
+        width: 100%;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-h3;
+        color: $color-text-100;
+        margin-bottom: 30px;
+    }
+    .tabGroup{
+        width: 580px;
+        display: flex;
+        justify-content: space-between;
+        .tab{
+            width: 105px;
+            height: 46px;
+            border: 1.5px solid $color-greyscale-300;
+            background: $color-greyscale-200;
+            font-weight: $font-weight-medium;
+            box-sizing: border-box;
+            border-radius: 5px 5px 0px 0px;
+            padding: 14px 35px 14px 35px;
+            color: $color-text-87;
+            font-size: $font-size-button-lg;
+            cursor: pointer;
+            &:hover{
+                color: $color-primary-default;
+            }
+            &:active{
+                color: $color-primary-dark;
+            }
+            &:target{
+                border: 1.5px solid $color-primary-tint1;
+                background: $color-primary-tint2;
+                color: $color-primary-dark;
+            }
+        }
+    }
+    .block{
+        width: 1200px;
+        height: 176px;
+        margin: 0 auto;
+        background: $color-primary-tint2;
+        border: 1.5px $color-primary-tint1 solid;
+        border-radius: 0px 0px 5px 5px;
+        position: relative;
+        // display: flex;
+        .btnCountiresGroup{
+            position: absolute;
+            width: 100%;
+            padding-left: 36px;
+            margin-top: 32px;
+            margin-bottom: 24px;
+            // bottom: 35%;
+            .btnCountry{
+                font-weight: $font-weight-medium;
+                font-size: $font-size-button-lg;
+                color: $color-text-100;
+                padding-right: 40px;
+                cursor: pointer;
+                &:hover{
+                    color: $color-primary-default;
+                }
+                &:active{
+                    color: $color-primary-dark;
+                }
+                &:focus{
+                    color: $color-primary-default;
+                }
+            }
+        }
+        .btnBusrouteGroup{
+            width: 100%;
+            margin-left: 36px;
+            // bottom: 10%;
+            display: flex;
+            margin-top: 32px;
+            .btnBusroute{
+                border: 1px solid $color-primary-default;
+                border-radius: 5px;
+                padding: 8px 16px 8px 16px;
+                margin-right: 20px;
+                color: $color-primary-default;
+                font-weight: $font-weight-medium;
+                font-size: $font-size-button-md;
+                cursor: pointer;
+                &:hover{
+                    background: $color-primary-default;
+                    color: $color-text-white;
+                }
+                &:active{
+                    border: 1px solid $color-primary-dark;
+                    background: $color-primary-dark;
+                    color: $color-text-white;
+                }
+                &:focus{
+                    background: $color-primary-default;
+                    color: $color-text-white;
+                }
+            }
+        }
+    }    
+    .busRoute{
+        width: 100%;
+        height: 400px;
+        margin: 0 auto;
+        background-color: #cccccc;
+        position: absolute;
+        margin-top: 280px; 
+    }
+}

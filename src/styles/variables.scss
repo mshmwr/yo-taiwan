@@ -1,37 +1,47 @@
-$color-primary: (
-    default: #74D1E7,
-    dark: #26B7D9,
-    tint1: #C8EFF8,
-    tint2: #F1FBFD
-);
+$color-primary-default:#74D1E7;
+$color-primary-dark: #26B7D9;
+$color-primary-tint1: #C8EFF8;
+$color-primary-tint2: #F1FBFD;
 
-$color-secondary-pink: (
-    default: #FF8B7C,
-    dark: #FF624E,
-    tint: #FFD3CE
-);
+$color-secondary-pink-default: #FF8B7C;
+$color-secondary-pink-dark: #FF624E;
+$color-secondary-pink-tint: #FFD3CE;
 
-$color-secondary-yellow: (
-    default: #FFD77C,
-    dark: #FFBB20,
-    tint: #FFF0CE
-);
+$color-secondary-yellow-default: #FFD77C;
+$color-secondary-yellow-dark: #FFBB20;
+$color-secondary-yellow-tint: #FFF0CE;
 
-$color-greyscale: (
-    800: #666666,
-    700: #878787,
-    600: #A8A8A8,
-    500: #C9C9C9,
-    400: #DADADA,
-    300: #EBEBEB,
-    200: #FBFBFB,
-    0: #FFFFFF
-);
+$color-greyscale-800: #666666;
+$color-greyscale-700: #878787;
+$color-greyscale-600: #A8A8A8;
+$color-greyscale-500: #C9C9C9;
+$color-greyscale-400: #DADADA;
+$color-greyscale-300: #EBEBEB;
+$color-greyscale-200: #FBFBFB;
+$color-greyscale-white: #FFFFFF;
 
-$color-text: (
-    100: #666666,
-    87: rgba(102, 102, 102, 0.87),
-    60: rgba(102, 102, 102, 0.6),
-    37: rgba(102, 102, 102, 0.38),
-    0: #ffffff
-);
+$color-text-100: #666666;
+$color-text-87: rgba(102, 102, 102, 0.87);
+$color-text-60: rgba(102, 102, 102, 0.6);
+$color-text-38: rgba(102, 102, 102, 0.38);
+$color-text-white:#ffffff;
+
+$font-size-h1: 40p;
+$font-size-h2: 32px;
+$font-size-h3: 24px;
+$font-size-h4: 20px;
+$font-size-h5: 18px;
+$font-size-title: 16px;
+$font-size-subtitle: 14px;
+$font-size-body18: 18px;
+$font-size-body16: 16px;
+$font-size-body14: 14px;
+$font-size-caption: 12px;
+$font-size-button-lg: 16px;
+$font-size-button-md: 14px;
+$font-size-button-sm: 12px;
+
+$font-weight-bold:700;
+$font-weight-medium:500;
+$font-weight-regular:400;
+
