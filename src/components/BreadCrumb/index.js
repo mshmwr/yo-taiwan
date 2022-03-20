@@ -1,11 +1,12 @@
 import React from "react";
 import "./style.scss";
 
-const BreadCrumb = () => {
+const BreadCrumb = ({ topic }) => {
+  console.log(topic);
   return (
     <div class="breadcrumb">
       <span className="first_layer">{`首頁 >`} </span>
-      <span className="second_layer">主題旅遊</span>
+      <span className="second_layer">{topic}</span>
     </div>
   );
 };

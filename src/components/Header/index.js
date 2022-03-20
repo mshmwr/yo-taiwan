@@ -27,7 +27,7 @@ const Header = ({ showSearch }) => {
             <img className="wave_yellow" src={waveYellow} alt="wave_Yellow" />
             <SelectBar />
           </Link>
-          <Link to="/" className="menu_food">
+          <Link to="/foodFeaturedPage" className="menu_food">
             特色美食
             <img className="wave_pink" src={wavePink} alt="wave_Pink" />
           </Link>

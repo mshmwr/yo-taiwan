@@ -1,20 +1,20 @@
 import Header from "../../components/Header";
 import BreadCrumb from "../../components/BreadCrumb";
+import TopicTab from "../../components/TopicTab";
 import Footer from "../../components/Footer";
-import Banner from "../../components/Banner";
 import React from "react";
 
-function TravelFeaturedPage() {
+function TopicTravelPage() {
   return (
     <div>
       <div className="header1">
         <Header />
       </div>
-      <BreadCrumb topic="觀光景點" />
-      <Banner />
+      <BreadCrumb topic="主題旅遊" />
+      <TopicTab />
       <Footer />
     </div>
   );
 }
 
-export default TravelFeaturedPage;
+export default TopicTravelPage;

@@ -4,8 +4,9 @@ import templeSection from "../../asset/images/templeSection.png";
 import onsenSection from "../../asset/images/onsenSection.png";
 import divingSection from "../../asset/images/divingSection.png";
 import bookSection from "../../asset/images/bookSection.png";
+import Banner from "../../components/Banner";
 import "./style.scss";
-import SearchingResult from "../../pages/TravelFeaturedPage/searchingResult";
+import SearchingResult from "../../pages/TopicTravelPage/searchingResult";
 import {
   getCampingIcon,
   getIconTemple,
@@ -21,7 +22,7 @@ const TopicTab = () => {
       icon: getCampingIcon(),
       sectionImg: campingSection,
       word: "# 與三五好友一起呼吸大自然",
-      keywords: ["露營"]
+      keywords: ["露營"],
     },
     {
       name: "古蹟巡禮",
@@ -87,7 +88,14 @@ const TopicTab = () => {
           );
         })}
       </div>
-      <div
+      <Banner
+        bannerInfo={{
+          image: tabs[selectedTab].sectionImg,
+          topic: tabs[selectedTab].name,
+          subtitle: tabs[selectedTab].word,
+        }}
+      />
+      {/* <div
         className="main_section"
         style={{
           backgroundImage: `url(${tabs[selectedTab].sectionImg})`,
@@ -95,7 +103,7 @@ const TopicTab = () => {
       >
         <div class="section_topic">{tabs[selectedTab].name}</div>
         <div class="section_subtitle">{tabs[selectedTab].word}</div>
-      </div>
+      </div> */}
       <SearchingResult searchTopic={tabs[selectedTab]} />
     </div>
   );
