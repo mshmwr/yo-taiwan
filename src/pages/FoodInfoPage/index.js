@@ -2,22 +2,20 @@ import Header from "../../components/Header";
 import LandScape from "../../components/LandScape";
 import Footer from "../../components/Footer";
 import TripInfoContent from "./TripInfoContent";
-import TripInfoMenu from "../../components/TripInfoMenu";
+import FoodInfoMenu from "../FoodInfoPage/FoodInfoMenu";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { doSearchTripId } from "../../apis/searchApiTripId";
+import { doSearchRestaurantId } from "../../apis/searchApiTripId";
 import "./style.scss";
-import Restaurant from "../../components/Restaurant";
 
-function TripInfoPage() {
+function FoodInfoPage() {
   const [showSearch, setshowSearch] = useState("hide");
-  const [tripInfo, settripInfo] = useState();
+  const [foodInfo, setfoodInfo] = useState();
   const { id } = useParams();
-
   useEffect(() => {
     setshowSearch("show");
     async function fetchData() {
-      settripInfo(await doSearchTripId(id));
+      setfoodInfo(await doSearchRestaurantId(id));
     }
     fetchData();
   }, [id]);
@@ -25,15 +23,15 @@ function TripInfoPage() {
   return (
     <div>
       <div className="header1">
-        <Header showSearch={showSearch && showSearch} />
+        <Header showSearch={showSearch} />
       </div>
-      <TripInfoMenu tripInfo={tripInfo && tripInfo} />
-      <TripInfoContent tripInfo={tripInfo && tripInfo} />
+      <FoodInfoMenu foodInfo={foodInfo} />
+      <TripInfoContent foodInfo={foodInfo} />
       <LandScape />
-      <Restaurant />
+      <LandScape />
       <Footer />
     </div>
   );
 }
 
-export default TripInfoPage;
+export default FoodInfoPage;

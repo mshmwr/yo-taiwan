@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { doSearchCity } from "../../apis/searchApi";
+import { doSearchTopic } from "../../apis/searchApi";
 import { splitAddressToCityAndDistrict } from "../../utils/addressUtils";
 import {
   getWeatherIcon,
@@ -7,15 +7,15 @@ import {
   getLocationIcon,
 } from "../../utils/iconUtilis";
 
-function SearchingResult({ searchCity }) {
+function SearchingResult({ searchTopic }) {
   const [searchResult, setsearchResult] = useState([]);
-  let keyword = searchCity[1];
+  let keyword = searchTopic.keywords;
   let blankImgUrl =
     "https://user-images.githubusercontent.com/89368918/148541385-5f1bffa5-80f1-4faa-8d93-2945a568c917.png";
 
   useEffect(() => {
     async function fetchData() {
-      setsearchResult(await doSearchCity("ScenicSpot", keyword));
+      setsearchResult(await doSearchTopic(keyword));
     }
     fetchData();
   }, [keyword]);
@@ -23,9 +23,7 @@ function SearchingResult({ searchCity }) {
   return (
     <>
       <div className="title_group">
-        <span className="section_title travel_section_title">
-          <span>{`「${searchCity[0]}」`}</span>精心景點：
-        </span>
+        <span className="section_title">我們為你精心挑選了以下景點：</span>
       </div>
       <div className="landscape_section">
         {searchResult && searchResult.length !== 0

@@ -24,4 +24,28 @@ const doSearchTripId = async (Id) => {
   return res;
 };
 
-export { doSearchTripId };
+const doSearchRestaurantId = async (Id) => {
+  let res = null;
+
+  try {
+    await axios
+      .get(
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?$filter=RestaurantID eq '${Id}'`,
+        {
+          headers: getAuthorizationHeader(),
+        }
+      )
+      .then(function (response) {
+        res = response.data;
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  } catch (error) {
+    alert("GET Error!!" + error);
+  }
+
+  return res;
+};
+
+export { doSearchTripId, doSearchRestaurantId };

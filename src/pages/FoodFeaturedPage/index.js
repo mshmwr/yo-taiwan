@@ -1,13 +1,13 @@
 import Header from "../../components/Header";
 import BreadCrumb from "../../components/BreadCrumb";
 import Footer from "../../components/Footer";
-import travelSection from "../../asset/images/travelSection.png";
+import foodSection from "../../asset/images/foodSection.png";
 import React, { useState } from "react";
 import SearchingResult from "./searchingResult";
 import { DistrictDatafromMOTC } from "../../utils/axios";
 import "./style.scss";
 
-function TravelFeaturedPage() {
+function FoodFeaturedPage() {
   const [regionSelected, setregionSelected] = useState(0);
   const [citySelected, setcitySelected] = useState([""]);
 
@@ -16,15 +16,15 @@ function TravelFeaturedPage() {
       <div className="header1">
         <Header />
       </div>
-      <BreadCrumb topic="觀光景點" />
+      <BreadCrumb topic="特色美食" />
       <div
-        className="main_section_tab"
+        className="food_main_section_tab"
         style={{
-          backgroundImage: `url(${travelSection})`,
+          backgroundImage: `url(${foodSection})`,
         }}
       >
-        <div className="section_topic_tab">觀光景點</div>
-        <div className="section_subtitle_tab">為您精選全台知名觀光景點！</div>
+        <div className="section_topic_tab">特色美食</div>
+        <div className="section_subtitle_tab">為您精選豐富的台灣道地美食！</div>
         <div className="location_menu">
           <div className="region_menu">
             {DistrictDatafromMOTC.map((d, index) =>
@@ -58,4 +58,4 @@ function TravelFeaturedPage() {
   );
 }
 
-export default TravelFeaturedPage;
+export default FoodFeaturedPage;

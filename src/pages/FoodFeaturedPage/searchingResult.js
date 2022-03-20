@@ -15,15 +15,15 @@ function SearchingResult({ searchCity }) {
 
   useEffect(() => {
     async function fetchData() {
-      setsearchResult(await doSearchCity("ScenicSpot", keyword));
+      setsearchResult(await doSearchCity("Restaurant", keyword));
     }
     fetchData();
   }, [keyword]);
-
+  console.log(searchResult);
   return (
     <>
       <div className="title_group">
-        <span className="section_title travel_section_title">
+        <span className="section_title food_section_title">
           <span>{`「${searchCity[0]}」`}</span>精心景點：
         </span>
       </div>
@@ -33,7 +33,7 @@ function SearchingResult({ searchCity }) {
               return (
                 <a
                   key={item.ID}
-                  href={`/yo-taiwan/tripInfoPage/${item.ScenicSpotID}`}
+                  href={`/yo-taiwan/foodInfoPage/${item.RestaurantID}`}
                   style={{ textDecoration: "none" }}
                 >
                   <div className="landscape_block">

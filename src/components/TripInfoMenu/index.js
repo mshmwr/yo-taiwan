@@ -33,7 +33,7 @@ const TripInfoMenu = ({ tripInfo }) => {
     <div className="tripInfo_menu_section">
       <div className="breadcrumb">
         {`首頁 > 觀光景點 >`}
-        <span>{tripInfo ? tripInfo[0].ScenicSpotName : null}</span>
+        <span>{tripInfo && tripInfo[0].ScenicSpotName}</span>
       </div>
       <div className="tripInfo_menu">
         <div className="tripInfo_menu_img">
@@ -71,7 +71,7 @@ const TripInfoMenu = ({ tripInfo }) => {
         </div>
         <div className="tripInfo_menu_text">
           <span className="menu_title">
-            {tripInfo ? tripInfo[0].ScenicSpotName : null}
+            {tripInfo && tripInfo[0].ScenicSpotName}
           </span>
           <div className="menu_text">
             <div className="list">
