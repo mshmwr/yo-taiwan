@@ -4,7 +4,8 @@ import LandScape from "../../components/LandScape";
 import Bus from "../../components/Bus";
 import Footer from "../../components/Footer";
 
-function HomePage() {
+export default function HomePage() {
+  console.log("HI我是同事，我改了一些東西");
   return (
     <div>
       <Header />
@@ -15,5 +16,3 @@ function HomePage() {
     </div>
   );
 }
-
-export default HomePage;

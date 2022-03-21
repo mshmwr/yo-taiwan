@@ -9,7 +9,8 @@ import { doSearchTripId } from "../../apis/searchApiTripId";
 import "./style.scss";
 import Restaurant from "../../components/Restaurant";
 
-function TripInfoPage() {
+export default function TripInfoPage() {
+  console.log("HI我是同事，我改了一些東西");
   const [showSearch, setshowSearch] = useState("hide");
   const [tripInfo, settripInfo] = useState();
   const { id } = useParams();
@@ -35,5 +36,3 @@ function TripInfoPage() {
     </div>
   );
 }
-
-export default TripInfoPage;

@@ -4,7 +4,8 @@ import TopicTab from "../../components/TopicTab";
 import Footer from "../../components/Footer";
 import React from "react";
 
-function TravelFeaturedPage() {
+export default function TravelFeaturedPage() {
+  console.log("HI我是同事，我改了一些東西");
   return (
     <div>
       <div className="header1">
@@ -16,5 +17,3 @@ function TravelFeaturedPage() {
     </div>
   );
 }
-
-export default TravelFeaturedPage;
