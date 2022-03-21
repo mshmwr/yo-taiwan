@@ -10,8 +10,11 @@ import {
 } from "../../utils/iconUtilis";
 import { keywordSplitWithPlus } from "../../utils/stringUtils";
 
+
 export default function SearchingResult() {
   console.log("HI我是同事，我改了一些東西");
+  console.log('SearchingResult');
+
   const [searchResult, setsearchResult] = useState([]);
   const { keywords } = useParams();
 
