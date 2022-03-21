@@ -11,6 +11,7 @@ import {
 import { keywordSplitWithPlus } from "../../utils/stringUtils";
 
 function SearchingResult() {
+  console.log('SearchingResult');
   const [searchResult, setsearchResult] = useState([]);
   const { keywords } = useParams();
 

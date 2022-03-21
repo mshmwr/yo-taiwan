@@ -5,6 +5,7 @@ import Footer from "../../components/Footer";
 import React from "react";
 
 function TravelFeaturedPage() {
+  console.log('TravelFeaturedPage');
   return (
     <div>
       <div className="header1">

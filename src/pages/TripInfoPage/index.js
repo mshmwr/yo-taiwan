@@ -10,6 +10,7 @@ import "./style.scss";
 import Restaurant from "../../components/Restaurant";
 
 function TripInfoPage() {
+  console.log('TripInfoPage');
   const [showSearch, setshowSearch] = useState("hide");
   const [tripInfo, settripInfo] = useState();
   const { id } = useParams();

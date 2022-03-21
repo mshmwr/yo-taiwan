@@ -5,6 +5,7 @@ import Bus from "../../components/Bus";
 import Footer from "../../components/Footer";
 
 function HomePage() {
+  console.log('HomePage');
   return (
     <div>
       <Header />
