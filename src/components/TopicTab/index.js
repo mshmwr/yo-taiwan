@@ -95,15 +95,6 @@ const TopicTab = () => {
           subtitle: tabs[selectedTab].word,
         }}
       />
-      {/* <div
-        className="main_section"
-        style={{
-          backgroundImage: `url(${tabs[selectedTab].sectionImg})`,
-        }}
-      >
-        <div class="section_topic">{tabs[selectedTab].name}</div>
-        <div class="section_subtitle">{tabs[selectedTab].word}</div>
-      </div> */}
       <SearchingResult searchTopic={tabs[selectedTab]} />
     </div>
   );

@@ -22,6 +22,28 @@ const doSearch = async (top = 30) => {
   return res;
 };
 
+const doSearchCity = async (type = "Restaurant", city = "") => {
+  let res = null;
+  try {
+    await axios
+      .get(
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/${type}/${city}?%24top=10&%24format=JSON`,
+        {
+          headers: getAuthorizationHeader(),
+        }
+      )
+      .then(function (response) {
+        res = response.data;
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  } catch (error) {
+    alert("GET Error!!" + error);
+  }
+  return res;
+};
+
 const doSearchTopic = async (topicName = "") => {
   let res = null;
   try {
@@ -66,4 +88,4 @@ const doSearchName = async (name = "", address = "", top = 30) => {
   return res;
 };
 
-export { doSearch, doSearchName, doSearchTopic };
+export { doSearch, doSearchName, doSearchTopic, doSearchCity };
