@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getLandScape, getLandScapeAll } from "../../apis/landscapeApi";
+import { getRestaurant, getRestaurantAll } from "../../apis/restaurantApi";
 import {
   getWeatherIcon,
   getBusIcon,
+  getNearbyFoodIcon,
   getLocationIcon,
 } from "../../utils/iconUtilis";
 import { splitAddressToCityAndDistrict } from "../../utils/addressUtils";
 import btn_next from "../../asset/icon/btn_next.png";
-// import './style.scss';
 
-const landscapeQuantity = 5;
+const restaurantsQuantity = 5;
 
-const LandScape = () => {
+const Restaurant = () => {
   const [totalPage, setTotalPage] = useState(0);
 
   const [currentPage, setCurrentPage] = useState(0);
-  const [LandScapeItem, setLandScapeItem] = useState([]);
+  const [restaurantItem, setRestaurantItem] = useState([]);
 
   const handleClickNext = () => {
     setCurrentPage((prev) => prev + 1);
@@ -27,34 +27,36 @@ const LandScape = () => {
 
   useEffect(() => {
     async function fetchData() {
-      setLandScapeItem(await getLandScape(currentPage * landscapeQuantity));
+      setRestaurantItem(await getRestaurant(currentPage * restaurantsQuantity));
     }
     fetchData();
   }, [currentPage]);
 
   useEffect(() => {
     async function fetchData() {
-      const landscapes = await getLandScapeAll(currentPage * landscapeQuantity);
-      if (landscapes)
-        setTotalPage(Math.ceil(landscapes.length / landscapeQuantity));
+      const restaurants = await getRestaurantAll(
+        currentPage * restaurantsQuantity
+      );
+      if (restaurants)
+        setTotalPage(Math.ceil(restaurants.length / restaurantsQuantity));
     }
     fetchData();
   }, []);
 
   return (
     <div className="landscape_section">
-      <span className="sectionTitle">想去哪玩？</span>
+      <span className="section_title">玩樂不忘來點美食</span>
       {!!currentPage && (
         <div className="btn_prev" onClick={handleClickPrev}>
           <img src={btn_next} alt="btn_prev" />
         </div>
       )}
-      {LandScapeItem &&
-        LandScapeItem.map((item) => {
+      {restaurantItem &&
+        restaurantItem.map((item) => {
           return (
             <Link
               to={{
-                pathname: `/tripInfoPage/${item.ScenicSpotID}`,
+                pathname: `/tripInfoPage/${item.RestaurantID}`,
               }}
               style={{ textDecoration: "none" }}
             >
@@ -64,9 +66,16 @@ const LandScape = () => {
                     <img alt={item.Name} src={item.Picture.PictureUrl1} />
                   </div>
                   <div className="content_block">
-                    {item.ScenicSpotName}
-                    {item?.Bus && (
+                    <div>{item.RestaurantName}</div>
+
+                    {item?.Class && (
                       <div className="tag_bus">
+                        {getNearbyFoodIcon()}
+                        {item.Class}
+                      </div>
+                    )}
+                    {item?.Bus && (
+                      <div className="tag_location">
                         {getBusIcon()}
                         {item.Bus}
                       </div>
@@ -77,7 +86,6 @@ const LandScape = () => {
                       {splitAddressToCityAndDistrict(item.Address)}
                     </div>
                     <div className="weather">{getWeatherIcon("sunny")}</div>
-                    {/* TODO: 天氣icon要接天氣預報api */}
                   </div>
                 </div>
               </div>
@@ -93,4 +101,4 @@ const LandScape = () => {
   );
 };
 
-export default LandScape;
+export default Restaurant;

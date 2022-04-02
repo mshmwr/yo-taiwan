@@ -7,6 +7,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { doSearchTripId } from "../../apis/searchApiTripId";
 import "./style.scss";
+import Restaurant from "../../components/Restaurant";
 
 function TripInfoPage() {
   const [showSearch, setshowSearch] = useState("hide");
@@ -29,7 +30,7 @@ function TripInfoPage() {
       <TripInfoMenu tripInfo={tripInfo && tripInfo} />
       <TripInfoContent tripInfo={tripInfo && tripInfo} />
       <LandScape />
-      <LandScape />
+      <Restaurant />
       <Footer />
     </div>
   );
