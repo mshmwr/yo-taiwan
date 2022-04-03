@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { doSearchName } from "../../apis/searchApi";
 import Header from "../../components/Header";
-import { splitAddressToCityAndDistrict } from "../../utils/addressUtils";
+import { getCityWithDistrict } from "../../utils/addressUtils";
 import {
   getWeatherIcon,
   getBusIcon,
@@ -70,7 +70,7 @@ function SearchingResult() {
 
                       <div className="tag_location">
                         {getLocationIcon()}
-                        {splitAddressToCityAndDistrict(item.Address)}
+                        {getCityWithDistrict(item.Address)}
                       </div>
                       <div className="weather">{getWeatherIcon("sunny")}</div>
                     </div>

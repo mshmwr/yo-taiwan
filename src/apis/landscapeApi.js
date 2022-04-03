@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getAuthorizationHeader } from "../utils/axios";
 
-const getLandScapeAll = async () => {
+const getLandscapeAll = async () => {
   let res = null;
   try {
     await axios
@@ -23,13 +23,12 @@ const getLandScapeAll = async () => {
   return res;
 };
 
-const getLandScape = async (startIndex = 0, top = 5) => {
+const getLandscape = async (startIndex = 0, top = 5) => {
   let res = null;
   try {
     await axios
       .get(
-        // `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?%24top=${top}&%24skip=${startIndex}&%24format=JSON`,
-        "https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?%24top=5&%24skip=1&%24format=JSON",
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?%24top=${top}&%24skip=${startIndex}&%24format=JSON`,
         {
           headers: getAuthorizationHeader(),
         }
@@ -46,4 +45,4 @@ const getLandScape = async (startIndex = 0, top = 5) => {
   return res;
 };
 
-export { getLandScape, getLandScapeAll };
+export { getLandscape, getLandscapeAll };
