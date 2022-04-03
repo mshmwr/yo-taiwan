@@ -1,22 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { getLandScape, getLandScapeAll } from "../../apis/landscapeApi";
-import {
-  getWeatherIcon,
-  getBusIcon,
-  getLocationIcon,
-} from "../../utils/iconUtilis";
-import { splitAddressToCityAndDistrict } from "../../utils/addressUtils";
+import { getLandscape, getLandscapeAll } from "../../apis/landscapeApi";
 import btn_next from "../../asset/icon/btn_next.png";
-// import './style.scss';
-
+import Landscapes from "./Landscapes";
 const landscapeQuantity = 5;
 
 const LandScape = () => {
   const [totalPage, setTotalPage] = useState(0);
 
   const [currentPage, setCurrentPage] = useState(0);
-  const [LandScapeItem, setLandScapeItem] = useState([]);
+  const [landscapes, setLandscapes] = useState([]);
 
   const handleClickNext = () => {
     setCurrentPage((prev) => prev + 1);
@@ -27,14 +19,14 @@ const LandScape = () => {
 
   useEffect(() => {
     async function fetchData() {
-      setLandScapeItem(await getLandScape(currentPage * landscapeQuantity));
+      setLandscapes(await getLandscape(currentPage * landscapeQuantity));
     }
     fetchData();
   }, [currentPage]);
 
   useEffect(() => {
     async function fetchData() {
-      const landscapes = await getLandScapeAll(currentPage * landscapeQuantity);
+      const landscapes = await getLandscapeAll(currentPage * landscapeQuantity);
       if (landscapes)
         setTotalPage(Math.ceil(landscapes.length / landscapeQuantity));
     }
@@ -49,41 +41,7 @@ const LandScape = () => {
           <img src={btn_next} alt="btn_prev" />
         </div>
       )}
-      {LandScapeItem &&
-        LandScapeItem.map((item) => {
-          return (
-            <Link
-              to={{
-                pathname: `/tripInfoPage/${item.ScenicSpotID}`,
-              }}
-              style={{ textDecoration: "none" }}
-            >
-              <div>
-                <div className="landscape_block">
-                  <div className="image_block">
-                    <img alt={item.Name} src={item.Picture.PictureUrl1} />
-                  </div>
-                  <div className="content_block">
-                    {item.ScenicSpotName}
-                    {item?.Bus && (
-                      <div className="tag_bus">
-                        {getBusIcon()}
-                        {item.Bus}
-                      </div>
-                    )}
-
-                    <div className="tag_location">
-                      {getLocationIcon()}
-                      {splitAddressToCityAndDistrict(item.Address)}
-                    </div>
-                    <div className="weather">{getWeatherIcon("sunny")}</div>
-                    {/* TODO: 天氣icon要接天氣預報api */}
-                  </div>
-                </div>
-              </div>
-            </Link>
-          );
-        })}
+      <Landscapes landscapes={landscapes} />
       {currentPage < totalPage && (
         <div className="btn_next" onClick={handleClickNext}>
           <img src={btn_next} alt="btn_next" />

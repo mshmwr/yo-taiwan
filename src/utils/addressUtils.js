@@ -17,13 +17,20 @@ const splitAddressToCityAndDistrict = (address) => {
   };
 
   const cityIndex = getTitleIndex(address, cityTitleList);
-  const cityStr = address.substring(0, cityIndex + 1);
+  const city = address.substring(0, cityIndex + 1);
 
-  const distAddress = address.substring(cityIndex + 1);
-  const distIndex = getTitleIndex(distAddress, distTitleList);
-  const distStr = distAddress.substring(0, distIndex + 1).replace(/\d+/, "");
+  const districtAddress = address.substring(cityIndex + 1);
+  const districtIndex = getTitleIndex(districtAddress, distTitleList);
+  const district = districtAddress
+    .substring(0, districtIndex + 1)
+    .replace(/\d+/, "");
 
-  return `${cityStr}, ${distStr}`;
+  return { city, district };
 };
 
-export { splitAddressToCityAndDistrict };
+const getCityWithDistrict = (address) => {
+  const addressItems = splitAddressToCityAndDistrict(address);
+  return `${addressItems.city}, ${addressItems.district}`;
+};
+
+export { getCityWithDistrict, splitAddressToCityAndDistrict };

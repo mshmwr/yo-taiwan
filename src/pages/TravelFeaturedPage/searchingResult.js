@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { doSearchCity } from "../../apis/searchApi";
-import { splitAddressToCityAndDistrict } from "../../utils/addressUtils";
+import { getCityWithDistrict } from "../../utils/addressUtils";
 import {
   getWeatherIcon,
   getBusIcon,
@@ -54,7 +54,7 @@ function SearchingResult({ searchCity }) {
 
                       <div className="tag_location">
                         {getLocationIcon()}
-                        {splitAddressToCityAndDistrict(item.Address)}
+                        {getCityWithDistrict(item.Address)}
                       </div>
                       <div className="weather">{getWeatherIcon("sunny")}</div>
                     </div>

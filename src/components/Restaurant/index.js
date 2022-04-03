@@ -7,7 +7,7 @@ import {
   getNearbyFoodIcon,
   getLocationIcon,
 } from "../../utils/iconUtilis";
-import { splitAddressToCityAndDistrict } from "../../utils/addressUtils";
+import { getCityWithDistrict } from "../../utils/addressUtils";
 import btn_next from "../../asset/icon/btn_next.png";
 
 const restaurantsQuantity = 5;
@@ -83,7 +83,7 @@ const Restaurant = () => {
 
                     <div className="tag_location">
                       {getLocationIcon()}
-                      {splitAddressToCityAndDistrict(item.Address)}
+                      {getCityWithDistrict(item.Address)}
                     </div>
                     <div className="weather">{getWeatherIcon("sunny")}</div>
                   </div>
