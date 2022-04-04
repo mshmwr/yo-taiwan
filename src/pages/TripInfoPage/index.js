@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import { doSearchTripId } from "../../apis/searchApiTripId";
 import "./style.scss";
 import Restaurant from "../../components/Restaurant";
+import { getLandscape, getLandscapeAll } from "../../apis/landscapeApi";
 
 function TripInfoPage() {
   const [showSearch, setshowSearch] = useState("hide");
@@ -29,7 +30,12 @@ function TripInfoPage() {
       </div>
       <TripInfoMenu tripInfo={tripInfo && tripInfo} />
       <TripInfoContent tripInfo={tripInfo && tripInfo} />
-      <SpotsCarousel />
+      <SpotsCarousel
+        title="想去哪玩？"
+        page="tripInfoPage"
+        fetchSpot={getLandscape}
+        fetchSpotAll={getLandscapeAll}
+      />
       <Restaurant />
       <Footer />
     </div>

@@ -4,39 +4,39 @@ import { getBusIcon, getLocationIcon } from "../../utils/iconUtilis";
 import { splitAddressToCityAndDistrict } from "../../utils/addressUtils";
 import Weather from "../Weather";
 
-function Spots({ landscapes }) {
-  if (!landscapes) return null;
+function Spots({ spots, page }) {
+  if (!spots) return null;
 
   return (
     <>
-      {landscapes.map((landscape) => (
-        <Spot landscape={landscape} />
+      {spots.map((spot) => (
+        <Spot spot={spot} page={page} />
       ))}
     </>
   );
 }
 
-function Spot({ landscape }) {
-  const addressItems = splitAddressToCityAndDistrict(landscape.Address);
+function Spot({ spot, page }) {
+  const addressItems = splitAddressToCityAndDistrict(spot.Address);
 
   return (
     <Link
       to={{
-        pathname: `/tripInfoPage/${landscape.ScenicSpotID}`,
+        pathname: `/${page}/${spot.ScenicSpotID}`,
       }}
       style={{ textDecoration: "none" }}
     >
       <div>
         <div className="landscape_block">
           <div className="image_block">
-            <img alt={landscape.Name} src={landscape.Picture.PictureUrl1} />
+            <img alt={spot.Name} src={spot.Picture.PictureUrl1} />
           </div>
           <div className="content_block">
-            {landscape.ScenicSpotName}
-            {landscape?.Bus && (
+            {spot.ScenicSpotName}
+            {spot?.Bus && (
               <div className="tag_bus">
                 {getBusIcon()}
-                {landscape.Bus}
+                {spot.Bus}
               </div>
             )}
             <div className="tag_location">

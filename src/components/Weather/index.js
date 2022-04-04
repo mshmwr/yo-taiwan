@@ -3,13 +3,12 @@ import { WeatherContext } from "../../contexts";
 import { getWeatherIcon } from "../../utils/iconUtilis";
 export default function Weather({ city }) {
   const weather = useContext(WeatherContext);
+  if (!Object.keys(weather).length || !city) return null;
   return (
     <>
-      {Object.keys(weather).length !== 0 && (
-        <div className="weather">
-          {getWeatherIcon(weather[city].parameterName)}
-        </div>
-      )}
+      <div className="weather">
+        {getWeatherIcon(weather[city].parameterName)}
+      </div>
     </>
   );
 }
