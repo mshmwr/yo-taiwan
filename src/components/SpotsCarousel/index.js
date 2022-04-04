@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { getLandscape, getLandscapeAll } from "../../apis/landscapeApi";
 import btn_next from "../../asset/icon/btn_next.png";
-import Landscapes from "./Landscapes";
-const landscapeQuantity = 5;
+import Spots from "./Spots";
+const SPOT_QUANTITY = 5;
 
-const LandScape = () => {
+const SpotsCarousel = ({ title = "", page = "", fetchSpot, fetchSpotAll }) => {
   const [totalPage, setTotalPage] = useState(0);
-
   const [currentPage, setCurrentPage] = useState(0);
-  const [landscapes, setLandscapes] = useState([]);
-
+  const [spots, setSpots] = useState([]);
   const handleClickNext = () => {
     setCurrentPage((prev) => prev + 1);
   };
@@ -19,29 +16,28 @@ const LandScape = () => {
 
   useEffect(() => {
     async function fetchData() {
-      setLandscapes(await getLandscape(currentPage * landscapeQuantity));
+      setSpots(await fetchSpot(currentPage * SPOT_QUANTITY));
     }
-    fetchData();
-  }, [currentPage]);
+    if (fetchSpot) fetchData();
+  }, [currentPage, fetchSpot]);
 
   useEffect(() => {
     async function fetchData() {
-      const landscapes = await getLandscapeAll(currentPage * landscapeQuantity);
-      if (landscapes)
-        setTotalPage(Math.ceil(landscapes.length / landscapeQuantity));
+      const spots = await fetchSpotAll(currentPage * SPOT_QUANTITY);
+      if (spots) setTotalPage(Math.ceil(spots.length / SPOT_QUANTITY));
     }
-    fetchData();
+    if (fetchSpotAll) fetchData();
   }, []);
 
   return (
     <div className="landscape_section">
-      <span className="section_title">想去哪玩？</span>
+      <span className="section_title">{title}</span>
       {!!currentPage && (
         <div className="btn_prev" onClick={handleClickPrev}>
           <img src={btn_next} alt="btn_prev" />
         </div>
       )}
-      <Landscapes landscapes={landscapes} />
+      <Spots spots={spots} page={page} />
       {currentPage < totalPage && (
         <div className="btn_next" onClick={handleClickNext}>
           <img src={btn_next} alt="btn_next" />
@@ -51,4 +47,4 @@ const LandScape = () => {
   );
 };
 
-export default LandScape;
+export default SpotsCarousel;

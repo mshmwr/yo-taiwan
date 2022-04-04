@@ -6,7 +6,7 @@ const getLandscapeAll = async () => {
   try {
     await axios
       .get(
-        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?%24top=5&%24format=JSON`,
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?%24format=JSON`,
         {
           headers: getAuthorizationHeader(),
         }

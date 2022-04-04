@@ -1,5 +1,5 @@
 import Header from "../../components/Header";
-import LandScape from "../../components/LandScape";
+import SpotsCarousel from "../../components/SpotsCarousel";
 import Footer from "../../components/Footer";
 import TripInfoContent from "./TripInfoContent";
 import TripInfoMenu from "./TripInfoMenu";
@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import { doSearchTripId } from "../../apis/searchApiTripId";
 import "./style.scss";
 import Restaurant from "../../components/Restaurant";
+import { getLandscape, getLandscapeAll } from "../../apis/landscapeApi";
 
 function TripInfoPage() {
   const [showSearch, setshowSearch] = useState("hide");
@@ -29,7 +30,12 @@ function TripInfoPage() {
       </div>
       <TripInfoMenu tripInfo={tripInfo && tripInfo} />
       <TripInfoContent tripInfo={tripInfo && tripInfo} />
-      <LandScape />
+      <SpotsCarousel
+        title="想去哪玩？"
+        page="tripInfoPage"
+        fetchSpot={getLandscape}
+        fetchSpotAll={getLandscapeAll}
+      />
       <Restaurant />
       <Footer />
     </div>
