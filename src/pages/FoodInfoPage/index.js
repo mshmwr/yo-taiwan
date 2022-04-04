@@ -1,5 +1,5 @@
 import Header from "../../components/Header";
-import LandScape from "../../components/LandScape";
+import Restaurant from "../../components/Restaurant";
 import Footer from "../../components/Footer";
 import TripInfoContent from "./TripInfoContent";
 import FoodInfoMenu from "../FoodInfoPage/FoodInfoMenu";
@@ -27,8 +27,8 @@ function FoodInfoPage() {
       </div>
       <FoodInfoMenu foodInfo={foodInfo} />
       <TripInfoContent foodInfo={foodInfo} />
-      <LandScape />
-      <LandScape />
+      <Restaurant title='更多美食等你發掘'/>
+      <Restaurant title='吃飽可以來這逛逛'/>
       <Footer />
     </div>
   );

@@ -1,9 +1,11 @@
 .breadcrumb {
   width: 1200px;
-  padding-top: 30px;
+  padding: 10px;
   margin: 0 auto;
-  .second_layer {
-    color: #ffd77c;
-    font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.10000000149011612px;
+  a{
+    text-decoration: none;
   }
+
 }

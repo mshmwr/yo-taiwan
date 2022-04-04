@@ -10,13 +10,20 @@ import "./style.scss";
 function TravelFeaturedPage() {
   const [regionSelected, setregionSelected] = useState(0);
   const [citySelected, setcitySelected] = useState([""]);
+  const BreadCrumbColor = { color: '#74D1E7',fontWeight: '700' };
 
   return (
     <div>
       <div className="header1">
         <Header />
       </div>
-      <BreadCrumb topic="觀光景點" />
+      <BreadCrumb
+            topic={{
+              topic: "觀光景點",
+              color: BreadCrumbColor,
+              link:'/yo-taiwan/TravelFeaturedPage',
+            }}
+          />
       <div
         className="main_section_tab"
         style={{

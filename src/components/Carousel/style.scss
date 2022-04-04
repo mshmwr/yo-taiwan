@@ -1,0 +1,53 @@
+
+.tripInfo_menu_img {
+    border-radius: 20px;
+    margin: 15px;
+    width: 536px;
+    height: fit-content;
+    overflow: hidden;
+  }
+  
+  .section-view {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    img {
+      height: 115px;
+      width: 170px;
+    }
+  }
+  
+  .full-view {
+    position: relative;
+    img {
+      height: 377px;
+      width: 100%;
+    }
+  }
+  
+  .selected-img {
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0.3;
+  }
+  
+  .btn_next_trip {
+    position: absolute;
+    padding: 15px;
+    top: 40%;
+    width: 530px;
+    display: flex;
+    justify-content: space-between;
+  
+    img {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+  
+      &:active {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+  
