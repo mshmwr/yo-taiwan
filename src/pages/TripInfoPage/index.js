@@ -2,7 +2,7 @@ import Header from "../../components/Header";
 import LandScape from "../../components/LandScape";
 import Footer from "../../components/Footer";
 import TripInfoContent from "./TripInfoContent";
-import TripInfoMenu from "../../components/TripInfoMenu";
+import TripInfoMenu from "./TripInfoMenu";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { doSearchTripId } from "../../apis/searchApiTripId";

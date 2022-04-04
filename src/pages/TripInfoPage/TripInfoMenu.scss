@@ -1,0 +1,66 @@
+
+.tripInfo_menu {
+    display: flex;
+  
+    &_section {
+      width: 1200px;
+      height: 632px;
+      border-radius: 20px;
+      margin: 0 auto;
+    }
+  
+    &_text {
+      width: 626px;
+      margin: 15px;
+    }
+  }
+  
+  .menu_title {
+    font-family: Noto Sans TC;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0.10000000149011612px;
+    text-align: left;
+    color: rgba(102, 102, 102, 1);
+  }
+  .menu_text {
+    display: flex;
+    .list {
+      margin-top: 20px;
+      justify-content: space-between;
+      font-family: Noto Sans TC;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 40px;
+      letter-spacing: 0.10000000149011612px;
+      text-align: left;
+      width: 50%;
+    }
+  }
+  
+  .list {
+    li {
+      padding-right: 50px;
+    }
+    img {
+      width: 20px;
+      height: 20px;
+      margin-right: 15px;
+      vertical-align: middle;
+    }
+  }
+  
+  .describe_text {
+    margin-top: 40px;
+    font-family: Noto Sans TC;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.10000000149011612px;
+    text-align: left;
+    color: rgba(102, 102, 102, 1);
+  }

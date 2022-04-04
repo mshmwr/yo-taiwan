@@ -8,7 +8,7 @@ import weather from "../../asset/icon/weather.png";
 import sunny from "../../asset/icon/sunny.svg";
 import bus from "../../asset/icon/bus.png";
 import BreadCrumb from "../../components/BreadCrumb";
-import "./style.scss";
+import "./TripInfoMenu.scss";
 
 const TripInfoMenu = ({ tripInfo }) => {
   const BreadCrumbColor = { color: "#74D1E7", fontWeight: "700" };

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { doSearchCity } from "../../apis/searchApi";
+import { getRestaurant } from "../../apis/restaurantApi";
 import { getCityWithDistrict } from "../../utils/addressUtils";
 import {
   getWeatherIcon,
@@ -15,7 +15,7 @@ function SearchingResult({ searchCity }) {
 
   useEffect(() => {
     async function fetchData() {
-      setsearchResult(await doSearchCity("Restaurant", keyword));
+      setsearchResult(await getRestaurant(0,10,keyword));
     }
     fetchData();
   }, [keyword]);

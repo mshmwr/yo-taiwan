@@ -1,7 +1,7 @@
 import React from "react";
-import "./TripInfoContent.scss";
+import "./FoodInfoContent.scss";
 
-const TripInfoContent = ({ foodInfo }) => {
+const FoodInfoContent = ({ foodInfo }) => {
   return (
     <div className="tripInfo_content_section">
       <span className="content_title">餐廳介紹</span>
@@ -12,4 +12,4 @@ const TripInfoContent = ({ foodInfo }) => {
   );
 };
 
-export default TripInfoContent;
+export default FoodInfoContent;

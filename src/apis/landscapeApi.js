@@ -23,12 +23,12 @@ const getLandscapeAll = async () => {
   return res;
 };
 
-const getLandscape = async (startIndex = 0, top = 5) => {
+const getLandscape = async (startIndex = 0, top = 5, city = "") => {
   let res = null;
   try {
     await axios
       .get(
-        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?%24top=${top}&%24skip=${startIndex}&%24format=JSON`,
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${city}?%24top=${top}&%24skip=${startIndex}&%24format=JSON`,
         {
           headers: getAuthorizationHeader(),
         }

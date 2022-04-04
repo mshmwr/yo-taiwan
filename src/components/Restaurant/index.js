@@ -56,7 +56,7 @@ const Restaurant = ({title='玩樂不忘來點美食'}) => {
           return (
             <Link
               to={{
-                pathname: `/tripInfoPage/${item.RestaurantID}`,
+                pathname: `/foodInfoPage/${item.RestaurantID}`,
               }}
               style={{ textDecoration: "none" }}
             >
