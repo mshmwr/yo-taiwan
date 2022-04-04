@@ -1,44 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import weatherApi from "../../apis/weatherApi";
-import {
-  getWeatherIcon,
-  getBusIcon,
-  getLocationIcon,
-} from "../../utils/iconUtilis";
+import { getBusIcon, getLocationIcon } from "../../utils/iconUtilis";
 import { splitAddressToCityAndDistrict } from "../../utils/addressUtils";
+import Weather from "../Weather";
 
 function Spots({ landscapes }) {
-  const [weather, setWeather] = useState({});
-  useEffect(() => {
-    async function fetchData() {
-      const resWeathers = await weatherApi();
-      if (resWeathers) {
-        const weather = resWeathers.records.location.reduce((prev, curr) => {
-          prev = {
-            ...prev,
-            [curr.locationName]: curr.weatherElement[0].time[0].parameter,
-          };
-          return prev;
-        }, {});
-        setWeather(weather);
-      }
-    }
-    fetchData();
-  }, []);
-
   if (!landscapes) return null;
 
   return (
     <>
       {landscapes.map((landscape) => (
-        <Spot landscape={landscape} weather={weather} />
+        <Spot landscape={landscape} />
       ))}
     </>
   );
 }
 
-function Spot({ landscape, weather }) {
+function Spot({ landscape }) {
   const addressItems = splitAddressToCityAndDistrict(landscape.Address);
 
   return (
@@ -61,16 +39,11 @@ function Spot({ landscape, weather }) {
                 {landscape.Bus}
               </div>
             )}
-
             <div className="tag_location">
               {getLocationIcon()}
               {`${addressItems.city}, ${addressItems.district}`}
             </div>
-            {Object.keys(weather).length !== 0 && (
-              <div className="weather">
-                {getWeatherIcon(weather[addressItems.city].parameterName)}
-              </div>
-            )}
+            <Weather city={addressItems.city} />
           </div>
         </div>
       </div>
