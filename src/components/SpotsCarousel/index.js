@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { getLandscape, getLandscapeAll } from "../../apis/landscapeApi";
 import btn_next from "../../asset/icon/btn_next.png";
-import Landscapes from "./Landscapes";
+import Spots from "./Spots";
 const landscapeQuantity = 5;
 
-const LandScape = () => {
+const SpotsCarousel = () => {
   const [totalPage, setTotalPage] = useState(0);
 
   const [currentPage, setCurrentPage] = useState(0);
-  const [landscapes, setLandscapes] = useState([]);
+  const [landscapes, setSpots] = useState([]);
 
   const handleClickNext = () => {
     setCurrentPage((prev) => prev + 1);
@@ -19,7 +19,7 @@ const LandScape = () => {
 
   useEffect(() => {
     async function fetchData() {
-      setLandscapes(await getLandscape(currentPage * landscapeQuantity));
+      setSpots(await getLandscape(currentPage * landscapeQuantity));
     }
     fetchData();
   }, [currentPage]);
@@ -41,7 +41,7 @@ const LandScape = () => {
           <img src={btn_next} alt="btn_prev" />
         </div>
       )}
-      <Landscapes landscapes={landscapes} />
+      <Spots landscapes={landscapes} />
       {currentPage < totalPage && (
         <div className="btn_next" onClick={handleClickNext}>
           <img src={btn_next} alt="btn_next" />
@@ -51,4 +51,4 @@ const LandScape = () => {
   );
 };
 
-export default LandScape;
+export default SpotsCarousel;

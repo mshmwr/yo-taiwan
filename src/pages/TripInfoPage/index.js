@@ -1,5 +1,5 @@
 import Header from "../../components/Header";
-import LandScape from "../../components/LandScape";
+import SpotsCarousel from "../../components/SpotsCarousel";
 import Footer from "../../components/Footer";
 import TripInfoContent from "./TripInfoContent";
 import TripInfoMenu from "../../components/TripInfoMenu";
@@ -29,7 +29,7 @@ function TripInfoPage() {
       </div>
       <TripInfoMenu tripInfo={tripInfo && tripInfo} />
       <TripInfoContent tripInfo={tripInfo && tripInfo} />
-      <LandScape />
+      <SpotsCarousel />
       <Restaurant />
       <Footer />
     </div>

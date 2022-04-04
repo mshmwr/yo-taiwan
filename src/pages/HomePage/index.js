@@ -1,6 +1,6 @@
 import Header from "../../components/Header";
 import Hero from "./Hero";
-import LandScape from "../../components/LandScape";
+import SpotsCarousel from "../../components/SpotsCarousel";
 import Bus from "../../components/Bus";
 import Footer from "../../components/Footer";
 
@@ -9,7 +9,7 @@ function HomePage() {
     <div>
       <Header />
       <Hero />
-      <LandScape />
+      <SpotsCarousel />
       <Bus />
       <Footer />
     </div>

@@ -8,7 +8,7 @@ import {
 } from "../../utils/iconUtilis";
 import { splitAddressToCityAndDistrict } from "../../utils/addressUtils";
 
-function Landscapes({ landscapes }) {
+function Spots({ landscapes }) {
   const [weather, setWeather] = useState({});
   useEffect(() => {
     async function fetchData() {
@@ -32,13 +32,13 @@ function Landscapes({ landscapes }) {
   return (
     <>
       {landscapes.map((landscape) => (
-        <LandScape landscape={landscape} weather={weather} />
+        <Spot landscape={landscape} weather={weather} />
       ))}
     </>
   );
 }
 
-function LandScape({ landscape, weather }) {
+function Spot({ landscape, weather }) {
   const addressItems = splitAddressToCityAndDistrict(landscape.Address);
 
   return (
@@ -78,4 +78,4 @@ function LandScape({ landscape, weather }) {
   );
 }
 
-export default React.memo(Landscapes);
+export default React.memo(Spots);
