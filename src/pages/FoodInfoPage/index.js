@@ -1,7 +1,7 @@
 import Header from "../../components/Header";
 import Restaurant from "../../components/Restaurant";
 import Footer from "../../components/Footer";
-import TripInfoContent from "./TripInfoContent";
+import TripInfoContent from "./FoodInfoContent";
 import FoodInfoMenu from "../FoodInfoPage/FoodInfoMenu";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -22,7 +22,7 @@ function FoodInfoPage() {
 
   return (
     <div>
-      <div className="header1">
+      <div>
         <Header showSearch={showSearch} />
       </div>
       <FoodInfoMenu foodInfo={foodInfo} />
