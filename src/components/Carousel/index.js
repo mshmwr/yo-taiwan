@@ -46,10 +46,16 @@ const Carousel = ({ tripInfo }) => {
       <div className="section-view">
         {picArray.map((p, i) => {
           if (i === imgBtn) {
-            return <img src={p} alt="landscapeimage" />;
+            return (
+              <div className="section-view_frame">
+                <img src={p} alt="landscapeimage" />
+              </div>
+            );
           } else {
             return (
-              <img src={p} alt="landscapeimage" className="selected-img" />
+              <div className="section-view_frame">
+                <img src={p} alt="landscapeimage" className="selected-img" />
+              </div>
             );
           }
         })}

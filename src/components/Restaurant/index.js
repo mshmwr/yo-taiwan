@@ -12,7 +12,7 @@ import btn_next from "../../asset/icon/btn_next.png";
 
 const restaurantsQuantity = 5;
 
-const Restaurant = ({title='玩樂不忘來點美食'}) => {
+const Restaurant = ({ title = "玩樂不忘來點美食" }) => {
   const [totalPage, setTotalPage] = useState(0);
 
   const [currentPage, setCurrentPage] = useState(0);
@@ -60,33 +60,31 @@ const Restaurant = ({title='玩樂不忘來點美食'}) => {
               }}
               style={{ textDecoration: "none" }}
             >
-              <div>
-                <div className="landscape_block">
-                  <div className="image_block">
-                    <img alt={item.Name} src={item.Picture.PictureUrl1} />
-                  </div>
-                  <div className="content_block">
-                    <div>{item.RestaurantName}</div>
+              <div className="landscape_block">
+                <div className="image_block">
+                  <img alt={item.Name} src={item.Picture.PictureUrl1} />
+                </div>
+                <div className="content_block">
+                  <div>{item.RestaurantName}</div>
 
-                    {item?.Class && (
-                      <div className="tag_bus">
-                        {getNearbyFoodIcon()}
-                        {item.Class}
-                      </div>
-                    )}
-                    {item?.Bus && (
-                      <div className="tag_location">
-                        {getBusIcon()}
-                        {item.Bus}
-                      </div>
-                    )}
-
-                    <div className="tag_location">
-                      {getLocationIcon()}
-                      {getCityWithDistrict(item.Address)}
+                  {item?.Class && (
+                    <div className="tag_bus">
+                      {getNearbyFoodIcon()}
+                      {item.Class}
                     </div>
-                    <div className="weather">{getWeatherIcon("sunny")}</div>
+                  )}
+                  {item?.Bus && (
+                    <div className="tag_location">
+                      {getBusIcon()}
+                      {item.Bus}
+                    </div>
+                  )}
+
+                  <div className="tag_location">
+                    {getLocationIcon()}
+                    {getCityWithDistrict(item.Address)}
                   </div>
+                  <div className="weather">{getWeatherIcon("sunny")}</div>
                 </div>
               </div>
             </Link>

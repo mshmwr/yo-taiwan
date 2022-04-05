@@ -7,7 +7,7 @@ import React from "react";
 function TopicTravelPage() {
   const BreadCrumbColor = { color: "#FFD77C", fontWeight: "700" };
   return (
-    <div>
+    <>
       <div className="header1">
         <Header />
       </div>
@@ -15,12 +15,12 @@ function TopicTravelPage() {
         topic={{
           topic: "主題旅遊",
           color: BreadCrumbColor,
-          link:'/yo-taiwan/TopicTravelPage',
+          link: "/yo-taiwan/TopicTravelPage",
         }}
       />
       <TopicTab />
       <Footer />
-    </div>
+    </>
   );
 }
 
