@@ -375,6 +375,17 @@
   border-radius: 0 0 5px 5px;
   /* line-height: 46px; */
 }
+
+.content_section {
+  width: 1200px;
+  padding-top: 60px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+
 .tag_bus {
   margin-top: 15px;
   font-weight: 400;
@@ -447,6 +458,9 @@
 }
 
 @media (max-width: 768px) {
+  .content_section {
+    margin: auto 32px;
+  }
 }
 
 @media (max-width: 375px) {

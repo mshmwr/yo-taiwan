@@ -1,9 +1,8 @@
 import React from "react";
-import "./TripInfoContent.scss";
 
 const TripInfoContent = ({ tripInfo }) => {
   return (
-    <div className="tripInfo_content_section">
+    <div className="content_section">
       <span className="content_title">景點介紹</span>
       <div className="content_text">
         {tripInfo ? tripInfo[0].DescriptionDetail : null}
