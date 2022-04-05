@@ -26,25 +26,23 @@ function Spot({ spot, page }) {
       }}
       style={{ textDecoration: "none" }}
     >
-      <div>
-        <div className="landscape_block">
-          <div className="image_block">
-            <img alt={spot.Name} src={spot.Picture.PictureUrl1} />
-          </div>
-          <div className="content_block">
-            {spot.ScenicSpotName}
-            {spot?.Bus && (
-              <div className="tag_bus">
-                {getBusIcon()}
-                {spot.Bus}
-              </div>
-            )}
-            <div className="tag_location">
-              {getLocationIcon()}
-              {`${addressItems.city}, ${addressItems.district}`}
+      <div className="landscape_block">
+        <div className="image_block">
+          <img alt={spot.Name} src={spot.Picture.PictureUrl1} />
+        </div>
+        <div className="content_block">
+          {spot.ScenicSpotName}
+          {spot?.Bus && (
+            <div className="tag_bus">
+              {getBusIcon()}
+              {spot.Bus}
             </div>
-            <Weather city={addressItems.city} />
+          )}
+          <div className="tag_location">
+            {getLocationIcon()}
+            {`${addressItems.city}, ${addressItems.district}`}
           </div>
+          <Weather city={addressItems.city} />
         </div>
       </div>
     </Link>
