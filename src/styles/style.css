@@ -6,6 +6,11 @@
   font-weight: 400;
   scroll-padding-top: 88px;
 }
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
 .header {
   width: 100%;
@@ -440,6 +445,7 @@
 
 @media (max-width: 1200px) {
 }
+
 @media (max-width: 768px) {
 }
 

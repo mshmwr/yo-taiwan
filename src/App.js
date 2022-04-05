@@ -33,7 +33,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="wrapper">
       <WeatherContext.Provider value={weather}>
         <Routes>
           <Route path="/" exact element={<HomePage />} />
