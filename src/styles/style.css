@@ -416,8 +416,6 @@
 }
 /* ------------------------------ landscape_section ------------------------------ */
 
-
-
 .title_group {
   width: 1200px;
   margin: 0 auto;
@@ -438,4 +436,12 @@
   font-size: 24px;
   color: #666;
   margin-bottom: 25px;
+}
+
+@media (max-width: 1200px) {
+}
+@media (max-width: 768px) {
+}
+
+@media (max-width: 375px) {
 }

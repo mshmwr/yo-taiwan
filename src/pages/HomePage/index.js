@@ -7,7 +7,7 @@ import { getLandscape, getLandscapeAll } from "../../apis/landscapeApi";
 
 function HomePage() {
   return (
-    <div>
+    <>
       <Header />
       <Hero />
       <SpotsCarousel
@@ -18,7 +18,7 @@ function HomePage() {
       />
       <Bus />
       <Footer />
-    </div>
+    </>
   );
 }
 

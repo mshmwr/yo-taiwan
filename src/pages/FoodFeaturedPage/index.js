@@ -10,15 +10,20 @@ import "./style.scss";
 function FoodFeaturedPage() {
   const [regionSelected, setregionSelected] = useState(0);
   const [citySelected, setcitySelected] = useState([""]);
-  const BreadCrumbColor={color:'#EF8678',fontWeight: '700'};
-
+  const BreadCrumbColor = { color: "#EF8678", fontWeight: "700" };
 
   return (
-    <div>
+    <>
       <div className="header1">
         <Header />
       </div>
-      <BreadCrumb topic={{topic:"特色美食",color:BreadCrumbColor,link:'/yo-taiwan/foodFeaturedPage'}} />
+      <BreadCrumb
+        topic={{
+          topic: "特色美食",
+          color: BreadCrumbColor,
+          link: "/yo-taiwan/foodFeaturedPage",
+        }}
+      />
       <div
         className="food_main_section_tab"
         style={{
@@ -56,7 +61,7 @@ function FoodFeaturedPage() {
       </div>
       <SearchingResult searchCity={citySelected} />
       <Footer />
-    </div>
+    </>
   );
 }
 

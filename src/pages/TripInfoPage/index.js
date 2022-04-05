@@ -24,7 +24,7 @@ function TripInfoPage() {
   }, [id]);
 
   return (
-    <div>
+    <>
       <div className="header1">
         <Header showSearch={showSearch && showSearch} />
       </div>
@@ -38,7 +38,7 @@ function TripInfoPage() {
       />
       <Restaurant />
       <Footer />
-    </div>
+    </>
   );
 }
 
