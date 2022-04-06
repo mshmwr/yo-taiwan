@@ -23,13 +23,12 @@ const getRestaurantAll = async () => {
   return res;
 };
 
-const getRestaurant = async (startIndex = 0, top = 5) => {
+const getRestaurant = async (startIndex = 0, top = 5, city = "") => {
   let res = null;
   try {
     await axios
       .get(
-        // `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?%24top=${top}&%24skip=${startIndex}&%24format=JSON`,
-        "https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?%24top=5&%24skip=1&%24format=JSON",
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant/${city}?%24top=${top}&%24skip=${startIndex}&%24format=JSON`,
         {
           headers: getAuthorizationHeader(),
         }

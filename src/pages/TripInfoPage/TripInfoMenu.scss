@@ -1,21 +1,11 @@
-.breadcrumb {
-  font-family: Noto Sans TC;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 20px;
-  letter-spacing: 0.10000000149011612px;
-  text-align: left;
-  padding: 30px 0px;
-  span {
-    color: #74d1e7;
-  }
-}
+@import "../../styles/mixins.scss";
 
 .tripInfo_menu {
   display: flex;
 
   &_section {
+    display: flex;
+    flex-direction: column;
     width: 1200px;
     height: 632px;
     border-radius: 20px;
@@ -25,6 +15,29 @@
   &_text {
     width: 626px;
     margin: 15px;
+  }
+
+  @include desktop {
+    &_section {
+      width: 100%;
+      margin: 0 32px;
+    }
+    &_text {
+      width: 100%;
+    }
+  }
+
+  @include pad {
+    flex-direction: column;
+    &_section {
+      height: auto;
+    }
+    &_text {
+      margin: 15px 0;
+    }
+  }
+
+  @include mobile {
   }
 }
 
@@ -50,6 +63,7 @@
     line-height: 40px;
     letter-spacing: 0.10000000149011612px;
     text-align: left;
+    width: 50%;
   }
 }
 
@@ -75,55 +89,4 @@
   letter-spacing: 0.10000000149011612px;
   text-align: left;
   color: rgba(102, 102, 102, 1);
-}
-
-.tripInfo_menu_img {
-  border-radius: 20px;
-  margin: 15px;
-  width: 536px;
-  height: fit-content;
-  overflow: hidden;
-}
-
-.section-view {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  img {
-    height: 115px;
-    width: 170px;
-  }
-}
-
-.full-view {
-  position: relative;
-  img {
-    height: 377px;
-  }
-}
-
-.selected-img {
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0.3;
-}
-
-.btn_next_trip {
-  position: absolute;
-  padding: 15px;
-  top: 40%;
-  width: 530px;
-  display: flex;
-  justify-content: space-between;
-
-  img {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-
-    &:active {
-      width: 50px;
-      height: 50px;
-    }
-  }
 }

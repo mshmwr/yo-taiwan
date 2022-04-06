@@ -1,0 +1,89 @@
+.food_main_section_tab {
+  width: 1200px;
+  height: 345px;
+  border-radius: 20px;
+  margin: 30px auto;
+  flex-wrap: wrap;
+  padding-top: 115px;
+  padding-bottom: 115px;
+  .section_topic_tab {
+    width: 100%;
+    font-size: 44px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  .section_subtitle_tab {
+    text-align: center;
+    width: auto;
+    padding: 8px 35px 8px 35px;
+    font-weight: 700;
+    font-size: 24px;
+    display: block;
+    align-items: center;
+    line-height: 160%;
+    color: #ffffff;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+  }
+  .location_menu {
+    margin: 50px auto;
+    width: 560px;
+    height: 166px;
+    background: #ffffff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+
+    .region_menu {
+      padding: 20px;
+      display: flex;
+      justify-content: space-evenly;
+      div {
+        font-family: "Noto Sans TC";
+        font-style: normal;
+        font-weight: 500;
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 140%;
+        text-align: center;
+        color: #666666;
+      }
+      .regionActive {
+        color: #EF8678;
+        ;
+      }
+    }
+
+    .cities_menu {
+      display: flex;
+      justify-content: center;
+      div {
+        cursor: pointer;
+        font-family: "Noto Sans TC";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 140%;
+        text-align: center;
+        margin: 10px;
+        border-radius: 50%;
+        border: 1px solid #EF8678;
+        padding: 15px;
+        width: 65px;
+        height: 65px;
+        line-height: 200%;
+        color: #EF8678;
+      }
+      .cityActive {
+        background-color: #EF8678;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.food_section_title span {
+  color: #EF8678;
+}

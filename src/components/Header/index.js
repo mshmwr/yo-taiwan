@@ -18,16 +18,16 @@ const Header = ({ showSearch }) => {
           <HeaderSearch />
         </div>
         <div className="nav_menu">
-          <Link to="/" className="menu_landscape">
+          <Link to="/TravelFeaturedPage" className="menu_landscape">
             觀光景點
             <img className="wave_blue1" src={waveBlue} alt="wave_blue" />
           </Link>
-          <Link to="/" className="menu_fair">
+          <Link to="/TopicTravelPage" className="menu_fair">
             主題旅遊
             <img className="wave_yellow" src={waveYellow} alt="wave_Yellow" />
             <SelectBar />
           </Link>
-          <Link to="/" className="menu_food">
+          <Link to="/foodFeaturedPage" className="menu_food">
             特色美食
             <img className="wave_pink" src={wavePink} alt="wave_Pink" />
           </Link>

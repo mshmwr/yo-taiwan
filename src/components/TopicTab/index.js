@@ -4,8 +4,9 @@ import templeSection from "../../asset/images/templeSection.png";
 import onsenSection from "../../asset/images/onsenSection.png";
 import divingSection from "../../asset/images/divingSection.png";
 import bookSection from "../../asset/images/bookSection.png";
+import Banner from "../../components/Banner";
 import "./style.scss";
-import SearchingResult from "../../pages/TravelFeaturedPage/searchingResult";
+import SearchingResult from "../../pages/TopicTravelPage/searchingResult";
 import {
   getCampingIcon,
   getIconTemple,
@@ -87,15 +88,13 @@ const TopicTab = () => {
           );
         })}
       </div>
-      <div
-        className="main_section"
-        style={{
-          backgroundImage: `url(${tabs[selectedTab].sectionImg})`,
+      <Banner
+        bannerInfo={{
+          image: tabs[selectedTab].sectionImg,
+          topic: tabs[selectedTab].name,
+          subtitle: tabs[selectedTab].word,
         }}
-      >
-        <div className="section_topic">{tabs[selectedTab].name}</div>
-        <div className="section_subtitle">{tabs[selectedTab].word}</div>
-      </div>
+      />
       <SearchingResult searchTopic={tabs[selectedTab]} />
     </div>
   );

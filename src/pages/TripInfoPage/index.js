@@ -1,13 +1,14 @@
 import Header from "../../components/Header";
-import LandScape from "../../components/LandScape";
+import SpotsCarousel from "../../components/SpotsCarousel";
 import Footer from "../../components/Footer";
 import TripInfoContent from "./TripInfoContent";
-import TripInfoMenu from "../../components/TripInfoMenu";
+import TripInfoMenu from "./TripInfoMenu";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { doSearchTripId } from "../../apis/searchApiTripId";
 import "./style.scss";
 import Restaurant from "../../components/Restaurant";
+import { getLandscape, getLandscapeAll } from "../../apis/landscapeApi";
 
 function TripInfoPage() {
   const [showSearch, setshowSearch] = useState("hide");
@@ -23,16 +24,21 @@ function TripInfoPage() {
   }, [id]);
 
   return (
-    <div>
+    <>
       <div className="header1">
-        <Header showSearch={!showSearch ? undefined : showSearch} />
+        <Header showSearch={showSearch && showSearch} />
       </div>
-      <TripInfoMenu tripInfo={!tripInfo ? undefined : tripInfo} />
-      <TripInfoContent tripInfo={!tripInfo ? undefined : tripInfo} />
-      <LandScape />
+      <TripInfoMenu tripInfo={tripInfo && tripInfo} />
+      <TripInfoContent tripInfo={tripInfo && tripInfo} />
+      <SpotsCarousel
+        title="想去哪玩？"
+        page="tripInfoPage"
+        fetchSpot={getLandscape}
+        fetchSpotAll={getLandscapeAll}
+      />
       <Restaurant />
       <Footer />
-    </div>
+    </>
   );
 }
 

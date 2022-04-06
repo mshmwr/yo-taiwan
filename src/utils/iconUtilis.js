@@ -15,18 +15,20 @@ import { ReactComponent as IconBicycle } from "../asset/icon/dropdown_bicycle.sv
 import { ReactComponent as IconBusSelect } from "../asset/icon/dropdown_bus.svg";
 import { ReactComponent as IconNearbyFood } from "../asset/icon/nearby_food.svg";
 
-function getWeatherIcon(weather = null) {
-  switch (weather) {
-    case "sunny":
-      return <IconWeatherSunny alt={`weather-${weather}`} />;
-    case "rainy":
-      return <IconWeatherRainy alt={`weather-${weather}`} />;
-    case "cloudy":
-      return <IconWeatherCloudy alt={`weather-${weather}`} />;
-
-    default:
-      return <></>;
+function getWeatherIcon(weatherName) {
+  //TODO: 或用 weatherValue 來做 switch: - [預報產品天氣描述代碼表](https://opendata.cwb.gov.tw/opendatadoc/MFC/D0047.pdf)
+  if (!weatherName) return null;
+  if (weatherName.includes("雨")) {
+    return <IconWeatherRainy alt={`${weatherName}`} />;
   }
+  if (weatherName.includes("陰") || weatherName.includes("雲")) {
+    return <IconWeatherCloudy alt={`${weatherName}`} />;
+  }
+
+  if (weatherName.includes("晴")) {
+    return <IconWeatherSunny alt={`${weatherName}`} />;
+  }
+  return <p>{weatherName}</p>;
 }
 
 function getBusIcon() {
