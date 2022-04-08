@@ -12,7 +12,7 @@ import "./style.scss";
 const Header = ({ showSearch }) => {
   return (
     <div className="header">
-      <div className="header_container">
+      <div className="container">
         <Link to="/">{getyoTaiwanLogoIcon()}</Link>
         <div className={showSearch === "show" ? "show" : "hide"}>
           <HeaderSearch />

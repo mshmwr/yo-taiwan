@@ -90,19 +90,22 @@ const Bus = () => {
     <div>
       <div className="busSection">
         <span className="sectionTitle">台灣好行公車路線</span>
-        <div className="tabGroup">
+        <ul className="tabGroup">
+          <li className="active-tab">
+            北部
+          </li>
           {DistrictBusData.map((r, index) => {
             return (
-              <div
+              <li
                 key={index}
                 className="tab"
                 onClick={handleClick}
               >
                 {r.region}
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
         <div className="block">
           <div className="btnCountiresGroup">
             {DistrictBusData.filter(

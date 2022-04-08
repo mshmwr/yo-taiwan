@@ -12,11 +12,28 @@
   flex-direction: column;
 }
 
-.header {
+@media (max-width:1439px) and (min-width:1200px){
+  .wrapper{
+    padding-left: 32px;
+  padding-right: 32px;
+  }
+}
+@media (max-width:1199px) and (min-width:768px){
+  .wrapper{
+    padding-left: 32px;
+  padding-right: 32px;
+  }
+}
+@media (max-width:767px) and (min-width:375px){
+  .wrapper{
+    padding-left: 16px;
+  padding-right: 16px;
+  }
+}
+/* .header {
   width: 100%;
   height: 88px;
   color: #ffffff;
-  /* border-bottom: #E4E6E8 1px solid; */
 }
 
 .header_container {
@@ -32,10 +49,10 @@
 .header_container > img {
   width: 231px;
   height: 32px;
-}
+} */
 
 /* ------------------------------ nav_menu ------------------------------ */
-.menu_landscape {
+/* .menu_landscape {
   margin-right: 40px;
   text-decoration: none;
   position: relative;
@@ -93,10 +110,10 @@
   position: absolute;
   top: 20px;
   right: 0;
-}
+} */
 
 /* -------------- dropdown -------------- */
-.menu_dropdown_1,
+/* .menu_dropdown_1,
 .menu_dropdown_2 {
   width: 175px;
   background: #ffffff;
@@ -143,11 +160,11 @@
 }
 .menu_traffic:hover > .menu_dropdown_2 {
   display: block;
-}
+} */
 
 /* -------------- dropdown -------------- */
 
-.btn_callForAction {
+/* .btn_callForAction {
   background-color: #74d1e7;
   width: 134px;
   height: 42px;
@@ -156,15 +173,14 @@
   border-radius: 30px;
   border: none;
   cursor: pointer;
-}
+} */
 /* ------------------------------ nav_menu ------------------------------ */
 
 /* ------------------------------ hero_section ------------------------------ */
-.hero_section {
+/* .hero_section {
   width: 1200px;
   height: 660px;
   border-radius: 20px;
-  /* border: none; */
   margin: 0 auto;
   background-image: url(../asset/images/hero_image.png);
 }
@@ -215,12 +231,11 @@
   display: flex;
   padding: 20px;
   align-items: center;
-}
+} */
 
 /* -------------- dropdown -------------- */
-.search_box_dropdown {
+/* .search_box_dropdown {
   width: 148px;
-  /* border-right: 1px solid #E5E5E5; */
   color: #a0a5aa;
   position: relative;
   cursor: pointer;
@@ -270,11 +285,11 @@
   right: 10px;
   border: 6px solid;
   border-color: #74d1e7 transparent transparent transparent;
-}
+} */
 
 /* -------------- dropdown -------------- */
 
-.search_field {
+/* .search_field {
   width: 100%;
   height: 100%;
   position: relative;
@@ -309,11 +324,11 @@
   margin-right: 10px;
   cursor: pointer;
   color: #fff;
-}
+} */
 /* ------------------------------ hero_section ------------------------------ */
 
 /* ------------------------------ landscape_section ------------------------------ */
-.landscape_section {
+/* .landscape_section {
   width: 1200px;
   padding-top: 60px;
   margin: 0 auto;
@@ -332,9 +347,9 @@
 
 .landscape_section a {
   width: 220px;
-}
+} */
 
-.landscape_block {
+/* .landscape_block {
   width: 100%;
   height: 236px;
   background: #ffffff;
@@ -342,13 +357,13 @@
   border-radius: 5px;
   margin-bottom: 30px;
   position: relative;
-}
+} */
 
-.landscape_block:hover {
+/* .landscape_block:hover {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
-}
+} */
 
-.image_block {
+/* .image_block {
   width: 220px;
 }
 .image_block img {
@@ -358,9 +373,9 @@
   width: 100%;
   height: 60%;
   border-radius: 5px 5px 0 0;
-}
+} */
 
-.content_block {
+/* .content_block {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -372,11 +387,9 @@
   font-weight: 700;
   padding-top: 10px;
   padding-left: 12px;
-  /* border-top:#e8e8e8 solid 1px; */
   border-top: #e8e8e8 solid 1px;
   border-radius: 0 0 5px 5px;
-  /* line-height: 46px; */
-}
+} */
 
 .content_section {
   width: 1200px;
@@ -388,7 +401,7 @@
   position: relative;
 }
 
-.tag_bus {
+/* .tag_bus {
   margin-top: 15px;
   font-weight: 400;
   font-size: 12px;
@@ -398,8 +411,8 @@
 }
 .tag_bus img {
   margin-right: 8px;
-}
-.tag_location {
+} */
+/* .tag_location {
   margin-top: 10px;
   font-weight: 400;
   font-size: 12px;
@@ -409,14 +422,14 @@
 }
 .tag_location img {
   margin-right: 10px;
-}
-.weather {
+} */
+/* .weather {
   position: absolute;
   bottom: 12px;
   right: 12px;
-}
+} */
 
-.btn_next {
+/* .btn_next {
   position: absolute;
   top: 50%;
   right: -20px;
@@ -431,7 +444,7 @@
   cursor: pointer;
   transform: scaleX(-1);
   z-index: 1;
-}
+} */
 /* ------------------------------ landscape_section ------------------------------ */
 
 .title_group {
