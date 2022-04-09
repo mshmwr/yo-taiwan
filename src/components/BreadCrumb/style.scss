@@ -9,3 +9,19 @@
   }
 
 }
+
+@media (max-width:1439px) and (min-width:1200px){
+  .breadcrumb {
+    width: 100%;
+  }
+}
+@media (max-width:1199px) and (min-width:768px){
+  .breadcrumb {
+    width: 100%;
+  }
+}
+@media (max-width:767px) and (min-width:375px){
+  .breadcrumb {
+    width: 100%;
+  }
+}

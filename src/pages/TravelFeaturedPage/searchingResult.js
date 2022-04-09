@@ -24,7 +24,7 @@ function SearchingResult({ searchCity }) {
     <>
       <div className="title_group">
         <span className="section_title travel_section_title">
-          <span>{`「${searchCity[0]}」`}</span>精心景點：
+          <span>{`「${searchCity[0]}」`}</span>精選景點：
         </span>
       </div>
       <div className="landscape_section">

@@ -75,3 +75,28 @@
     border-radius: 5px;
   }
 }
+
+@media (max-width:1439px) and (min-width:1200px){
+  .topic_tab {
+    width: 100%;
+  }
+  .main_section {
+    width: 100%;
+  }
+}
+@media (max-width:1199px) and (min-width:768px){
+  .topic_tab {
+    width: 100%;
+  }
+  .main_section {
+    width: 100%;
+  }
+}
+@media (max-width:767px) and (min-width:375px){
+  .topic_tab {
+    width: 100%;
+  }
+  .main_section {
+    width: 100%;
+  }
+}
