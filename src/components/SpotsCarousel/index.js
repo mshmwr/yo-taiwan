@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import btn_next from "../../asset/icon/btn_next.png";
 import Spots from "./Spots";
+import "./style.scss";
+
 const SPOT_QUANTITY_DESKTOP = 5;
 const SPOT_QUANTITY_MOBILE = 4;
 function handleWidthChange(width) {
@@ -56,17 +58,17 @@ const SpotsCarousel = ({ title = "", page = "", fetchSpot, fetchSpotAll }) => {
   });
 
   return (
-    <div className="landscape_section">
-      <span className="section_title">{title}</span>
+    <div className="landscapeSection">
+      <span className="title">{title}</span>
       {!!currentPage && (
-        <div className="btn_prev" onClick={handleClickPrev}>
-          <img src={btn_next} alt="btn_prev" />
+        <div className="btnPrev" onClick={handleClickPrev}>
+          <img src={btn_next} alt="btnPrev" />
         </div>
       )}
       <Spots spots={spots} page={page} />
       {currentPage < totalPage && (
-        <div className="btn_next" onClick={handleClickNext}>
-          <img src={btn_next} alt="btn_next" />
+        <div className="btnNext" onClick={handleClickNext}>
+          <img src={btn_next} alt="btnNext" />
         </div>
       )}
     </div>

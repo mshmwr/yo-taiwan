@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { getBusIcon, getLocationIcon } from "../../utils/iconUtilis";
 import { splitAddressToCityAndDistrict } from "../../utils/addressUtils";
 import Weather from "../Weather";
+import "./style.scss";
 
 function Spots({ spots, page }) {
   if (!spots) return null;
@@ -26,19 +27,19 @@ function Spot({ spot, page }) {
       }}
       style={{ textDecoration: "none" }}
     >
-      <div className="landscape_block">
-        <div className="image_block">
+      <div className="landscapeBlock">
+        <div className="imageBlock">
           <img alt={spot.Name} src={spot.Picture.PictureUrl1} />
         </div>
-        <div className="content_block">
+        <div className="contentBlock">
           {spot.ScenicSpotName}
           {spot?.Bus && (
-            <div className="tag_bus">
+            <div className="tagBus">
               {getBusIcon()}
               {spot.Bus}
             </div>
           )}
-          <div className="tag_location">
+          <div className="tagLocation">
             {getLocationIcon()}
             {`${addressItems.city}, ${addressItems.district}`}
           </div>

@@ -1,6 +1,7 @@
 @import "../../styles/variables.scss";
 
 footer{
+    width: 100vw;
     background: $color-greyscale-800;
     text-align: center;
     .line1{
@@ -21,6 +22,7 @@ footer{
         };
         a{
             color: $color-primary-default;
+            
         }
     }
 }

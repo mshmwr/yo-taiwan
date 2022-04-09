@@ -17,12 +17,27 @@
         margin-bottom: 30px;
     }
     .tabGroup{
-        width: 580px;
-        display: flex;
-        justify-content: space-between;
-        .tab{
-            width: 105px;
-            height: 46px;
+        width: 100%;
+        list-style: none;
+        border-bottom: 1.5px solid $color-primary-tint1;
+        position:relative;
+        .active-tab{
+            border: 1.5px solid $color-primary-tint1;
+            background: $color-primary-tint2;
+            color: $color-primary-dark;
+            border-bottom:1.5px solid $color-primary-tint2;
+            position: relative;            
+            &::after{
+                position: absolute;
+                content:"";
+                left: 0;
+                bottom: -0.1em;
+            }
+        }
+        li{
+            // width: 105px;
+            // height: 46px;
+            display: inline-block;
             border: 1.5px solid $color-greyscale-300;
             background: $color-greyscale-200;
             font-weight: $font-weight-medium;
@@ -32,16 +47,16 @@
             color: $color-text-87;
             font-size: $font-size-button-lg;
             cursor: pointer;
+            border-right:0;
+            border-bottom-color: transparent;
             &:hover{
                 color: $color-primary-default;
             }
             &:active{
                 color: $color-primary-dark;
             }
-            &:target{
-                border: 1.5px solid $color-primary-tint1;
-                background: $color-primary-tint2;
-                color: $color-primary-dark;
+            &:last-child{
+                border-right:1.5px solid $color-greyscale-300;
             }
         }
     }
@@ -53,9 +68,10 @@
         border: 1.5px $color-primary-tint1 solid;
         border-radius: 0px 0px 5px 5px;
         position: relative;
+        border-top-color: transparent;
         // display: flex;
         .btnCountiresGroup{
-            position: absolute;
+            // position: absolute;
             width: 100%;
             padding-left: 36px;
             margin-top: 32px;
@@ -115,6 +131,32 @@
         margin: 0 auto;
         background-color: #cccccc;
         position: absolute;
-        margin-top: 280px; 
+        margin-top: 300px; 
+    }
+}
+
+@media (max-width:1439px) and (min-width:1200px) {
+    .busSection{
+        width: 100%;
+        .block{
+            width: 100%;
+        }
+    }
+}
+@media (max-width:1199px) and (min-width:768px){
+    .busSection{
+        width: 100%;
+        .block{
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width:767px) and (min-width:375px){
+    .busSection{
+        width: 100%;
+        .block{
+            width: 100%;
+        }
     }
 }
