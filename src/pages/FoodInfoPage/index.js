@@ -1,5 +1,4 @@
 import Header from "../../components/Header";
-import Restaurant from "../../components/Restaurant";
 import Footer from "../../components/Footer";
 import TripInfoContent from "./FoodInfoContent";
 import FoodInfoMenu from "../FoodInfoPage/FoodInfoMenu";
@@ -7,6 +6,9 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { doSearchRestaurantId } from "../../apis/searchApiTripId";
 import "./style.scss";
+import { getLandscape, getLandscapeAll } from "../../apis/landscapeApi";
+import { getRestaurant, getRestaurantAll } from "../../apis/restaurantApi";
+import SpotsCarousel from "../../components/SpotsCarousel";
 
 function FoodInfoPage() {
   const [showSearch, setshowSearch] = useState("hide");
@@ -27,8 +29,18 @@ function FoodInfoPage() {
       </div>
       <FoodInfoMenu foodInfo={foodInfo} />
       <TripInfoContent foodInfo={foodInfo} />
-      <Restaurant title='更多美食等你發掘'/>
-      <Restaurant title='吃飽可以來這逛逛'/>
+      <SpotsCarousel
+        title="更多美食等你發掘"
+        page="foodInfoPage"
+        fetchSpot={getRestaurant}
+        fetchSpotAll={getRestaurantAll}
+      />
+      <SpotsCarousel
+        title="吃飽可以來這逛逛"
+        page="tripInfoPage"
+        fetchSpot={getLandscape}
+        fetchSpotAll={getLandscapeAll}
+      />
       <Footer />
     </div>
   );

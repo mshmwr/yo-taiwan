@@ -23,7 +23,7 @@ function Spot({ spot, page }) {
   return (
     <Link
       to={{
-        pathname: `/${page}/${spot.ScenicSpotID}`,
+        pathname: `/${page}/${spot.ScenicSpotID || spot.RestaurantID}`,
       }}
       style={{ textDecoration: "none" }}
     >

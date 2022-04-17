@@ -7,8 +7,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { doSearchTripId } from "../../apis/searchApiTripId";
 import "./style.scss";
-import Restaurant from "../../components/Restaurant";
 import { getLandscape, getLandscapeAll } from "../../apis/landscapeApi";
+import { getRestaurant, getRestaurantAll } from "../../apis/restaurantApi";
 
 function TripInfoPage() {
   const [showSearch, setshowSearch] = useState("hide");
@@ -25,18 +25,23 @@ function TripInfoPage() {
 
   return (
     <>
-      <div className="header1">
+      <div>
         <Header showSearch={showSearch && showSearch} />
       </div>
       <TripInfoMenu tripInfo={tripInfo && tripInfo} />
       <TripInfoContent tripInfo={tripInfo && tripInfo} />
       <SpotsCarousel
-        title="想去哪玩？"
+        title="還可以去這裡走走"
         page="tripInfoPage"
         fetchSpot={getLandscape}
         fetchSpotAll={getLandscapeAll}
       />
-      <Restaurant />
+      <SpotsCarousel
+        title="玩樂不忘來點美食！"
+        page="foodInfoPage"
+        fetchSpot={getRestaurant}
+        fetchSpotAll={getRestaurantAll}
+      />
       <Footer />
     </>
   );
