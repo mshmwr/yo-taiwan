@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { WeatherContext } from "../../contexts";
 import { getWeatherIcon } from "../../utils/iconUtilis";
-import "./style.scss"
+import "./style.scss";
 
 export default function Weather({ city }) {
   const weather = useContext(WeatherContext);
@@ -9,7 +9,7 @@ export default function Weather({ city }) {
   return (
     <>
       <div className="weather">
-        {getWeatherIcon(weather[city].parameterName)}
+        {getWeatherIcon(weather[city] && weather[city].parameterName)}
       </div>
     </>
   );
