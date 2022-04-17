@@ -19,12 +19,12 @@ function SearchingResult({ searchCity }) {
     }
     fetchData();
   }, [keyword]);
-  console.log(searchResult);
+
   return (
     <>
       <div className="title_group">
         <span className="section_title food_section_title">
-          <span>{`「${searchCity[0]}」`}</span>精心景點：
+          <span>{`「${searchCity[0] || '不分縣市'}」`}</span>精選美食：
         </span>
       </div>
       <div className="landscape_section">
