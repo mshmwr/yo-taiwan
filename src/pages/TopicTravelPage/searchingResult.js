@@ -15,8 +15,8 @@ function SearchingResult({ searchTopic }) {
 
   return (
     <>
-      <div className="title_group">
-        <span className="section_title">我們為你精心挑選了以下景點：</span>
+      <div className="titleGroup">
+        <span className="sectionTitle">我們為你精心挑選了以下景點：</span>
       </div>
       <div className="landscape_section">
         <Spots spots={searchResult} page={"tripInfoPage"} />

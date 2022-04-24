@@ -319,7 +319,7 @@
   flex-wrap: wrap;
   position: relative;
 }
-.section_title {
+.sectionTitle{
   width: 100%;
   font-weight: 700;
   font-size: 24px;
@@ -429,13 +429,13 @@
 }
 /* ------------------------------ landscape_section ------------------------------ */
 
-.title_group {
+.titleGroup {
   width: 1200px;
   margin: 0 auto;
   margin-top: 60px;
 }
 
-.section_title_blue {
+.sectionTitleBlue {
   width: 100%;
   font-weight: 700;
   font-size: 24px;
@@ -443,7 +443,7 @@
   margin-bottom: 25px;
 }
 
-.section_title {
+.sectionTitle {
   width: 100%;
   font-weight: 700;
   font-size: 24px;
@@ -481,7 +481,7 @@
     padding-left: 32px;
   padding-right: 32px;
   }
-  .title_group {
+  .titleGroup {
   width: 100%;
   }
 }
@@ -490,7 +490,7 @@
     padding-left: 32px;
   padding-right: 32px;
   }
-  .title_group {
+  .titleGroup {
     width: 100%;
     }
 }
@@ -499,7 +499,7 @@
     padding-left: 16px;
   padding-right: 16px;
   }
-  .title_group {
+  .titleGroup {
     width: 100%;
     }
 }

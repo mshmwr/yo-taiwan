@@ -5,8 +5,8 @@ import { doBusRouteSearch } from "../../apis/searchbusRouteApi";
 import "./style.scss";
 
 const Bus = () => {
-  const [selectRegion, setselectRegion] = useState("北部");
-  const [selectCity, setselectCity] = useState("Taoyuan");
+  const [selectRegion, setselectRegion] = useState(0);
+  const [selectCity, setselectCity] = useState([""]);
   const [selectBusRoute, setselectBusRoute] = useState();
   const [searchBusRoute, setsearchBusRoute] = useState();
   const DistrictBusData = [
@@ -68,7 +68,7 @@ const Bus = () => {
 
   function BusRouteCheck(searchBusRoute) {
     const districtBusRoute = searchBusRoute.filter((route) =>
-      (!route.City ? "" : route.City).includes(selectCity)
+      (!route.City ? "" : route.City).includes(selectCity[1])
     );
 
     searchBusRouteShpArray.push(districtBusRoute.map((name) => name));
@@ -76,10 +76,7 @@ const Bus = () => {
   }
 
   function handleClick(e) {
-    setselectRegion(e.target.innerHTML);
-  }
-  function handleCityClick(e) {
-    setselectCity(e.target.getAttribute("value"));
+    setselectRegion(e.target.id);
   }
 
   const getBusRoute = (e) => {
@@ -89,47 +86,48 @@ const Bus = () => {
   return (
     <div>
       <div className="busSection">
-        <span className="sectionTitle">台灣好行公車路線</span>
-        <ul className="tabGroup">
-          <li className="active-tab">
-            北部
-          </li>
-          {DistrictBusData.map((r, index) => {
-            return (
-              <li
-                key={index}
-                className="tab"
-                onClick={handleClick}
-              >
-                {r.region}
-              </li>
-            );
-          })}
-        </ul>
-        <div className="block">
-          <div className="btnCountiresGroup">
-            {DistrictBusData.filter(
-              (r) => r.region === selectRegion
-            )[0].cities.map((cities, index) => {
-              return (
-                <span
-                  key={index}
-                  className="btnCountry"
-                  value={cities[1]}
-                  onClick={handleCityClick}
+        <div className="sectionTitle">台灣好行公車路線</div>
+        <div className="tabBlock">
+          <div className="tabGroup">
+            {DistrictBusData.map((r, index) => 
+              +selectRegion === index ? (
+                <div id={index} className="tabActive">
+                  {r.region}
+                </div>
+              ) : (
+                <div
+                  id={index}
+                  className="tab"
+                  onClick={handleClick}
                 >
-                  {cities[0]}
-                </span>
-              );
-            })}
+                  {r.region}
+                </div>
+              )
+            )}
           </div>
-          <div className="btnBusrouteGroup">
-            <SearchBusRoute
-              selectCity={selectCity}
-              handleRouteMap={getBusRoute}
-              handleBusRouteCheck={BusRouteCheck}
-              searchBusRoute={searchBusRoute}
-            />
+          <div className="block">
+            <div className="btnCountiresGroup">
+              {DistrictBusData.filter(
+                (r,index) => index === +selectRegion
+                )[0].cities.map((c) =>
+                selectCity[0] === c[0] ? (
+                  <div className="btnCountryActive">{c[0]}</div>
+                ) : (
+                  <div 
+                  className="btnCountry"
+                  onClick={() => setselectCity(c)}
+                  >{c[0]}</div>
+                )
+              )}
+            </div>
+            <div>
+              <SearchBusRoute
+                selectCity={selectCity}
+                handleRouteMap={getBusRoute}
+                handleBusRouteCheck={BusRouteCheck}
+                searchBusRoute={searchBusRoute}
+              />
+          </div>
         </div>
 
         </div>

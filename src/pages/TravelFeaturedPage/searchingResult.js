@@ -14,8 +14,8 @@ function SearchingResult({ searchCity }) {
 
   return (
     <>
-      <div className="title_group">
-        <span className="section_title travel_section_title">
+      <div className="titleGroup">
+        <span className="sectionTitle travel_section_title">
           <span>{`「${searchCity[0] || "不分縣市"}」`}</span>精選景點：
         </span>
       </div>

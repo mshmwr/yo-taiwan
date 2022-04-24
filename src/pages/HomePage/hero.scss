@@ -165,6 +165,54 @@
 
 @media (max-width:767px) and (min-width:375px){
     .heroSection{
+        height: 445px;
+        .title{
+            font-size: $font-size-h2;
+            padding-top: 60px;
+        }
+        .subtitle{
+            font-size: $font-size-h5;
+            padding-top: 16px;
+        }
         width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        .searchSection{
+            width: 100%;
+            height: auto;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            .searchBox{
+                display: block;
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                .dropdown{
+                    width: 100%;
+                    padding-left: 16px;
+                    border-bottom:1px solid $color-greyscale-300;
+                    ul{
+                        width:100%;
+                        left:0;
+                    }
+                }
+                .searchField{
+                    .input{
+                        padding-left: 16px;
+                        padding-top: 24px;
+                        padding-bottom: 10px;
+                        border-left: 0px solid #e5e5e5;
+                        border-bottom:1px solid $color-greyscale-300;
+                    }
+                    .searchBtn{
+                        width: 100%;  
+                        margin-top: 24px;
+                    }
+                }
+
+            }
+        }
     }
 }

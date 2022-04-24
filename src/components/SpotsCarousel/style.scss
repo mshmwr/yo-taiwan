@@ -101,15 +101,15 @@
 @media (max-width:1199px) and (min-width:768px){
     .landscapeSection {
         width: 100%;
-        // a{
-        //     width: 50%;
-        // }
-        // .btnPrev{
-        //     display: none;
-        // }
-        // .btnNext{
-        //     display: none;
-        // }
+        a{
+            width: 50%;
+        }
+        .btnPrev{
+            display: none;
+        }
+        .btnNext{
+            display: none;
+        }
     }
     .landscapeBlock{
         .imageBlock{
@@ -127,15 +127,15 @@
 @media (max-width:767px) and (min-width:375px){
     .landscapeSection {
         width: 100%;
-        // a{
-        //     width: 100%;
-        // }
-        // .btnPrev{
-        //     display: none;
-        // }
-        // .btnNext{
-        //     display: none;
-        // }
+        a{
+            width: 100%;
+        }
+        .btnPrev{
+            display: none;
+        }
+        .btnNext{
+            display: none;
+        }
     }
     .landscapeBlock{
         .imageBlock{

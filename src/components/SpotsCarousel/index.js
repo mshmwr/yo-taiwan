@@ -6,7 +6,7 @@ import "./style.scss";
 const SPOT_QUANTITY_DESKTOP = 5;
 const SPOT_QUANTITY_MOBILE = 4;
 function handleWidthChange(width) {
-  return width > 1200;
+  return width >= 1440;
 }
 
 let prevWidth = 0;
