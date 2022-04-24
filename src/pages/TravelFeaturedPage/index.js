@@ -36,11 +36,11 @@ function TravelFeaturedPage() {
           <div className="region_menu">
             {DistrictDatafromMOTC.map((d, index) =>
               +regionSelected === index ? (
-                <div id={index} className="regionActive">
+                <div id={index} key={d.cities[0]+index} className="regionActive">
                   {d.region}
                 </div>
               ) : (
-                <div id={index} onClick={(e) => setregionSelected(e.target.id)}>
+                <div id={index} key={d.cities[0]+index} onClick={(e) => setregionSelected(e.target.id)}>
                   {d.region}
                 </div>
               )
@@ -51,9 +51,9 @@ function TravelFeaturedPage() {
               (d, index) => index === +regionSelected
             )[0].cities.map((c) =>
               citySelected[0] === c[0] ? (
-                <div className="cityActive">{c[0]}</div>
+                <div className="cityActive" key={c[0]}>{c[0]}</div>
               ) : (
-                <div onClick={() => setcitySelected(c)}>{c[0]}</div>
+                <div onClick={() => setcitySelected(c)} key={c[0]}>{c[0]}</div>
               )
             )}
           </div>
