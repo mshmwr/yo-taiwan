@@ -22,7 +22,6 @@ const doSearch = async (top = 30) => {
   return res;
 };
 
-
 const doSearchTopic = async (topicName = "") => {
   let res = null;
   try {
@@ -50,7 +49,7 @@ const doSearchName = async (name = "", address = "", top = 30) => {
   try {
     await axios
       .get(
-        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=contains(Name%2C'${name}') and contains(Address%2C'${address}')&$top=${top}&$format=JSON`,
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=contains(ScenicSpotName%2C'${name}') and contains(Address%2C'${address}')&$top=${top}&$format=JSON`,
         {
           headers: getAuthorizationHeader(),
         }
