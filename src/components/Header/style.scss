@@ -12,6 +12,37 @@
   width: 100%;
   height: 88px;
   color: $color-greyscale-white;
+  position: relative;
+  #menuControl{
+    position: absolute;
+    z-index: -2;
+    opacity: 0;
+    }
+  .menuBtn{
+    width: 50px;
+    height: 43px;
+    background-color: transparent; 
+    display: none;
+    cursor: pointer;
+    span{
+      opacity: 0;
+    }
+    &::before{
+      content:"";
+      position: absolute;
+      height: 2.5px;
+      width: 26px;
+      left: 12px;
+      background-color: $color-greyscale-400;
+      // 置中
+      top:0;
+      bottom:0;
+      margin:auto;
+
+      box-shadow: 0px 8px 0px $color-greyscale-400,
+                  0px -8px 0px $color-greyscale-400;
+    }
+   }   
   .container{
     width: 1200px;
     height: 100%;
@@ -24,10 +55,13 @@
       width: 231px;
       height: 32px;
     }
+    // .navMenu{
+
+    // }
   }
 }
 
-.menu_landscape {
+.menuLandscape {
   margin-right: 40px;
   text-decoration: none;
   position: relative;
@@ -45,35 +79,35 @@
   }
 }
 
-.wave_blue1 {
+.waveBlue1 {
   position: absolute;
   top: 30px;
   right: 0;
   display: none;
 }
 
-.wave_blue2 {
+.waveBlue2 {
   position: absolute;
   top: 30px;
   right: 5px;
   display: none;
 }
 
-.wave_yellow {
+.waveYellow {
   position: absolute;
   top: 30px;
   right: 5px;
   display: none;
 }
 
-.wave_pink {
+.wavePink {
   position: absolute;
   top: 30px;
   right: 5px;
   display: none;
 }
 
-.menu_fair {
+.menuFair {
   margin-right: 40px;
   text-decoration: none;
   position: relative;
@@ -85,13 +119,13 @@
       top: 20px;
       right: 0;
     }
-    .menu_dropdown_1{
+    .menuDropdown1{
       display: block;
     }
   }
 }
 
-.menu_food {
+.menuFood {
   margin-right: 40px;
   text-decoration: none;
   position: relative;
@@ -106,7 +140,7 @@
   }
 }
 
-.menu_traffic {
+.menuTraffic {
   margin-right: 40px;
   text-decoration: none;
   position: relative;
@@ -118,12 +152,12 @@
       top: 20px;
       right: 0;
     }
-    .menu_dropdown_2{
+    .menuDropdown2{
       display: block;
     }
   }
 }
-.menu_dropdown_1{
+.menuDropdown1{
   width: 175px;
   background: #ffffff;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
@@ -151,7 +185,7 @@
   }
 }
 
-.menu_dropdown_2{
+.menuDropdown2{
   width: 175px;
   background: $color-greyscale-white;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
@@ -181,7 +215,7 @@
   }
 }
 
-.btn_callForAction {
+.btnCallForAction {
   background-color: $color-primary-default;
   width: 134px;
   height: 42px;
@@ -198,6 +232,9 @@
   }
 }
 
+
+
+
 @media (max-width:1439px) and (min-width:1200px) {
   .header {
     .container{
@@ -208,15 +245,175 @@
 
 @media (max-width:1199px) and (min-width:768px){
   .header {
+    #menuControl{
+      &:checked ~ .container .navMenu{
+        left: -32px;
+      }
+    }
     .container{
       width: 100%;
+      justify-content: start;
+      a{
+        margin-left: calc((100vw - 345px)/2);
+      }
+      .menuBtn{
+        display: block;
+      }
+      .navMenu{
+        width: 40vw;
+        height: calc(100vh - 50px); 
+        background-color: $color-primary-tint1;
+        position: absolute;
+        top:88px;
+        left: -500px;
+        z-index: 2;
+        transition: .5s;
+        .menuLandscape{
+          display: block;
+          border-bottom: 1px solid $color-greyscale-white;
+          margin-left: 24px;
+          padding-top: 24px;
+          padding-bottom: 24px;
+          &:hover{
+            &::after{
+              content:"";
+            }
+          }
+        }
+        .menuFair{
+          display: block;
+          border-bottom: 1px solid $color-greyscale-white;
+          margin-left: 24px;
+          padding-top: 24px;
+          padding-bottom: 24px;
+          &:hover{
+            &::after{
+              content:"";
+            }
+          }
+          .menuDropdown1{
+            display: none;
+          }
+        }
+        .menuFood{
+          display: block;
+          border-bottom: 1px solid $color-greyscale-white;
+          margin-left: 24px;
+          padding-top: 24px;
+          padding-bottom: 24px;
+          &:hover{
+            &::after{
+              content:"";
+            }
+          }
+        }
+        .menuTraffic{
+          display: block;
+          border-bottom: 1px solid $color-greyscale-white;
+          margin-left: 24px;
+          padding-top: 24px;
+          padding-bottom: 24px;
+          &:hover{
+            &::after{
+              content:"";
+            }
+          }
+          .menuDropdown2{
+            display: none;
+          }  
+        }
+        .btnCallForAction {
+          margin-left: 24px;
+          margin-top: 24px;
+        }
+      }
     }
   }  
 }
 @media (max-width:767px) and (min-width:375px){
   .header {
+    #menuControl{
+      &:checked ~ .container .navMenu{
+        left: -32px;
+      }
+    }
     .container{
       width: 100%;
+      justify-content: start;
+      a{
+        margin-left: calc((100vw - 313px)/2);
+      }
+      .menuBtn{
+        display: block;
+      }
+      .navMenu{
+        width: 60vw;
+        height: calc(100vh - 50px); 
+        background-color: $color-primary-tint1;
+        position: absolute;
+        top:88px;
+        left: -500px;
+        z-index: 2;
+        transition: .5s;
+        .menuLandscape{
+          display: block;
+          border-bottom: 1px solid $color-greyscale-white;
+          margin-left: 24px;
+          padding-top: 24px;
+          padding-bottom: 24px;
+          &:hover{
+            &::after{
+              content:"";
+            }
+          }
+        }
+        .menuFair{
+          display: block;
+          border-bottom: 1px solid $color-greyscale-white;
+          margin-left: 24px;
+          padding-top: 24px;
+          padding-bottom: 24px;
+          &:hover{
+            &::after{
+              content:"";
+            }
+          }
+          .menuDropdown1{
+            display: none;
+          }
+        }
+        .menuFood{
+          display: block;
+          border-bottom: 1px solid $color-greyscale-white;
+          margin-left: 24px;
+          padding-top: 24px;
+          padding-bottom: 24px;
+          &:hover{
+            &::after{
+              content:"";
+            }
+          }
+        }
+        .menuTraffic{
+          display: block;
+          border-bottom: 1px solid $color-greyscale-white;
+          margin-left: 24px;
+          padding-top: 24px;
+          padding-bottom: 24px;
+          &:hover{
+            &::after{
+              content:"";
+            }
+          }
+          .menuDropdown2{
+            display: none;
+          }  
+        }
+        .btnCallForAction {
+          margin-left: 24px;
+          margin-top: 24px;
+        }
+      }
     }
   }  
 }

@@ -12,31 +12,35 @@ import "./style.scss";
 const Header = ({ showSearch }) => {
   return (
     <div className="header">
+      <input type="checkbox" name="" id="menuControl"></input>
       <div className="container">
+        <label for="menuControl" className="menuBtn">
+          <span>選單</span>
+        </label>
         <Link to="/">{getyoTaiwanLogoIcon()}</Link>
         <div className={showSearch === "show" ? "show" : "hide"}>
           <HeaderSearch />
         </div>
-        <div className="nav_menu">
-          <Link to="/TravelFeaturedPage" className="menu_landscape">
+        <div className="navMenu">
+          <Link to="/TravelFeaturedPage" className="menuLandscape">
             觀光景點
-            <img className="wave_blue1" src={waveBlue} alt="wave_blue" />
+            <img className="waveBlue1" src={waveBlue} alt="wave_blue" />
           </Link>
-          <Link to="/TopicTravelPage" className="menu_fair">
+          <Link to="/TopicTravelPage" className="menuFair">
             主題旅遊
-            <img className="wave_yellow" src={waveYellow} alt="wave_Yellow" />
+            <img className="waveYellow" src={waveYellow} alt="wave_Yellow" />
             <SelectBar />
           </Link>
-          <Link to="/foodFeaturedPage" className="menu_food">
+          <Link to="/foodFeaturedPage" className="menuFood">
             特色美食
-            <img className="wave_pink" src={wavePink} alt="wave_Pink" />
+            <img className="wavePink" src={wavePink} alt="wave_Pink" />
           </Link>
-          <Link to="/" className="menu_traffic">
+          <Link to="/" className="menuTraffic">
             交通資訊
-            <img className="wave_blue2" src={waveBlue} alt="wave_blue" />
+            <img className="waveBlue2" src={waveBlue} alt="wave_blue" />
             <SelectBarTraffic />
           </Link>
-          <button className="btn_callForAction">今天想去哪？</button>
+          <button className="btnCallForAction">今天想去哪？</button>
         </div>
       </div>
     </div>

@@ -31,11 +31,11 @@ function SearchingResult() {
   return (
     <>
       <Header showSearch="show" />
-      <div className="title_group">
+      <div className="titleGroup">
         {keywords === undefined ? (
           "no input"
         ) : (
-          <span className="section_title_blue">
+          <span className="sectionTitleBlue">
             「
             {keywordSplitWithPlus(keywords)[0] !== ""
               ? keywords
@@ -43,7 +43,7 @@ function SearchingResult() {
             」
           </span>
         )}
-        <span className="section_title">搜尋結果如下：</span>
+        <span className="sectionTitle">搜尋結果如下：</span>
       </div>
       <div className="landscape_section">
         {searchResult && searchResult.length !== 0

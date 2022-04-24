@@ -5,7 +5,7 @@
     margin: 0 auto;
     margin-top: 60px;
     margin-bottom: 600px;
-    display: flex;
+    display: block;
     justify-content: space-between;
     flex-wrap: wrap;
     position: relative;
@@ -14,140 +14,178 @@
         font-weight: $font-weight-bold;
         font-size: $font-size-h3;
         color: $color-text-100;
-        margin-bottom: 30px;
+        margin-bottom: 80px;
     }
-    .tabGroup{
-        width: 100%;
-        list-style: none;
-        border-bottom: 1.5px solid $color-primary-tint1;
+    .tabBlock{
         position:relative;
-        .active-tab{
-            border: 1.5px solid $color-primary-tint1;
-            background: $color-primary-tint2;
-            color: $color-primary-dark;
-            border-bottom:1.5px solid $color-primary-tint2;
-            position: relative;            
-            &::after{
-                position: absolute;
-                content:"";
-                left: 0;
-                bottom: -0.1em;
-            }
-        }
-        li{
-            // width: 105px;
-            // height: 46px;
-            display: inline-block;
-            border: 1.5px solid $color-greyscale-300;
-            background: $color-greyscale-200;
-            font-weight: $font-weight-medium;
-            box-sizing: border-box;
-            border-radius: 5px 5px 0px 0px;
-            padding: 14px 35px 14px 35px;
-            color: $color-text-87;
-            font-size: $font-size-button-lg;
-            cursor: pointer;
-            border-right:0;
-            border-bottom-color: transparent;
-            &:hover{
-                color: $color-primary-default;
-            }
-            &:active{
-                color: $color-primary-dark;
-            }
-            &:last-child{
-                border-right:1.5px solid $color-greyscale-300;
-            }
-        }
-    }
-    .block{
-        width: 1200px;
-        height: 176px;
-        margin: 0 auto;
-        background: $color-primary-tint2;
-        border: 1.5px $color-primary-tint1 solid;
-        border-radius: 0px 0px 5px 5px;
-        position: relative;
-        border-top-color: transparent;
-        // display: flex;
-        .btnCountiresGroup{
-            // position: absolute;
+        .tabGroup{
             width: 100%;
-            padding-left: 36px;
-            margin-top: 32px;
-            margin-bottom: 24px;
-            // bottom: 35%;
-            .btnCountry{
+            list-style: none;
+            // border-bottom: 1.5px solid $color-primary-tint1;
+            // position:relative;
+            position: absolute;
+                // content:"";
+                // left: 0;
+            display: flex;
+            top: -2.8em;
+            .tabActive{
+                border: 1.5px solid $color-primary-tint1;
+                background: $color-primary-tint2;
+                color: $color-primary-dark;
+                border-bottom:1.5px solid $color-primary-tint2;
+                position: relative;
+                border-radius: 5px 5px 0px 0px;
+                padding: 14px 35px 14px 35px;
+                font-weight: $font-weight-medium;    
+                //    
+                // position: absolute;
+                // content:"";
+                // left: 0;
+                // bottom: -0.1em;
+            }
+            .tab{
+                border: 1.5px solid $color-greyscale-300;
+                background: $color-greyscale-200;
                 font-weight: $font-weight-medium;
+                box-sizing: border-box;
+                border-radius: 5px 5px 0px 0px;
+                padding: 14px 35px 14px 35px;
+                color: $color-text-87;
                 font-size: $font-size-button-lg;
-                color: $color-text-100;
-                padding-right: 40px;
                 cursor: pointer;
+                border-right:0;
+                border-bottom-color: $color-primary-tint1;
                 &:hover{
                     color: $color-primary-default;
                 }
                 &:active{
                     color: $color-primary-dark;
                 }
-                &:focus{
-                    color: $color-primary-default;
+                &:last-child{
+                    border-right:1.5px solid $color-greyscale-300;
                 }
             }
         }
-        .btnBusrouteGroup{
-            width: 100%;
-            margin-left: 36px;
-            // bottom: 10%;
-            display: flex;
-            margin-top: 32px;
-            .btnBusroute{
-                border: 1px solid $color-primary-default;
-                border-radius: 5px;
-                padding: 8px 16px 8px 16px;
-                margin-right: 20px;
-                color: $color-primary-default;
-                font-weight: $font-weight-medium;
-                font-size: $font-size-button-md;
-                cursor: pointer;
-                &:hover{
-                    background: $color-primary-default;
-                    color: $color-text-white;
+        .block{
+            width: 1200px;
+            height: 176px;
+            margin: 0 auto;
+            background: $color-primary-tint2;
+            border: 1.5px $color-primary-tint1 solid;
+            border-radius: 0px 0px 5px 5px;
+            padding-left: 36px;
+            padding-bottom: 24px;
+            // position: relative;
+            // border-top-color: transparent;
+            // display: flex;
+            .btnCountiresGroup{
+                // position: absolute;
+                width: 100%;
+                margin-top: 32px;
+                margin-bottom: 32px;
+                display: flex;
+                // bottom: 35%;
+                .btnCountryActive{
+                    font-weight: $font-weight-medium;
+                    font-size: $font-size-button-lg;
+                    color: $color-primary-dark;
+                    margin-right: 40px;
+                    cursor: pointer;
+                    width: fit-content;
+                    width: 50px;
+                    margin-top: 16px;
                 }
-                &:active{
+                .btnCountry{
+                    font-weight: $font-weight-medium;
+                    font-size: $font-size-button-lg;
+                    color: $color-text-100;
+                    margin-right: 40px;
+                    cursor: pointer;
+                    width: 50px;
+                    margin-top: 16px;
+                    &:hover{
+                        color: $color-primary-default;
+                    }
+                    &:active{
+                        color: $color-primary-dark;
+                    }
+                    &:focus{
+                        color: $color-primary-default;
+                    }
+                }
+            }
+            .btnBusrouteGroup{
+                width: 100%;
+                display: flex;
+                .btnBusrouteActive{
                     border: 1px solid $color-primary-dark;
+                    border-radius: 5px;
+                    padding: 8px 16px 8px 16px;
+                    margin-right: 20px;
+                    color: $color-text-white;
+                    font-weight: $font-weight-medium;
+                    font-size: $font-size-button-md;
+                    cursor: pointer;
                     background: $color-primary-dark;
-                    color: $color-text-white;
                 }
-                &:focus{
-                    background: $color-primary-default;
-                    color: $color-text-white;
+                .btnBusroute{
+                    border: 1px solid $color-primary-default;
+                    border-radius: 5px;
+                    padding: 8px 16px 8px 16px;
+                    margin-right: 20px;
+                    margin-top: 16px;
+                    color: $color-primary-default;
+                    font-weight: $font-weight-medium;
+                    font-size: $font-size-button-md;
+                    cursor: pointer;
+                    &:hover{
+                        background: $color-primary-default;
+                        color: $color-text-white;
+                    }
+                    &:active{
+                        border: 1px solid $color-primary-dark;
+                        background: $color-primary-dark;
+                        color: $color-text-white;
+                    }
+                    &:focus{
+                        background: $color-primary-default;
+                        color: $color-text-white;
+                    }
                 }
             }
-        }
-    }    
+        } 
+    }
+   
     .busRoute{
         width: 100%;
         height: 400px;
         margin: 0 auto;
         background-color: #cccccc;
         position: absolute;
-        margin-top: 300px; 
+        margin-top: 24px;
     }
 }
 
 @media (max-width:1439px) and (min-width:1200px) {
     .busSection{
         width: 100%;
-        .block{
+        .tabBlock{
             width: 100%;
+            .block{
+                width: 100%;
+            }
         }
     }
 }
 @media (max-width:1199px) and (min-width:768px){
     .busSection{
         width: 100%;
-        .block{
+        .tabBlock{
             width: 100%;
+            .block{
+                width: 100%;
+
+            }
         }
     }
 }
@@ -155,8 +193,32 @@
 @media (max-width:767px) and (min-width:375px){
     .busSection{
         width: 100%;
-        .block{
+        .tabBlock{
             width: 100%;
+            .tabGroup{
+                justify-content: space-between;
+                top: -2.6em;
+                .tabActive{
+                    width: 100%;
+                    text-align: center;
+                    padding: 12px 14px 12px 14px;
+                }
+                .tab{
+                    width: 100%;
+                    text-align: center;
+                    padding: 12px 14px 12px 14px;
+                }
+            }
+            .block{
+                width: 100%;
+                height: auto;
+                .btnCountiresGroup{
+                    flex-wrap: wrap;
+                }
+                .btnBusrouteGroup{
+                    flex-wrap: wrap;
+                }
+            }
         }
     }
 }
