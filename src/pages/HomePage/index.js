@@ -12,9 +12,9 @@ function HomePage() {
       <Hero />
       <SpotsCarousel
         title="想去哪玩？"
-        page="tripInfoPage"
         fetchSpot={getLandscape}
         fetchSpotAll={getLandscapeAll}
+        pathnameConfig={{ page: "tripInfoPage", spotID: "ScenicSpotID" }}
       />
       <Bus />
       <Footer />

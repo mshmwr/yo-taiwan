@@ -5,25 +5,25 @@ import { splitAddressToCityAndDistrict } from "../../utils/addressUtils";
 import Weather from "../Weather";
 import "./style.scss";
 
-function Spots({ spots, page }) {
-  if (!spots) return null;
+function Spots({ spots, pathnameConfig }) {
+  if (!spots || !pathnameConfig) return null;
 
   return (
     <>
       {spots.map((spot) => (
-        <Spot spot={spot} page={page} />
+        <Spot key={spot.Address} spot={spot} pathnameConfig={pathnameConfig} />
       ))}
     </>
   );
 }
 
-function Spot({ spot, page }) {
+function Spot({ spot, pathnameConfig }) {
   const addressItems = splitAddressToCityAndDistrict(spot.Address);
 
   return (
     <Link
       to={{
-        pathname: `/${page}/${spot.ScenicSpotID || spot.RestaurantID}`,
+        pathname: `/${pathnameConfig.page}/${spot[pathnameConfig.spotID]}`,
       }}
       style={{ textDecoration: "none" }}
     >

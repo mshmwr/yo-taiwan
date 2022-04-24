@@ -20,7 +20,10 @@ function SearchingResult({ searchCity }) {
         </span>
       </div>
       <div className="landscape_section">
-        <Spots spots={searchResult} page={"tripInfoPage"} />
+        <Spots
+          spots={searchResult}
+          pathnameConfig={{ page: "tripInfoPage", spotID: "ScenicSpotID" }}
+        />
       </div>
     </>
   );
