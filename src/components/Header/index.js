@@ -17,7 +17,7 @@ const Header = ({ showSearch }) => {
         <label for="menuControl" className="menuBtn">
           <span>選單</span>
         </label>
-        <Link to="/">{getyoTaiwanLogoIcon()}</Link>
+        <Link className="headerLogo" to="/">{getyoTaiwanLogoIcon()}</Link>
         <div className={showSearch === "show" ? "show" : "hide"}>
           <HeaderSearch />
         </div>

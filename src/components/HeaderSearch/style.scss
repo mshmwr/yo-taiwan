@@ -1,12 +1,15 @@
-.trip_search_field1 {
+.tripSearchField1 {
   position: relative;
-  img {
+  .searchIcon {
     position: absolute;
     right: 20px;
     top: 15px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
   }
 }
-.search_field_input1 {
+.searchFieldInput1 {
   width: 331px;
   height: 42px;
   background: #f2f4f6;
