@@ -2,30 +2,32 @@ import React, { useState } from "react";
 import btnLeft from "../../asset/icon/btn_next_left.png";
 import btnRight from "../../asset/icon/btn_next_right.png";
 import "./style.scss";
-
+const CAROUSEL_NUMBER = 3;
 const Carousel = ({ tripInfo }) => {
   const [imgBtn, setImgBtn] = useState(0);
 
-  let picArray = Array(3).fill(
-    "https://user-images.githubusercontent.com/89368918/148541385-5f1bffa5-80f1-4faa-8d93-2945a568c917.png"
-  );
-  if (tripInfo) {
-    let img = Object.values(tripInfo[0].Picture).filter((p) =>
-      p.includes("http")
-    );
-    for (let i = 0; i < img.length; i++) {
-      picArray[i] = img[i];
+  const picArray = [];
+  const defaultImg =
+    "https://user-images.githubusercontent.com/89368918/148541385-5f1bffa5-80f1-4faa-8d93-2945a568c917.png";
+
+  for (let i = 0; i < CAROUSEL_NUMBER; i++) {
+    if (tripInfo) {
+      const imgs = Object.values(tripInfo[0].Picture).filter((p) =>
+        p.includes("http")
+      );
+      picArray.push({ id: i, src: imgs[i] ? imgs[i] : defaultImg });
+    } else {
+      picArray.push({ id: i, src: defaultImg });
     }
   }
 
-  if (imgBtn > 2) setImgBtn(2);
+  if (imgBtn > CAROUSEL_NUMBER-1) setImgBtn(CAROUSEL_NUMBER-1);
   if (imgBtn < 0) setImgBtn(0);
 
   return (
     <div className="tripInfo_menu_img">
       <div className="full-view">
-        <img src={picArray[imgBtn]} alt="landscapePicture" />
-
+        {<img src={picArray[imgBtn] && picArray[imgBtn].src} alt="landscapePicture" />}
         <div className="btn_next_trip">
           <img
             src={btnLeft}
@@ -36,7 +38,7 @@ const Carousel = ({ tripInfo }) => {
           />
           <img
             src={btnRight}
-            alt="btnright"
+            alt="btnRight"
             onClick={() => {
               setImgBtn(imgBtn + 1);
             }}
@@ -47,14 +49,18 @@ const Carousel = ({ tripInfo }) => {
         {picArray.map((p, i) => {
           if (i === imgBtn) {
             return (
-              <div className="section-view_frame">
-                <img src={p} alt="landscapeimage" />
+              <div key={p.id} className="section-view_frame">
+                <img src={p.src} alt="landscapeImage" />
               </div>
             );
           } else {
             return (
-              <div className="section-view_frame">
-                <img src={p} alt="landscapeimage" className="selected-img" />
+              <div key={p.id} className="section-view_frame">
+                <img
+                  src={p.src}
+                  alt="landscapeImage"
+                  className="selected-img"
+                />
               </div>
             );
           }
