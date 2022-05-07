@@ -11,7 +11,12 @@ function handleWidthChange(width) {
 
 let prevWidth = 0;
 
-const SpotsCarousel = ({ title = "", page = "", fetchSpot, fetchSpotAll }) => {
+const SpotsCarousel = ({
+  title = "",
+  fetchSpot,
+  fetchSpotAll,
+  pathnameConfig,
+}) => {
   const [totalPage, setTotalPage] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const [spots, setSpots] = useState([]);
@@ -65,7 +70,7 @@ const SpotsCarousel = ({ title = "", page = "", fetchSpot, fetchSpotAll }) => {
           <img src={btn_next} alt="btnPrev" />
         </div>
       )}
-      <Spots spots={spots} page={page} />
+      <Spots spots={spots} pathnameConfig={pathnameConfig} />
       {currentPage < totalPage && (
         <div className="btnNext" onClick={handleClickNext}>
           <img src={btn_next} alt="btnNext" />

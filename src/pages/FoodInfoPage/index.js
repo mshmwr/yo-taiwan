@@ -31,15 +31,14 @@ function FoodInfoPage() {
       <TripInfoContent foodInfo={foodInfo} />
       <SpotsCarousel
         title="更多美食等你發掘"
-        page="foodInfoPage"
         fetchSpot={getRestaurant}
         fetchSpotAll={getRestaurantAll}
       />
       <SpotsCarousel
         title="吃飽可以來這逛逛"
-        page="tripInfoPage"
         fetchSpot={getLandscape}
         fetchSpotAll={getLandscapeAll}
+        pathnameConfig={{ page: "tripInfoPage", spotID: "ScenicSpotID" }}
       />
       <Footer />
     </div>
