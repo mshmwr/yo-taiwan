@@ -32,6 +32,7 @@ function FoodInfoPage() {
         title="更多美食等你發掘"
         fetchSpot={getRestaurant}
         fetchSpotAll={getRestaurantAll}
+        pathnameConfig={{ page: "foodInfoPage", spotID: "RestaurantID" }}
       />
       <SpotsCarousel
         title="吃飽可以來這逛逛"
