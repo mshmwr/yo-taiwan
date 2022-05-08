@@ -5,7 +5,8 @@ import travelSection from "../../asset/images/travelSection.png";
 import React, { useState } from "react";
 import SearchingResult from "./searchingResult";
 import { DistrictDatafromMOTC } from "../../utils/axios";
-import "./style.scss";
+import styles from "./style.module.scss";
+
 
 function TravelFeaturedPage() {
   const [regionSelected, setregionSelected] = useState(0);
@@ -14,7 +15,7 @@ function TravelFeaturedPage() {
 
   return (
     <>
-      <div className="header1">
+      <div>
         <Header />
       </div>
       <BreadCrumb
@@ -25,18 +26,18 @@ function TravelFeaturedPage() {
         }}
       />
       <div
-        className="main_section_tab"
+        className={styles.main_section_tab}
         style={{
           backgroundImage: `url(${travelSection})`,
         }}
       >
-        <div className="section_topic_tab">觀光景點</div>
-        <div className="section_subtitle_tab">為您精選全台知名觀光景點！</div>
-        <div className="location_menu">
-          <div className="region_menu">
+        <div className={styles.section_topic_tab}>觀光景點</div>
+        <div className={styles.section_subtitle_tab}>為您精選全台知名觀光景點！</div>
+        <div className={styles.location_menu}>
+          <div className={styles.region_menu}>
             {DistrictDatafromMOTC.map((d, index) =>
               +regionSelected === index ? (
-                <div id={index} key={d.cities[0]+index} className="regionActive">
+                <div id={index} key={d.cities[0]+index} className={styles.regionActive}>
                   {d.region}
                 </div>
               ) : (
@@ -46,12 +47,12 @@ function TravelFeaturedPage() {
               )
             )}
           </div>
-          <div className="cities_menu">
+          <div className={styles.cities_menu}>
             {DistrictDatafromMOTC.filter(
               (d, index) => index === +regionSelected
             )[0].cities.map((c) =>
               citySelected[0] === c[0] ? (
-                <div className="cityActive" key={c[0]}>{c[0]}</div>
+                <div className={styles.cityActive} key={c[0]}>{c[0]}</div>
               ) : (
                 <div onClick={() => setcitySelected(c)} key={c[0]}>{c[0]}</div>
               )

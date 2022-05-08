@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getLandscape } from "../../apis/landscapeApi";
 import Spots from "../../components/SpotsCarousel/Spots";
+import styles from "./style.module.scss";
 
 function SearchingResult({ searchCity }) {
   const [searchResult, setsearchResult] = useState([]);
@@ -14,8 +15,8 @@ function SearchingResult({ searchCity }) {
 
   return (
     <>
-      <div className="titleGroup">
-        <span className="sectionTitle travel_section_title">
+      <div className={styles.titleGroup}>
+        <span className={`${styles.sectionTitle} ${styles.travel_section_title}`}>
           <span>{`「${searchCity[0] || "不分縣市"}」`}</span>精選景點：
         </span>
       </div>
