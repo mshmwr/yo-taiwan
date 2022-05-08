@@ -6,7 +6,7 @@ import time from "../../asset/icon/food_time.png";
 import category from "../../asset/icon/food_category.png";
 import parking from "../../asset/icon/food_parking.png";
 import BreadCrumb from "../../components/BreadCrumb";
-import "./style.scss";
+import "./FoodInfoMenu.scss";
 import { handleNodata } from "../../utils/conditionUtils";
 
 const FoodInfoMenu = ({ foodInfo }) => {
@@ -15,7 +15,7 @@ const FoodInfoMenu = ({ foodInfo }) => {
   return (
     <div>
       {foodInfo && (
-        <div className="tripInfo_menu_section">
+        <div className="foodInfo_menu_section">
           <BreadCrumb
             topic={{
               topic: "特色美食",
@@ -24,9 +24,9 @@ const FoodInfoMenu = ({ foodInfo }) => {
               link:'/yo-taiwan/foodFeaturedPage'
             }}
           />
-          <div className="tripInfo_menu">
+          <div className="foodInfo_menu">
             <Carousel tripInfo={foodInfo}/>
-            <div className="tripInfo_menu_text">
+            <div className="foodInfo_menu_text">
               <span className="menu_title">
                 {handleNodata(foodInfo[0].RestaurantName)}
               </span>

@@ -23,7 +23,7 @@ function SearchingResult({ searchCity }) {
       <div className="landscape_section">
         <Spots
           spots={searchResult}
-          page={"foodInfoPage"}
+          pathnameConfig={{ page: "foodInfoPage", spotID: "RestaurantID" }}
         />
       </div>
     </>
