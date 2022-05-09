@@ -2,17 +2,19 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import TripInfoContent from "./FoodInfoContent";
 import FoodInfoMenu from "../FoodInfoPage/FoodInfoMenu";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { doSearchRestaurantId } from "../../apis/searchApiTripId";
-import { getLandscape, getLandscapeAll } from "../../apis/landscapeApi";
+import "./style.scss";
 import { getRestaurant, getRestaurantAll } from "../../apis/restaurantApi";
 import SpotsCarousel from "../../components/SpotsCarousel";
+import { LandscapesContext } from "../../contexts";
 
 function FoodInfoPage() {
   const [showSearch, setshowSearch] = useState("hide");
   const [foodInfo, setfoodInfo] = useState();
   const { id } = useParams();
+  const landscapes = useContext(LandscapesContext);
   useEffect(() => {
     setshowSearch("show");
     async function fetchData() {
@@ -36,8 +38,7 @@ function FoodInfoPage() {
       />
       <SpotsCarousel
         title="吃飽可以來這逛逛"
-        fetchSpot={getLandscape}
-        fetchSpotAll={getLandscapeAll}
+        spotsData={landscapes}
         pathnameConfig={{ page: "tripInfoPage", spotID: "ScenicSpotID" }}
       />
       <Footer />

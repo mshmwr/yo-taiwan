@@ -3,7 +3,7 @@ const distTitleList = ["市", "鎮", "鄉", "區"];
 
 const splitAddressToCityAndDistrict = (address) => {
   if (!address) {
-    return "null";
+    return { city: null, district: null };
   }
 
   const getTitleIndex = (address, titleList) => {
