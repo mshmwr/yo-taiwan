@@ -40,6 +40,7 @@ function TripInfoPage() {
         page="foodInfoPage"
         fetchSpot={getRestaurant}
         fetchSpotAll={getRestaurantAll}
+        pathnameConfig={{ page: "foodInfoPage", spotID: "RestaurantID" }}
       />
       <Footer />
     </>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getRestaurant } from "../../apis/restaurantApi";
 import Spots from "../../components/SpotsCarousel/Spots";
+import styles from "./style.module.scss";
 
 function SearchingResult({ searchCity }) {
   const [searchResult, setsearchResult] = useState([]);
@@ -14,15 +15,15 @@ function SearchingResult({ searchCity }) {
 
   return (
     <>
-      <div className="titleGroup">
-        <span className="sectionTitle food_section_title">
+      <div className={styles.titleGroup}>
+        <span className={`${styles.sectionTitle} ${styles.food_section_title}`}>
           <span>{`「${searchCity[0] || "不分縣市"}」`}</span>精選美食：
         </span>
       </div>
       <div className="landscape_section">
         <Spots
           spots={searchResult}
-          page={"foodInfoPage"}
+          pathnameConfig={{ page: "foodInfoPage", spotID: "RestaurantID" }}
         />
       </div>
     </>

@@ -5,7 +5,6 @@ import FoodInfoMenu from "../FoodInfoPage/FoodInfoMenu";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { doSearchRestaurantId } from "../../apis/searchApiTripId";
-import "./style.scss";
 import { getLandscape, getLandscapeAll } from "../../apis/landscapeApi";
 import { getRestaurant, getRestaurantAll } from "../../apis/restaurantApi";
 import SpotsCarousel from "../../components/SpotsCarousel";
@@ -33,6 +32,7 @@ function FoodInfoPage() {
         title="更多美食等你發掘"
         fetchSpot={getRestaurant}
         fetchSpotAll={getRestaurantAll}
+        pathnameConfig={{ page: "foodInfoPage", spotID: "RestaurantID" }}
       />
       <SpotsCarousel
         title="吃飽可以來這逛逛"
