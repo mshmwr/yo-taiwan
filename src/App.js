@@ -10,16 +10,19 @@ import SearchingResult from "./pages/SearchingResult";
 import "./styles/reset.css";
 import "./styles/style.css";
 import "./styles/variables.scss";
-import { WeatherContext } from "./contexts";
+import { WeatherContext, LandscapesContext } from "./contexts";
 import weatherApi from "./apis/weatherApi";
+import getLandscapes from "./apis/getLandscapes";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [weather, setWeather] = useState({});
+  const [landscapes, setLandscapes] = useState({});
   useEffect(() => {
     async function fetchData() {
-      const resWeathers = await weatherApi();
-      if (resWeathers) {
-        const weather = resWeathers.records.location.reduce((prev, curr) => {
+      const res = await weatherApi();
+      if (res) {
+        const weather = res.records.location.reduce((prev, curr) => {
           prev = {
             ...prev,
             [curr.locationName]: curr.weatherElement[0].time[0].parameter,
@@ -32,22 +35,38 @@ function App() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    async function fetchData() {
+      const res = await getLandscapes();
+      if (res) {
+        setLandscapes(res);
+      }
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className="wrapper">
       <WeatherContext.Provider value={weather}>
-        <Routes>
-          <Route path="/" exact element={<HomePage />} />
-          <Route path="/searchingResult" element={<SearchingResult />} />
-          <Route
-            path="/searchingResult/:keywords"
-            element={<SearchingResult />}
-          />
-          <Route path="/tripInfoPage/:id" element={<TripInfoPage />} />
-          <Route path="/TopicTravelPage" element={<TopicTravelPage />} />
-          <Route path="/foodInfoPage/:id" element={<FoodInfoPage />} />
-          <Route path="/FoodFeaturedPage" element={<FoodFeaturedPage />} />
-          <Route path="/TravelFeaturedPage" element={<TravelFeaturedPage />} />
-        </Routes>
+        <LandscapesContext.Provider value={landscapes}>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" exact element={<HomePage />} />
+            <Route path="/searchingResult" element={<SearchingResult />} />
+            <Route
+              path="/searchingResult/:keywords"
+              element={<SearchingResult />}
+            />
+            <Route path="/tripInfoPage/:id" element={<TripInfoPage />} />
+            <Route path="/TopicTravelPage" element={<TopicTravelPage />} />
+            <Route path="/foodInfoPage/:id" element={<FoodInfoPage />} />
+            <Route path="/FoodFeaturedPage" element={<FoodFeaturedPage />} />
+            <Route
+              path="/TravelFeaturedPage"
+              element={<TravelFeaturedPage />}
+            />
+          </Routes>
+        </LandscapesContext.Provider>
       </WeatherContext.Provider>
     </div>
   );

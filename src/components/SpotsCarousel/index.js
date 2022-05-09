@@ -5,20 +5,14 @@ import "./style.scss";
 
 const SPOT_QUANTITY_DESKTOP = 5;
 const SPOT_QUANTITY_MOBILE = 4;
-function handleWidthChange(width) {
-  return width >= 1440;
-}
+const DESKTOP_MIN_WIDTH = 1440;
+const SPOT_MIN_INDEX = 0;
 
 let prevWidth = 0;
 
-const SpotsCarousel = ({
-  title = "",
-  fetchSpot,
-  fetchSpotAll,
-  pathnameConfig,
-}) => {
-  const [totalPage, setTotalPage] = useState(0);
-  const [currentPage, setCurrentPage] = useState(0);
+const SpotsCarousel = ({ title = "", spotsData = [], pathnameConfig }) => {
+  const [spotsTotal, setSpotsTotal] = useState(0);
+  const [currentSpotIndex, setCurrentSpotIndex] = useState(0);
   const [spots, setSpots] = useState([]);
   const [isDesktop, setIsDesktop] = useState(true);
 
@@ -26,27 +20,40 @@ const SpotsCarousel = ({
     ? SPOT_QUANTITY_DESKTOP
     : SPOT_QUANTITY_MOBILE;
 
+  const isInRange = (num) => {
+    const min = SPOT_MIN_INDEX;
+    const max = spotsTotal;
+    return num >= min && num <= max;
+  };
+
   const handleClickNext = () => {
-    setCurrentPage((prev) => prev + 1);
+    setCurrentSpotIndex((prev) =>
+      isInRange(prev + SPOT_QUANTITY) ? prev + SPOT_QUANTITY : spotsTotal
+    );
   };
   const handleClickPrev = () => {
-    setCurrentPage((prev) => prev - 1);
+    setCurrentSpotIndex((prev) =>
+      isInRange(prev - SPOT_QUANTITY) ? prev - SPOT_QUANTITY : SPOT_MIN_INDEX
+    );
   };
 
   useEffect(() => {
-    async function fetchData() {
-      setSpots(await fetchSpot(currentPage * SPOT_QUANTITY, SPOT_QUANTITY));
+    if (spotsData.length) {
+      const startIndex = isInRange(currentSpotIndex)
+        ? currentSpotIndex
+        : SPOT_MIN_INDEX;
+      const endIndex = isInRange(currentSpotIndex + SPOT_QUANTITY)
+        ? currentSpotIndex + SPOT_QUANTITY
+        : spotsTotal;
+      setSpots(spotsData.slice(startIndex, endIndex));
     }
-    if (fetchSpot) fetchData();
-  }, [currentPage, fetchSpot, SPOT_QUANTITY]);
+  }, [spotsData, currentSpotIndex, SPOT_QUANTITY, spotsTotal]);
 
   useEffect(() => {
-    async function fetchData() {
-      const spots = await fetchSpotAll(currentPage * SPOT_QUANTITY);
-      if (spots) setTotalPage(Math.ceil(spots.length / SPOT_QUANTITY));
+    if (spotsData.length) {
+      setSpotsTotal(spotsData.length);
     }
-    if (fetchSpotAll) fetchData();
-  }, []);
+  }, [spotsData]);
 
   useEffect(() => {
     const observer = new ResizeObserver((entries) => {
@@ -54,7 +61,7 @@ const SpotsCarousel = ({
         const width = entry.borderBoxSize?.[0].inlineSize;
         if (typeof width === "number" && width !== prevWidth) {
           prevWidth = width;
-          setIsDesktop(handleWidthChange(width));
+          setIsDesktop(width >= DESKTOP_MIN_WIDTH);
         }
       }
     });
@@ -65,14 +72,18 @@ const SpotsCarousel = ({
   return (
     <div className="landscapeSection">
       <span className="title">{title}</span>
-      {!!currentPage && (
+      {isInRange(currentSpotIndex - SPOT_QUANTITY) && (
         <div className="btnPrev" onClick={handleClickPrev}>
           <img src={btn_next} alt="btnPrev" />
         </div>
       )}
       <Spots spots={spots} pathnameConfig={pathnameConfig} />
-      {currentPage < totalPage && (
-        <div className="btnNext" onClick={handleClickNext}>
+      {isInRange(currentSpotIndex + SPOT_QUANTITY) && (
+        <div
+          style={{ display: "block" }}
+          className="btnNext"
+          onClick={handleClickNext}
+        >
           <img src={btn_next} alt="btnNext" />
         </div>
       )}
