@@ -5,7 +5,7 @@ import FoodInfoMenu from "../FoodInfoPage/FoodInfoMenu";
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { doSearchRestaurantId } from "../../apis/searchApiTripId";
-import "./style.scss";
+import "./style.module.scss";
 import { getRestaurant, getRestaurantAll } from "../../apis/restaurantApi";
 import SpotsCarousel from "../../components/SpotsCarousel";
 import { LandscapesContext } from "../../contexts";

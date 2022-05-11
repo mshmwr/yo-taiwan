@@ -79,40 +79,17 @@
   }
 }
 
-.waveBlue1 {
-  position: absolute;
-  top: 30px;
-  right: 0;
-  display: none;
-}
-
-.waveBlue2 {
-  position: absolute;
-  top: 30px;
-  right: 5px;
-  display: none;
-}
-
-.waveYellow {
-  position: absolute;
-  top: 30px;
-  right: 5px;
-  display: none;
-}
-
-.wavePink {
-  position: absolute;
-  top: 30px;
-  right: 5px;
-  display: none;
-}
 
 .menuFair {
   margin-right: 40px;
-  text-decoration: none;
   position: relative;
+  .menuFairLink{
+    text-decoration: none;
+    &:hover{
+      color: $color-secondary-yellow-default;
+    }
+  }
   &:hover {
-    color: $color-secondary-yellow-default;
     &::after{
       content: url(../../asset/icon/wave_yellow.png);
       position: absolute;
@@ -142,10 +119,14 @@
 
 .menuTraffic {
   margin-right: 40px;
-  text-decoration: none;
   position: relative;
+  .menuTrafficLink{
+    text-decoration: none;
+    &:hover {
+      color: $color-primary-default;
+    }
+  }
   &:hover {
-    color: $color-primary-default;
     &::after{
       content: url(../../asset/icon/wave_blue.png);
       position: absolute;
