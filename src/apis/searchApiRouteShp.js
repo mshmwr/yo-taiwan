@@ -1,16 +1,11 @@
 import axios from "axios";
 import { getAuthorizationHeader } from "../utils/axios";
+import { getBusRoutePromise } from "./searchbusRouteApi";
 const doBusRouteShp = async (busName = "") => {
   let resresult = null;
 
   try {
-    await axios
-      .get(
-        `https://ptx.transportdata.tw/MOTC/v2/Tourism/Bus/Route/TaiwanTrip/${busName}?$format=JSON`,
-        {
-          headers: getAuthorizationHeader(),
-        }
-      )
+    await getBusRoutePromise(busName)
       .then(function (res) {
         const busId = !res.data[0].RouteUID ? "" : res.data[0].RouteUID;
         if (busId === "") console.log("無該路線");
