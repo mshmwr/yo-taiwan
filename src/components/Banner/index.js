@@ -9,8 +9,8 @@ function Banner({ bannerInfo }) {
         backgroundImage: `url(${bannerInfo.image})`,
       }}
     >
-      <div class="section_topic">{bannerInfo.topic}</div>
-      <div class="section_subtitle">{bannerInfo.subtitle}</div>
+      <div className="section_topic">{bannerInfo.topic}</div>
+      <div className="section_subtitle">{bannerInfo.subtitle}</div>
     </div>
   );
 }
