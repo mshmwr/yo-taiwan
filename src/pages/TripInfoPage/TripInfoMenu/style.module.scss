@@ -77,6 +77,13 @@
     margin-right: 15px;
     vertical-align: middle;
   }
+  :global(.weather) {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    display: inline-block;
+    margin: 0 6px;
+  }
 }
 
 .describe_text {

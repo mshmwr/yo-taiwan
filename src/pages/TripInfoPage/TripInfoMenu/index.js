@@ -5,10 +5,11 @@ import phone from "../../../asset/icon/phone.png";
 import time from "../../../asset/icon/time.png";
 import ticket from "../../../asset/icon/ticket.png";
 import weather from "../../../asset/icon/weather.png";
-import sunny from "../../../asset/icon/sunny.svg";
 import bus from "../../../asset/icon/bus.png";
 import BreadCrumb from "../../../components/BreadCrumb";
 import styles from "./style.module.scss";
+import Weather from "../../../components/Weather";
+import { splitAddressToCityAndDistrict } from "../../../utils/addressUtils";
 
 const TripInfoMenu = ({ tripInfo }) => {
   const BreadCrumbColor = { color: "#74D1E7", fontWeight: "700" };
@@ -61,9 +62,16 @@ const TripInfoMenu = ({ tripInfo }) => {
             <div className={styles.list}>
               <ul>
                 <li>
-                  <img src={weather} alt="weather" /> 即時天氣：
+                  <img src={weather} alt="weather" />
+                  即時天氣：
                   <span>
-                    <img src={sunny} alt="sunny" />
+                    <Weather
+                      city={
+                        splitAddressToCityAndDistrict(
+                          tripInfo ? tripInfo[0].Address : null
+                        ).city
+                      }
+                    />
                     <a href={"https://www.cwb.gov.tw/V8/C/"}>(詳細天氣資訊)</a>
                   </span>
                 </li>
