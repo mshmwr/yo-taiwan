@@ -1,36 +1,36 @@
 import React from "react";
-import Carousel from "../../components/Carousel";
-import location from "../../asset/icon/location.png";
-import phone from "../../asset/icon/phone.png";
-import time from "../../asset/icon/time.png";
-import ticket from "../../asset/icon/ticket.png";
-import weather from "../../asset/icon/weather.png";
-import sunny from "../../asset/icon/sunny.svg";
-import bus from "../../asset/icon/bus.png";
-import BreadCrumb from "../../components/BreadCrumb";
-import "./TripInfoMenu.scss";
+import Carousel from "../../../components/Carousel";
+import location from "../../../asset/icon/location.png";
+import phone from "../../../asset/icon/phone.png";
+import time from "../../../asset/icon/time.png";
+import ticket from "../../../asset/icon/ticket.png";
+import weather from "../../../asset/icon/weather.png";
+import sunny from "../../../asset/icon/sunny.svg";
+import bus from "../../../asset/icon/bus.png";
+import BreadCrumb from "../../../components/BreadCrumb";
+import styles from "./style.module.scss";
 
 const TripInfoMenu = ({ tripInfo }) => {
   const BreadCrumbColor = { color: "#74D1E7", fontWeight: "700" };
 
   return (
-    <div className="tripInfo_menu_section">
+    <div className={styles.tripInfo_menu_section}>
       <BreadCrumb
         topic={{
           topic: "觀光景點",
           subTopic: ` > ${tripInfo && tripInfo[0].ScenicSpotName}`,
           color: BreadCrumbColor,
-          link:'/yo-taiwan/TravelFeaturedPage',
+          link: "/yo-taiwan/TravelFeaturedPage",
         }}
       />
-      <div className="tripInfo_menu">
+      <div className={styles.tripInfo_menu}>
         <Carousel tripInfo={tripInfo} />
-        <div className="tripInfo_menu_text">
-          <span className="menu_title">
+        <div className={styles.tripInfo_menu_text}>
+          <span className={styles.menu_title}>
             {tripInfo && tripInfo[0].ScenicSpotName}
           </span>
-          <div className="menu_text">
-            <div className="list">
+          <div className={styles.menu_text}>
+            <div className={styles.list}>
               <ul>
                 <li>
                   <img src={location} alt="location" />
@@ -58,7 +58,7 @@ const TripInfoMenu = ({ tripInfo }) => {
                 </li>
               </ul>
             </div>
-            <div className="list">
+            <div className={styles.list}>
               <ul>
                 <li>
                   <img src={weather} alt="weather" /> 即時天氣：
@@ -74,7 +74,7 @@ const TripInfoMenu = ({ tripInfo }) => {
               </ul>
             </div>
           </div>
-          <div className="describe_text">
+          <div className={styles.describe_text}>
             {tripInfo ? tripInfo[0].Description : null}
           </div>
         </div>
