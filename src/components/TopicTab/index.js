@@ -70,9 +70,10 @@ const TopicTab = () => {
       <div className="topic_tab">
         {tabs.map((tab, index) => {
           return (
-            <>
+            <div key={index}>
               {index !== +selectedTab ? (
                 <div
+                  key={index}
                   className="default_tab"
                   id={index}
                   onClick={(e) => {
@@ -84,7 +85,7 @@ const TopicTab = () => {
               ) : (
                 <Selected />
               )}
-            </>
+            </div>
           );
         })}
       </div>

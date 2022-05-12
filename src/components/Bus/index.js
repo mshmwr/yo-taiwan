@@ -91,11 +91,12 @@ const Bus = () => {
           <div className="tabGroup">
             {DistrictBusData.map((r, index) => 
               +selectRegion === index ? (
-                <div id={index} className="tabActive">
+                <div key={index} id={index} className="tabActive">
                   {r.region}
                 </div>
               ) : (
                 <div
+                  key={index}
                   id={index}
                   className="tab"
                   onClick={handleClick}
@@ -111,9 +112,10 @@ const Bus = () => {
                 (r,index) => index === +selectRegion
                 )[0].cities.map((c) =>
                 selectCity[0] === c[0] ? (
-                  <div className="btnCountryActive">{c[0]}</div>
+                  <div key={c[0]} className="btnCountryActive">{c[0]}</div>
                 ) : (
                   <div 
+                  key={c[0]}
                   className="btnCountry"
                   onClick={() => setselectCity(c)}
                   >{c[0]}</div>

@@ -4,6 +4,7 @@ import { doSearchName } from "../../apis/searchApi";
 import Header from "../../components/Header";
 import { keywordSplitWithPlus } from "../../utils/stringUtils";
 import Spots from "../../components/SpotsCarousel/Spots";
+import "./style.scss";
 
 function SearchingResult() {
   const [searchResult, setSearchResult] = useState([]);
@@ -40,7 +41,7 @@ function SearchingResult() {
         )}
         <span className="sectionTitle">搜尋結果如下：</span>
       </div>
-      <div className="landscape_section">
+      <div className="landscapeSection">
         {searchResult?.length ? (
           <Spots
             spots={searchResult}

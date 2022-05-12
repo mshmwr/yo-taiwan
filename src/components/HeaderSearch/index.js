@@ -13,14 +13,14 @@ const HeaderSearch = () => {
     navigate(`/searchingResult/${input}`);
   };
   return (
-    <div className="trip_search_field1">
+    <div className="tripSearchField1">
       <input
         type="text"
-        className="search_field_input1"
+        className="searchFieldInput1"
         placeholder="請輸入目的地、景點等關鍵字"
         onChange={(e) => setinput(e.target.value)}
       />
-      <img src={search} alt="search" onClick={clickSearch} />
+      <img className="searchIcon" src={search} alt="search" onClick={clickSearch} />
     </div>
   );
 };
