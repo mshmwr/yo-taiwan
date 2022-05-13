@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getAuthorizationHeader } from "../utils/axios";
+import { getAuthorizationHeader } from "@utils/axios";
 import { getBusRoutePromise } from "./searchbusRouteApi";
 const doBusRouteShp = async (busName = "") => {
   let resResult = null;

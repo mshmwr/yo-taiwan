@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { doSearchName } from "../../apis/searchApi";
-import Header from "../../components/Header";
-import { keywordSplitWithPlus } from "../../utils/stringUtils";
-import Spots from "../../components/SpotsCarousel/Spots";
+import { doSearchName } from "@apis/searchApi";
+import Header from "@components/Header";
+import { keywordSplitWithPlus } from "@utils/stringUtils";
+import Spots from "@components/SpotsCarousel/Spots";
 import "./style.scss";
-import styles from "../../components/Header/style.module.scss"
+import styles from "@components/Header/style.module.scss";
 
 function SearchingResult() {
   const [searchResult, setSearchResult] = useState([]);

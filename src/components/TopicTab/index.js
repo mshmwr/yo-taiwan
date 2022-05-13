@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import campingSection from "../../asset/images/campingSection.png";
-import templeSection from "../../asset/images/templeSection.png";
-import onsenSection from "../../asset/images/onsenSection.png";
-import divingSection from "../../asset/images/divingSection.png";
-import bookSection from "../../asset/images/bookSection.png";
-import Banner from "../../components/Banner";
+import campingSection from "@asset/images/campingSection.png";
+import templeSection from "@asset/images/templeSection.png";
+import onsenSection from "@asset/images/onsenSection.png";
+import divingSection from "@asset/images/divingSection.png";
+import bookSection from "@asset/images/bookSection.png";
+import Banner from "@components/Banner";
 import styles from "./style.module.scss";
-import SearchingResult from "../../pages/TopicTravelPage/searchingResult";
+import SearchingResult from "@pages/TopicTravelPage/searchingResult";
 import {
   getCampingIcon,
   getIconTemple,
   getIconOnsen,
   getIconDiving,
   getIconBook,
-} from "../../utils/iconUtilis";
+} from "@utils/iconUtilis";
 
 const TopicTab = () => {
   const tabs = [

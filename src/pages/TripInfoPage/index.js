@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
-import Header from "../../components/Header";
-import SpotsCarousel from "../../components/SpotsCarousel";
-import Footer from "../../components/Footer";
+import Header from "@components/Header";
+import SpotsCarousel from "@components/SpotsCarousel";
+import Footer from "@components/Footer";
 import TripInfoContent from "./TripInfoContent";
 import TripInfoMenu from "./TripInfoMenu";
 import { useParams } from "react-router-dom";
-import { doSearchTripId } from "../../apis/searchApiTripId";
-import { getRestaurant, getRestaurantAll } from "../../apis/restaurantApi";
-import { LandscapesContext } from "../../contexts";
+import { doSearchTripId } from "@apis/searchApiTripId";
+import { getRestaurant, getRestaurantAll } from "@apis/restaurantApi";
+import { LandscapesContext } from "@contexts";
 
 function TripInfoPage() {
   const [showSearch, setshowSearch] = useState("hide");

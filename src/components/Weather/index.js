@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
-import { WeatherContext } from "../../contexts";
-import { getWeatherIcon } from "../../utils/iconUtilis";
+import { WeatherContext } from "@contexts";
+import { getWeatherIcon } from "@utils/iconUtilis";
 import "./style.scss";
-
 
 export default function Weather({ city }) {
   const weather = useContext(WeatherContext);

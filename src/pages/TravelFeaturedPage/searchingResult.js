@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
-import Spots from "../../components/SpotsCarousel/Spots";
+import Spots from "@components/SpotsCarousel/Spots";
 import styles from "./style.module.scss";
-import { LandscapesContext } from "../../contexts";
-import { splitAddressToCityAndDistrict } from "../../utils/addressUtils";
+import { LandscapesContext } from "@contexts";
+import { splitAddressToCityAndDistrict } from "@utils/addressUtils";
 
 const LANDSCAPE_NUM = 10;
 

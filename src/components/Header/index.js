@@ -1,20 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getyoTaiwanLogoIcon } from "../../utils/iconUtilis";
+import { getyoTaiwanLogoIcon } from "@utils/iconUtilis";
 import HeaderSearch from "../HeaderSearch";
 import SelectBar from "../SelectBar";
 import { SelectBarTraffic } from "../SelectBar";
-import styles from "./style.module.scss"
+import styles from "./style.module.scss";
 
 const Header = ({ showSearch }) => {
   return (
     <div className={styles.header}>
-      <input type="checkbox" name="" id="menuControl" className={styles.menuControl}></input>
+      <input
+        type="checkbox"
+        name=""
+        id="menuControl"
+        className={styles.menuControl}
+      ></input>
       <div className={styles.container}>
         <label htmlFor="menuControl" className={styles.menuBtn}>
           <span>選單</span>
         </label>
-        <Link className={styles.headerLogo} to="/">{getyoTaiwanLogoIcon()}</Link>
+        <Link className={styles.headerLogo} to="/">
+          {getyoTaiwanLogoIcon()}
+        </Link>
         <div className={showSearch === styles.show ? styles.show : styles.hide}>
           <HeaderSearch />
         </div>

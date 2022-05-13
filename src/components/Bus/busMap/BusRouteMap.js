@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MapLayer from "./map";
-import { doBusRouteShp } from "../../../apis/searchApiRouteShp";
+import { doBusRouteShp } from "@apis/searchApiRouteShp";
 
 const BusRouteMap = ({ selectBusRoute }) => {
   const [BusRouteShp, setBusRouteShp] = useState();

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import btnLeft from "../../asset/icon/btn_next_left.png";
-import btnRight from "../../asset/icon/btn_next_right.png";
+import btnLeft from "@asset/icon/btn_next_left.png";
+import btnRight from "@asset/icon/btn_next_right.png";
 import "./style.scss";
 const CAROUSEL_NUMBER = 3;
 const Carousel = ({ tripInfo }) => {
@@ -21,13 +21,18 @@ const Carousel = ({ tripInfo }) => {
     }
   }
 
-  if (imgBtn > CAROUSEL_NUMBER-1) setImgBtn(CAROUSEL_NUMBER-1);
+  if (imgBtn > CAROUSEL_NUMBER - 1) setImgBtn(CAROUSEL_NUMBER - 1);
   if (imgBtn < 0) setImgBtn(0);
 
   return (
     <div className="tripInfo_menu_img">
       <div className="full-view">
-        {<img src={picArray[imgBtn] && picArray[imgBtn].src} alt="landscapePicture" />}
+        {
+          <img
+            src={picArray[imgBtn] && picArray[imgBtn].src}
+            alt="landscapePicture"
+          />
+        }
         <div className="btn_next_trip">
           <img
             src={btnLeft}
