@@ -2,7 +2,6 @@ import React from "react";
 import { MapContainer, TileLayer, Polyline } from "react-leaflet";
 
 const MapLayer = ({ geoFeature }) => {
-  console.log(geoFeature);
 
   return (
     <div>
