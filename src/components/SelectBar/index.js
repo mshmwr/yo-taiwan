@@ -9,10 +9,11 @@ import {
   getIconBicycle,
   getIconBusSelect,
 } from "../../utils/iconUtilis";
+import styles from "../Header/style.module.scss"
 
 const SelectBar = () => {
   return (
-    <ul className="menuDropdown1">
+    <ul className={styles.menuDropdown1}>
       <li>
         <div>
           <Link to="/" className="a">
@@ -46,7 +47,7 @@ const SelectBar = () => {
 
 export const SelectBarTraffic = () => {
   return (
-    <ul className="menuDropdown2">
+    <ul className={styles.menuDropdown2}>
       <li>
         <div>
           <a href="https://mshmwr.github.io/yo-bike" className="a">

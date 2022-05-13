@@ -12,24 +12,17 @@
   flex-direction: column;
 }
 
-
-
-@media (max-width: 1200px) {
-  .content_section {
-    width: 100%;
-    margin: auto 32px;
-  }
-  .landscape_section {
-    width: 100%;
-    margin: 0 32px;
-  }
-  .landscape_section a {
-    width: 23.35%;
-  }
-  .landscape_section a:last-child {
-    margin-left: 0;
-  }
+/* for TripInfoPage & FoodInfoPage*/
+.content_section {
+  width: 1200px;
+  padding-top: 60px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
 }
+/* for TripInfoPage & FoodInfoPage*/
 
 
 @media (max-width:1439px) and (min-width:1200px){
