@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { doSearchTopic } from "../../apis/searchApi";
-import Spots from "../../components/SpotsCarousel/Spots";
+import { doSearchTopic } from "@apis/searchApi";
+import Spots from "@components/SpotsCarousel/Spots";
 
 function SearchingResult({ searchTopic }) {
   const [searchResult, setsearchResult] = useState([]);

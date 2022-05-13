@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { getRestaurant } from "../../apis/restaurantApi";
-import Spots from "../../components/SpotsCarousel/Spots";
+import { getRestaurant } from "@apis/restaurantApi";
+import Spots from "@components/SpotsCarousel/Spots";
 import styles from "./style.module.scss";
 
 function SearchingResult({ searchCity }) {

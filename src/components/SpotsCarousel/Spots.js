@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getBusIcon, getLocationIcon } from "../../utils/iconUtilis";
-import { splitAddressToCityAndDistrict } from "../../utils/addressUtils";
+import { getBusIcon, getLocationIcon } from "@utils/iconUtilis";
+import { splitAddressToCityAndDistrict } from "@utils/addressUtils";
 import Weather from "../Weather";
 import "./style.scss";
 

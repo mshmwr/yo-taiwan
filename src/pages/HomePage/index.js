@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import Header from "../../components/Header";
+import Header from "@components/Header";
 import Hero from "./Hero";
-import SpotsCarousel from "../../components/SpotsCarousel";
-import Bus from "../../components/Bus";
-import Footer from "../../components/Footer";
-import { LandscapesContext } from "../../contexts";
+import SpotsCarousel from "@components/SpotsCarousel";
+import Bus from "@components/Bus";
+import Footer from "@components/Footer";
+import { LandscapesContext } from "@contexts";
 
 function HomePage() {
   const landscapes = useContext(LandscapesContext);

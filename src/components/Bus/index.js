@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SearchBusRoute from "./SearchBusRoute";
 import BusRouteMap from "./busMap/BusRouteMap";
-import { doBusRouteSearch } from "../../apis/searchbusRouteApi";
+import { doBusRouteSearch } from "@apis/searchbusRouteApi";
 import "./style.scss";
 
 const Bus = () => {
@@ -89,7 +89,7 @@ const Bus = () => {
         <div className="sectionTitle">台灣好行公車路線</div>
         <div className="tabBlock">
           <div className="tabGroup">
-            {DistrictBusData.map((r, index) => 
+            {DistrictBusData.map((r, index) =>
               +selectRegion === index ? (
                 <div key={index} id={index} className="tabActive">
                   {r.region}
@@ -109,16 +109,20 @@ const Bus = () => {
           <div className="block">
             <div className="btnCountiresGroup">
               {DistrictBusData.filter(
-                (r,index) => index === +selectRegion
-                )[0].cities.map((c) =>
+                (r, index) => index === +selectRegion
+              )[0].cities.map((c) =>
                 selectCity[0] === c[0] ? (
-                  <div key={c[0]} className="btnCountryActive">{c[0]}</div>
+                  <div key={c[0]} className="btnCountryActive">
+                    {c[0]}
+                  </div>
                 ) : (
-                  <div 
-                  key={c[0]}
-                  className="btnCountry"
-                  onClick={() => setselectCity(c)}
-                  >{c[0]}</div>
+                  <div
+                    key={c[0]}
+                    className="btnCountry"
+                    onClick={() => setselectCity(c)}
+                  >
+                    {c[0]}
+                  </div>
                 )
               )}
             </div>
@@ -129,11 +133,10 @@ const Bus = () => {
                 handleBusRouteCheck={BusRouteCheck}
                 searchBusRoute={searchBusRoute}
               />
+            </div>
           </div>
         </div>
 
-        </div>
-      
         <div className="busRoute">
           {!selectBusRoute ? (
             <img

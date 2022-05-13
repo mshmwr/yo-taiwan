@@ -1,14 +1,14 @@
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "@components/Header";
+import Footer from "@components/Footer";
 import TripInfoContent from "./FoodInfoContent";
 import FoodInfoMenu from "../FoodInfoPage/FoodInfoMenu";
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { doSearchRestaurantId } from "../../apis/searchApiTripId";
+import { doSearchRestaurantId } from "@apis/searchApiTripId";
 import "./style.module.scss";
-import { getRestaurant, getRestaurantAll } from "../../apis/restaurantApi";
-import SpotsCarousel from "../../components/SpotsCarousel";
-import { LandscapesContext } from "../../contexts";
+import { getRestaurant, getRestaurantAll } from "@apis/restaurantApi";
+import SpotsCarousel from "@components/SpotsCarousel";
+import { LandscapesContext } from "@contexts";
 
 function FoodInfoPage() {
   const [showSearch, setshowSearch] = useState("hide");
