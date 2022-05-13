@@ -36,7 +36,7 @@ function SearchingResult({ searchCity }) {
           <span>{`「${searchCity[0] || "不分縣市"}」`}</span>精選景點：
         </span>
       </div>
-      <div className="landscape_section">
+      <div className="landscapeSection">
         <Spots
           spots={searchResult}
           pathnameConfig={{ page: "tripInfoPage", spotID: "ScenicSpotID" }}

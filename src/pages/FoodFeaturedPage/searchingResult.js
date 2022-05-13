@@ -20,7 +20,7 @@ function SearchingResult({ searchCity }) {
           <span>{`「${searchCity[0] || "不分縣市"}」`}</span>精選美食：
         </span>
       </div>
-      <div className="landscape_section">
+      <div className="landscapeSection">
         <Spots
           spots={searchResult}
           pathnameConfig={{ page: "foodInfoPage", spotID: "RestaurantID" }}
