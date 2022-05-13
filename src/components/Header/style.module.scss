@@ -13,7 +13,7 @@
   height: 88px;
   color: $color-greyscale-white;
   position: relative;
-  #menuControl{
+  .menuControl{
     position: absolute;
     z-index: -2;
     opacity: 0;
@@ -226,7 +226,7 @@
 
 @media (max-width:1199px) and (min-width:768px){
   .header {
-    #menuControl{
+    .menuControl{
       &:checked ~ .container .navMenu{
         left: -32px;
       }
@@ -313,7 +313,7 @@
 }
 @media (max-width:767px) and (min-width:375px){
   .header {
-    #menuControl{
+    .menuControl{
       &:checked ~ .container .navMenu{
         left: -32px;
       }

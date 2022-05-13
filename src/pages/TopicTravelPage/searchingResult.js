@@ -18,7 +18,7 @@ function SearchingResult({ searchTopic }) {
       <div className="titleGroup">
         <span className="sectionTitle">我們為你精心挑選了以下景點：</span>
       </div>
-      <div className="landscape_section">
+      <div className="landscapeSection">
         <Spots
           spots={searchResult}
           pathnameConfig={{ page: "tripInfoPage", spotID: "ScenicSpotID" }}

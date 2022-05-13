@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import { keywordSplitWithPlus } from "../../utils/stringUtils";
 import Spots from "../../components/SpotsCarousel/Spots";
 import "./style.scss";
+import styles from "../../components/Header/style.module.scss"
 
 function SearchingResult() {
   const [searchResult, setSearchResult] = useState([]);
@@ -26,7 +27,7 @@ function SearchingResult() {
 
   return (
     <>
-      <Header showSearch="show" />
+      <Header showSearch={styles.show} />
       <div className="titleGroup">
         {keywords === undefined ? (
           "no input"

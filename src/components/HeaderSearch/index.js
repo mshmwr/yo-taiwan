@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import search from "../../asset/icon/search.png";
-import "./style.scss";
+import styles from "./style.module.scss"
 
 const HeaderSearch = () => {
   const navigate = useNavigate();
@@ -13,14 +13,14 @@ const HeaderSearch = () => {
     navigate(`/searchingResult/${input}`);
   };
   return (
-    <div className="tripSearchField1">
+    <div className={styles.tripSearchField1}>
       <input
         type="text"
-        className="searchFieldInput1"
+        className={styles.searchFieldInput1}
         placeholder="請輸入目的地、景點等關鍵字"
         onChange={(e) => setinput(e.target.value)}
       />
-      <img className="searchIcon" src={search} alt="search" onClick={clickSearch} />
+      <img className={styles.searchIcon} src={search} alt="search" onClick={clickSearch} />
     </div>
   );
 };

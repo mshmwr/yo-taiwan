@@ -5,7 +5,7 @@ import onsenSection from "../../asset/images/onsenSection.png";
 import divingSection from "../../asset/images/divingSection.png";
 import bookSection from "../../asset/images/bookSection.png";
 import Banner from "../../components/Banner";
-import "./style.scss";
+import styles from "./style.module.scss";
 import SearchingResult from "../../pages/TopicTravelPage/searchingResult";
 import {
   getCampingIcon,
@@ -57,24 +57,24 @@ const TopicTab = () => {
 
   const Selected = () => {
     return (
-      <div className="selected_tab">
+      <div className={styles.selected_tab}>
         <span>{tabs[selectedTab].icon}</span>
         {tabs[selectedTab].name}
-        <div className="tab_bar"></div>
+        <div className={styles.tab_bar}></div>
       </div>
     );
   };
 
   return (
     <div>
-      <div className="topic_tab">
+      <div className={styles.topic_tab}>
         {tabs.map((tab, index) => {
           return (
             <div key={index}>
               {index !== +selectedTab ? (
                 <div
                   key={index}
-                  className="default_tab"
+                  className={styles.default_tab}
                   id={index}
                   onClick={(e) => {
                     setselectedTab(e.target.id);
