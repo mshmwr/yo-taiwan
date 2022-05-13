@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import TripInfoPage from "./pages/TripInfoPage";
-import FoodInfoPage from "./pages/FoodInfoPage";
-import TopicTravelPage from "./pages/TopicTravelPage";
-import FoodFeaturedPage from "./pages/FoodFeaturedPage";
-import TravelFeaturedPage from "./pages/TravelFeaturedPage";
-import SearchingResult from "./pages/SearchingResult";
-import "./styles/reset.css";
-import "./styles/style.css";
-import "./styles/variables.scss";
-import { WeatherContext, LandscapesContext } from "./contexts";
-import weatherApi from "./apis/weatherApi";
-import getLandscapes from "./apis/getLandscapes";
-import ScrollToTop from "./components/ScrollToTop";
+import HomePage from "@pages/HomePage";
+import TripInfoPage from "@pages/TripInfoPage";
+import FoodInfoPage from "@pages/FoodInfoPage";
+import TopicTravelPage from "@pages/TopicTravelPage";
+import FoodFeaturedPage from "@pages/FoodFeaturedPage";
+import TravelFeaturedPage from "@pages/TravelFeaturedPage";
+import SearchingResult from "@pages/SearchingResult";
+import "@styles/reset.css";
+import "@styles/style.css";
+import "@styles/variables.scss";
+import { WeatherContext, LandscapesContext } from "@contexts";
+import weatherApi from "@apis/weatherApi";
+import getLandscapes from "@apis/getLandscapes";
+import ScrollToTop from "@components/ScrollToTop";
 
 function App() {
   const [weather, setWeather] = useState({});

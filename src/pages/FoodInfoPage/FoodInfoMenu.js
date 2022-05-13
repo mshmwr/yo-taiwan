@@ -1,16 +1,16 @@
 import React from "react";
-import Carousel from '../../components/Carousel'
-import location from "../../asset/icon/food_location.png";
-import phone from "../../asset/icon/food_phone.png";
-import time from "../../asset/icon/food_time.png";
-import category from "../../asset/icon/food_category.png";
-import parking from "../../asset/icon/food_parking.png";
-import BreadCrumb from "../../components/BreadCrumb";
+import Carousel from "@components/Carousel";
+import location from "@asset/icon/food_location.png";
+import phone from "@asset/icon/food_phone.png";
+import time from "@asset/icon/food_time.png";
+import category from "@asset/icon/food_category.png";
+import parking from "@asset/icon/food_parking.png";
+import BreadCrumb from "@components/BreadCrumb";
 import "./FoodInfoMenu.scss";
-import { handleNodata } from "../../utils/conditionUtils";
+import { handleNodata } from "@utils/conditionUtils";
 
 const FoodInfoMenu = ({ foodInfo }) => {
-  const BreadCrumbColor = { color: "#EF8678",fontWeight: '700' };
+  const BreadCrumbColor = { color: "#EF8678", fontWeight: "700" };
 
   return (
     <div>
@@ -19,13 +19,13 @@ const FoodInfoMenu = ({ foodInfo }) => {
           <BreadCrumb
             topic={{
               topic: "特色美食",
-              subTopic:` > ${handleNodata(foodInfo[0].RestaurantName)}`,
+              subTopic: ` > ${handleNodata(foodInfo[0].RestaurantName)}`,
               color: BreadCrumbColor,
-              link:'/yo-taiwan/foodFeaturedPage'
+              link: "/yo-taiwan/foodFeaturedPage",
             }}
           />
           <div className="foodInfo_menu">
-            <Carousel tripInfo={foodInfo}/>
+            <Carousel tripInfo={foodInfo} />
             <div className="foodInfo_menu_text">
               <span className="menu_title">
                 {handleNodata(foodInfo[0].RestaurantName)}

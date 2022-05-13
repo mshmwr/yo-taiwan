@@ -13,6 +13,7 @@
     "jssha": "^3.2.0",
     "leaflet": "^1.7.1",
     "react": "^17.0.2",
+    "react-app-rewired": "^2.2.1",
     "react-dom": "^17.0.2",
     "react-leaflet": "^3.1.0",
     "react-router-dom": "^6.0.2",
@@ -21,8 +22,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",

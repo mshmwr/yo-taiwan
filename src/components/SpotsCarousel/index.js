@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import btn_next from "../../asset/icon/btn_next.png";
+import btn_next from "@asset/icon/btn_next.png";
 import Spots from "./Spots";
 import "./style.scss";
 

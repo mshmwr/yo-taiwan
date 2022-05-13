@@ -1,15 +1,15 @@
 import React from "react";
-import Carousel from "../../../components/Carousel";
-import location from "../../../asset/icon/location.png";
-import phone from "../../../asset/icon/phone.png";
-import time from "../../../asset/icon/time.png";
-import ticket from "../../../asset/icon/ticket.png";
-import weather from "../../../asset/icon/weather.png";
-import bus from "../../../asset/icon/bus.png";
-import BreadCrumb from "../../../components/BreadCrumb";
+import Carousel from "@components/Carousel";
+import location from "@asset/icon/location.png";
+import phone from "@asset/icon/phone.png";
+import time from "@asset/icon/time.png";
+import ticket from "@asset/icon/ticket.png";
+import weather from "@asset/icon/weather.png";
+import bus from "@asset/icon/bus.png";
+import BreadCrumb from "@components/BreadCrumb";
 import styles from "./style.module.scss";
-import Weather from "../../../components/Weather";
-import { splitAddressToCityAndDistrict } from "../../../utils/addressUtils";
+import Weather from "@components/Weather";
+import { splitAddressToCityAndDistrict } from "@utils/addressUtils";
 
 const TripInfoMenu = ({ tripInfo }) => {
   const BreadCrumbColor = { color: "#74D1E7", fontWeight: "700" };

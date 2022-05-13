@@ -8,8 +8,8 @@ import {
   getIconBook,
   getIconBicycle,
   getIconBusSelect,
-} from "../../utils/iconUtilis";
-import styles from "../Header/style.module.scss"
+} from "@utils/iconUtilis";
+import styles from "../Header/style.module.scss";
 
 const SelectBar = () => {
   return (
