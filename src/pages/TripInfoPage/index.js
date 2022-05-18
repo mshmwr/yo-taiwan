@@ -26,10 +26,10 @@ function TripInfoPage() {
   return (
     <>
       <div>
-        <Header showSearch={showSearch && showSearch} />
+        <Header showSearch={showSearch} />
       </div>
-      <TripInfoMenu tripInfo={tripInfo && tripInfo} />
-      <TripInfoContent tripInfo={tripInfo && tripInfo} />
+      <TripInfoMenu tripInfo={tripInfo} />
+      <TripInfoContent tripInfo={tripInfo} />
       <SpotsCarousel
         title="還可以去這裡走走"
         spotsData={landscapes}
