@@ -6,15 +6,16 @@ import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { doSearchRestaurantId } from "@apis/searchApiTripId";
 import "./style.module.scss";
-import { getRestaurant, getRestaurantAll } from "@apis/restaurantApi";
 import SpotsCarousel from "@components/SpotsCarousel";
-import { LandscapesContext } from "@contexts";
+import { LandscapesContext, RestaurantsContext } from "@contexts";
 
 function FoodInfoPage() {
   const [showSearch, setshowSearch] = useState("hide");
   const [foodInfo, setfoodInfo] = useState();
   const { id } = useParams();
   const landscapes = useContext(LandscapesContext);
+  const restaurants = useContext(RestaurantsContext);
+
   useEffect(() => {
     setshowSearch("show");
     async function fetchData() {
@@ -32,8 +33,7 @@ function FoodInfoPage() {
       <TripInfoContent foodInfo={foodInfo} />
       <SpotsCarousel
         title="更多美食等你發掘"
-        fetchSpot={getRestaurant}
-        fetchSpotAll={getRestaurantAll}
+        spotsData={restaurants}
         pathnameConfig={{ page: "foodInfoPage", spotID: "RestaurantID" }}
       />
       <SpotsCarousel
