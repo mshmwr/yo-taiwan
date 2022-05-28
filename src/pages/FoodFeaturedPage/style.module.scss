@@ -35,7 +35,7 @@
       background: #ffffff;
       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
       border-radius: 20px;
-  
+
       .region_menu {
         padding: 30px;
         display: flex;
@@ -51,11 +51,10 @@
           color: #666666;
         }
         .regionActive {
-          color: #EF8678;
-          ;
+          color: #ef8678;
         }
       }
-  
+
       .cities_menu {
         display: flex;
         justify-content: center;
@@ -69,18 +68,33 @@
           text-align: center;
           margin: 0px 10px 10px 10px;
           border-radius: 50%;
-          border: 1px solid #EF8678;
+          border: 1px solid #ef8678;
           padding: 15px;
           width: 65px;
           height: 65px;
           line-height: 200%;
-          color: #EF8678;
+          color: #ef8678;
         }
         .cityActive {
-          background-color: #EF8678;
+          background-color: #ef8678;
           color: #ffffff;
         }
       }
+    }
+  }
+  .titleGroup {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 60px;
+    .food_section_title span {
+      color: #ef8678;
+    }
+    .sectionTitle {
+      width: 100%;
+      font-weight: 700;
+      font-size: 24px;
+      color: #666;
+      margin-bottom: 25px;
     }
   }
 }
@@ -140,11 +154,10 @@
           color: #666666;
         }
         .regionActive {
-          color: #EF8678;
-          ;
+          color: #ef8678;
         }
       }
-  
+
       .cities_menu {
         margin: auto;
         display: flex;
@@ -160,30 +173,35 @@
           text-align: center;
           margin: 0px 10px 10px 10px;
           border-radius: 50%;
-          border: 1px solid #EF8678;
+          border: 1px solid #ef8678;
           padding: 15px;
           width: 65px;
           height: 65px;
           line-height: 200%;
-          color: #EF8678;
+          color: #ef8678;
         }
         .cityActive {
-          background-color: #EF8678;
+          background-color: #ef8678;
           color: #ffffff;
         }
       }
     }
   }
+  .titleGroup {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 60px;
+    .food_section_title span {
+      color: #ef8678;
+    }
+    .sectionTitle {
+      width: 100%;
+      font-weight: 700;
+      font-size: 24px;
+      color: #666;
+      margin-bottom: 25px;
+    }
+  }
 }
 
-.food_section_title span {
-  color: #EF8678;
-}
 
-.sectionTitle {
-  width: 100%;
-  font-weight: 700;
-  font-size: 24px;
-  color: #666;
-  margin-bottom: 25px;
-}
