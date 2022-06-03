@@ -10,7 +10,7 @@ import { LandscapesContext, RestaurantsContext } from "@contexts";
 
 function TripInfoPage() {
   const [showSearch, setShowSearch] = useState("hide");
-  const [tripInfo, settripInfo] = useState();
+  const [tripInfo, setTripInfo] = useState();
   const { id } = useParams();
   const landscapes = useContext(LandscapesContext);
   const restaurants = useContext(RestaurantsContext);
@@ -18,7 +18,7 @@ function TripInfoPage() {
   useEffect(() => {
     setShowSearch("show");
     async function fetchData() {
-      settripInfo(await doSearchTripId(id));
+      setTripInfo(await doSearchTripId(id));
     }
     fetchData();
   }, [id]);
@@ -37,7 +37,6 @@ function TripInfoPage() {
       />
       <SpotsCarousel
         title="玩樂不忘來點美食！"
-        page="foodInfoPage"
         spotsData={restaurants}
         pathnameConfig={{ page: "foodInfoPage", spotID: "RestaurantID" }}
       />
