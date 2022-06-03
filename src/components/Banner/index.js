@@ -2,7 +2,6 @@ import React from "react";
 import styles from "../TopicTab/style.module.scss";
 
 function Banner({ bannerInfo }) {
-  console.log(bannerInfo);
   return (
     <div
       className={styles.main_section}
