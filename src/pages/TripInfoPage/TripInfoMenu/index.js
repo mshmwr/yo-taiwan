@@ -42,9 +42,16 @@ const TripInfoMenu = ({ tripInfo }) => {
                 </li>
                 <li>
                   <img src={time} alt="time" />
-                  {tripInfo
-                    ? `開放時間:${tripInfo[0].OpenTime.replace(/星/g, "\n星")}`
-                    : null}
+                  <span>
+                    開放時間:
+                    <div>
+                      <ul>
+                        {tripInfo?.[0].OpenTime.split("；").map((s) => {
+                          return <li key={s}>{s}</li>;
+                        })}
+                      </ul>
+                    </div>
+                  </span>
                 </li>
                 <li>
                   <img src={ticket} alt="ticket" />
