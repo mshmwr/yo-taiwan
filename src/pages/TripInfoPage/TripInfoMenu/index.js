@@ -5,7 +5,6 @@ import phone from "@asset/icon/phone.png";
 import time from "@asset/icon/time.png";
 import ticket from "@asset/icon/ticket.png";
 import weather from "@asset/icon/weather.png";
-import bus from "@asset/icon/bus.png";
 import BreadCrumb from "@components/BreadCrumb";
 import styles from "./style.module.scss";
 import Weather from "@components/Weather";
@@ -74,10 +73,6 @@ const TripInfoMenu = ({ tripInfo }) => {
                     />
                     <a href={"https://www.cwb.gov.tw/V8/C/"}>(詳細天氣資訊)</a>
                   </span>
-                </li>
-                <li>
-                  <img src={bus} alt="bus" />
-                  公車路線：
                 </li>
               </ul>
             </div>
