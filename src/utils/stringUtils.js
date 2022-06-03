@@ -1,6 +1,6 @@
-function keywordSplitWithPlus(str) {
-  if(!str) return "";
-  return str.split("+");
+function keywordSplitWithSymbol(str = "", symbol = "") {
+  if (!str) return "";
+  return str.split(symbol);
 }
 
-export { keywordSplitWithPlus };
+export { keywordSplitWithSymbol };

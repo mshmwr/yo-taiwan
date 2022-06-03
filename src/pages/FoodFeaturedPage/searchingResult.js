@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { RestaurantsContext } from "@contexts";
 import Spots from "@components/SpotsCarousel/Spots";
+import { ANY_CITY } from "@utils/constants";
 import styles from "./style.module.scss";
 
 function SearchingResult({ searchCity }) {
@@ -28,7 +29,7 @@ function SearchingResult({ searchCity }) {
     <>
       <div className={styles.titleGroup}>
         <span className={`${styles.sectionTitle} ${styles.food_section_title}`}>
-          <span>{`「${searchCity[0] || "不分縣市"}」`}</span>精選美食：
+          <span>{`「${searchCity[0] || ANY_CITY}」`}</span>精選美食：
         </span>
       </div>
       <div className="landscapeSection">
