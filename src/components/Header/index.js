@@ -30,7 +30,7 @@ const Header = ({ showSearch }) => {
             觀光景點
           </Link>
           <span className={styles.menuFair}>
-            <Link to="/TopicTravelPage" className={styles.menuFairLink}>
+            <Link to="/TopicTravelPage/0" className={styles.menuFairLink}>
               主題旅遊
             </Link>
             <SelectBar />

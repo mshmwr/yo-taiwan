@@ -16,28 +16,28 @@ const SelectBar = () => {
     <ul className={styles.menuDropdown1}>
       <li>
         <div>
-          <Link to="/" className="a">
+          <Link to="/TopicTravelPage/0">
             <span>{getCampingIcon()}</span>戶外露營
           </Link>
         </div>
       </li>
       <li>
-        <Link to="/" className="a">
+        <Link to="/TopicTravelPage/1">
           <span>{getIconTemple()}</span>古蹟巡禮
         </Link>
       </li>
       <li>
-        <Link to="/" className="a">
+        <Link to="/TopicTravelPage/2">
           <span>{getIconOnsen()}</span>溫泉療癒
         </Link>
       </li>
       <li>
-        <Link to="/" className="a">
+        <Link to="/TopicTravelPage/3">
           <span>{getIconDiving()}</span>海洋探索
         </Link>
       </li>
       <li>
-        <Link to="/" className="a">
+        <Link to="/TopicTravelPage/4">
           <span>{getIconBook()}</span>知性之旅
         </Link>
       </li>
