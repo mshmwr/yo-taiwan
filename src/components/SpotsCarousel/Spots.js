@@ -7,11 +7,14 @@ import "./style.scss";
 
 function Spots({ spots, pathnameConfig }) {
   if (!spots || !pathnameConfig) return null;
-
   return (
     <>
       {spots.map((spot) => (
-        <Spot key={spot.Address} spot={spot} pathnameConfig={pathnameConfig} />
+        <Spot
+          key={spot.ScenicSpotID}
+          spot={spot}
+          pathnameConfig={pathnameConfig}
+        />
       ))}
     </>
   );
