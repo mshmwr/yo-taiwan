@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import campingSection from "@asset/images/campingSection.png";
 import templeSection from "@asset/images/templeSection.png";
 import onsenSection from "@asset/images/onsenSection.png";
@@ -16,6 +17,7 @@ import {
 } from "@utils/iconUtilis";
 
 const TopicTab = () => {
+  const { id } = useParams();
   const tabs = [
     {
       name: "戶外露營",
@@ -53,8 +55,11 @@ const TopicTab = () => {
       keywords: ["知識"],
     },
   ];
-  const [selectedTab, setselectedTab] = useState(0);
+  const [selectedTab, setselectedTab] = useState(id);
 
+  useEffect(() => {
+    setselectedTab(id);
+  }, [id]);
   const Selected = () => {
     return (
       <div className={styles.selected_tab}>

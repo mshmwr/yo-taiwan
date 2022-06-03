@@ -71,7 +71,7 @@ function App() {
               element={<SearchingResult />}
             />
             <Route path="/tripInfoPage/:id" element={<TripInfoPage />} />
-            <Route path="/TopicTravelPage" element={<TopicTravelPage />} />
+            <Route path="/TopicTravelPage/:id" element={<TopicTravelPage />} />
             <Route path="/foodInfoPage/:id" element={<FoodInfoPage />} />
             <Route path="/FoodFeaturedPage" element={<FoodFeaturedPage />} />
             <Route
