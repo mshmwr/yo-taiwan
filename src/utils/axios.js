@@ -24,7 +24,7 @@ const DistrictDatafromMOTC = [
     cities: [
       ["宜蘭", "YilanCounty"],
       ["基隆", "Keelung"],
-      ["台北", "Taipei"],
+      ["臺北", "Taipei"],
       ["新北", "NewTaipei"],
       ["桃園", "Taoyuan"],
       ["新竹", "Hsinchu"],

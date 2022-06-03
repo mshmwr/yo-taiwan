@@ -15,7 +15,7 @@ const Bus = () => {
       cities: [
         ["宜蘭縣", "YilanCounty"],
         ["基隆市", "Keelung"],
-        ["台北市", "Taipei"],
+        ["臺北市", "Taipei"],
         ["新北市", "NewTaipei"],
         ["桃園市", "Taoyuan"],
         ["新竹縣", "Hsinchu"],

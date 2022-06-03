@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import Spots from "@components/SpotsCarousel/Spots";
 import styles from "./style.module.scss";
+import { ANY_CITY } from "@utils/constants";
 import { LandscapesContext } from "@contexts";
 import { splitAddressToCityAndDistrict } from "@utils/addressUtils";
 
@@ -33,7 +34,7 @@ function SearchingResult({ searchCity }) {
         <span
           className={`${styles.sectionTitle} ${styles.travel_section_title}`}
         >
-          <span>{`「${searchCity[0] || "不分縣市"}」`}</span>精選景點：
+          <span>{`「${searchCity[0] || ANY_CITY}」`}</span>精選景點：
         </span>
       </div>
       <div className="landscapeSection">

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { PLUS_SYMBOL, ANY_CITY } from "@utils/constants";
 import "./hero.scss";
 
 const DistrictListData = [
   "不分縣市",
   "宜蘭縣",
   "基隆市",
-  "台北市",
+  "臺北市",
   "新北市",
   "桃園市",
   "新竹縣",
@@ -26,20 +27,22 @@ const DistrictListData = [
 
 const Hero = () => {
   const navigate = useNavigate();
-  const [input, setinput] = useState("");
-  const [dropdownDistrict, setdropdownDistrict] = useState("");
+  const [input, setInput] = useState("");
+  const [dropdownDistrict, setDropdownDistrict] = useState(ANY_CITY);
   const clickDropdown = (e) => {
-    setdropdownDistrict(e.target.getAttribute("value"));
+    setDropdownDistrict(e.target.getAttribute("value"));
   };
   const clickSearch = () => {
-    if (input === "" && dropdownDistrict === "") {
+    console.log("@@@@clickSearch 1:", input, dropdownDistrict);
+    if (!input && !dropdownDistrict) {
       return;
     }
-    if (dropdownDistrict === "") {
+    if (input) {
       navigate(`/searchingResult/${input}`);
-    } else {
-      navigate(`/searchingResult/${input}+${dropdownDistrict}`);
+      return;
     }
+    const district = dropdownDistrict === ANY_CITY ? "" : dropdownDistrict;
+    navigate(`/searchingResult/${district}${PLUS_SYMBOL}${input}`);
   };
 
   return (
@@ -65,7 +68,7 @@ const Hero = () => {
               type="text"
               className="input"
               placeholder="請輸入目的地、景點、公車路線等關鍵字"
-              onChange={(e) => setinput(e.target.value)}
+              onChange={(e) => setInput(e.target.value)}
             />
             <button className="searchBtn" onClick={clickSearch}>
               搜尋

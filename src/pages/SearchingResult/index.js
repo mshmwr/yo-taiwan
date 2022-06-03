@@ -2,44 +2,51 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { doSearchName } from "@apis/searchApi";
 import Header from "@components/Header";
-import { keywordSplitWithPlus } from "@utils/stringUtils";
+import { keywordSplitWithSymbol } from "@utils/stringUtils";
 import Spots from "@components/SpotsCarousel/Spots";
 import "./style.scss";
 import styles from "@components/Header/style.module.scss";
+import { PLUS_SYMBOL, ANY_CITY } from "@utils/constants";
 
 function SearchingResult() {
-  const [searchResult, setSearchResult] = useState([]);
   const { keywords } = useParams();
+  const [searchResult, setSearchResult] = useState([]);
+  const [searchTitle, setSearchTitle] = useState("");
 
   useEffect(() => {
-    async function fetchData() {
-      const keywordArr = keywordSplitWithPlus(keywords);
-      let keyword = keywordArr[0];
-      if (keywordArr.length === 1) {
-        setSearchResult(await doSearchName(keyword));
-      } else {
-        let address = keywordArr[1];
-        setSearchResult(await doSearchName(keyword, address));
+    const updateSearchTitle = (keyword, address) => {
+      if (keyword && address) return `${address}${PLUS_SYMBOL}${keyword}`;
+      if (!keyword && !address) return setSearchTitle(ANY_CITY);
+      if (keyword) {
+        setSearchTitle(keyword);
+        return;
       }
+      if (address) {
+        setSearchTitle(address);
+      }
+    };
+
+    async function doSearch() {
+      if (keywords && keywords.includes(PLUS_SYMBOL)) {
+        const [address, keyword] = keywordSplitWithSymbol(
+          keywords,
+          PLUS_SYMBOL
+        );
+        setSearchResult(await doSearchName(keyword, address));
+        updateSearchTitle(keyword, address);
+        return;
+      }
+      setSearchTitle(keywords ? keywords : ANY_CITY);
+      setSearchResult(await doSearchName(keywords));
     }
-    fetchData();
+    doSearch();
   }, [keywords]);
 
   return (
     <>
       <Header showSearch={styles.show} />
       <div className="titleGroup">
-        {keywords === undefined ? (
-          "no input"
-        ) : (
-          <span className="sectionTitleBlue">
-            「
-            {keywordSplitWithPlus(keywords)[0] !== ""
-              ? keywords
-              : keywords.replace("+", "")}
-            」
-          </span>
-        )}
+        <span className="sectionTitleBlue">「{searchTitle}」</span>
         <span className="sectionTitle">搜尋結果如下：</span>
       </div>
       <div className="landscapeSection">
