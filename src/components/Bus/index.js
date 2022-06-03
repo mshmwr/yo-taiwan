@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SearchBusRoute from "./SearchBusRoute";
 import BusRouteMap from "./busMap/BusRouteMap";
-import { doBusRouteSearch } from "@apis/searchbusRouteApi";
+import { doBusRouteSearch } from "@apis/searchBusRoute";
 import "./style.scss";
 
 const Bus = () => {

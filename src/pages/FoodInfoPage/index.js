@@ -4,7 +4,7 @@ import TripInfoContent from "./FoodInfoContent";
 import FoodInfoMenu from "../FoodInfoPage/FoodInfoMenu";
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { doSearchRestaurantId } from "@apis/searchApiTripId";
+import { doSearchRestaurantId } from "@apis/getSearchedDataFromId";
 import "./style.module.scss";
 import SpotsCarousel from "@components/SpotsCarousel";
 import { LandscapesContext, RestaurantsContext } from "@contexts";

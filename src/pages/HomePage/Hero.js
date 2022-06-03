@@ -33,7 +33,6 @@ const Hero = () => {
     setDropdownDistrict(e.target.getAttribute("value"));
   };
   const clickSearch = () => {
-    console.log("@@@@clickSearch 1:", input, dropdownDistrict);
     if (!input && !dropdownDistrict) {
       return;
     }

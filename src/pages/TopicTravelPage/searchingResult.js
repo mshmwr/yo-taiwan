@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { doSearchTopic } from "@apis/searchApi";
+import { doSearchTopic } from "@apis/getSearchedData";
 import Spots from "@components/SpotsCarousel/Spots";
 
 function SearchingResult({ searchTopic }) {
