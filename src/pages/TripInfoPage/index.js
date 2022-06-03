@@ -37,7 +37,6 @@ function TripInfoPage() {
       />
       <SpotsCarousel
         title="玩樂不忘來點美食！"
-        page="foodInfoPage"
         spotsData={restaurants}
         pathnameConfig={{ page: "foodInfoPage", spotID: "RestaurantID" }}
       />
