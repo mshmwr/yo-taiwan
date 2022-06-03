@@ -4,7 +4,7 @@ import Footer from "@components/Footer";
 import foodSection from "@asset/images/foodSection.png";
 import React, { useState } from "react";
 import SearchingResult from "./searchingResult";
-import { DistrictDatafromMOTC } from "@utils/axios";
+import { DISTRICT_DATA_FROM_MOTC } from "@utils/constants";
 import styles from "./style.module.scss";
 
 function FoodFeaturedPage() {
@@ -36,7 +36,7 @@ function FoodFeaturedPage() {
         </div>
         <div className={styles.location_menu}>
           <div className={styles.region_menu}>
-            {DistrictDatafromMOTC.map((d, index) =>
+            {DISTRICT_DATA_FROM_MOTC.map((d, index) =>
               +regionSelected === index ? (
                 <div
                   id={index}
@@ -57,7 +57,7 @@ function FoodFeaturedPage() {
             )}
           </div>
           <div className={styles.cities_menu}>
-            {DistrictDatafromMOTC.filter(
+            {DISTRICT_DATA_FROM_MOTC.filter(
               (d, index) => index === +regionSelected
             )[0].cities.map((c) =>
               citySelected[0] === c[0] ? (
