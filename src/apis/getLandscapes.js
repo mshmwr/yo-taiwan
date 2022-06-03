@@ -1,25 +1,7 @@
-import axios from "axios";
-import { getAuthorizationHeader } from "@utils/axios";
+import { ptxFetcher } from "@utils/axios";
+import { URL_ROOT, URL_TOURISM } from "@utils/constants";
 
 const getLandscapes = async () => {
-  let res = null;
-  try {
-    await axios
-      .get(
-        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?%24format=JSON`,
-        {
-          headers: getAuthorizationHeader(),
-        }
-      )
-      .then(function (response) {
-        res = response.data;
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  } catch (error) {
-    alert("GET Error!!" + error);
-  }
-  return res;
+  return ptxFetcher(`${URL_ROOT}/${URL_TOURISM}/ScenicSpot`);
 };
 export default getLandscapes;

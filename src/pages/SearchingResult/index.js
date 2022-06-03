@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { doSearchName } from "@apis/searchApi";
+import { doSearchName } from "@apis/getSearchedData";
 import Header from "@components/Header";
 import { keywordSplitWithSymbol } from "@utils/stringUtils";
 import Spots from "@components/SpotsCarousel/Spots";

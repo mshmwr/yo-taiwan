@@ -10,8 +10,12 @@ import SearchingResult from "@pages/SearchingResult";
 import "@styles/reset.css";
 import "@styles/style.css";
 import "@styles/variables.scss";
-import { WeatherContext, LandscapesContext, RestaurantsContext } from "@contexts";
-import weatherApi from "@apis/weatherApi";
+import {
+  WeatherContext,
+  LandscapesContext,
+  RestaurantsContext,
+} from "@contexts";
+import getWeather from "@apis/weather";
 import getLandscapes from "@apis/getLandscapes";
 import getRestaurants from "@apis/getRestaurants";
 import ScrollToTop from "@components/ScrollToTop";
@@ -22,7 +26,7 @@ function App() {
   const [restaurants, setRestaurants] = useState({});
   useEffect(() => {
     async function fetchData() {
-      const res = await weatherApi();
+      const res = await getWeather();
       if (res) {
         const weather = res.records.location.reduce((prev, curr) => {
           prev = {
@@ -62,23 +66,26 @@ function App() {
       <WeatherContext.Provider value={weather}>
         <LandscapesContext.Provider value={landscapes}>
           <RestaurantsContext.Provider value={restaurants}>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" exact element={<HomePage />} />
-            <Route path="/searchingResult" element={<SearchingResult />} />
-            <Route
-              path="/searchingResult/:keywords"
-              element={<SearchingResult />}
-            />
-            <Route path="/tripInfoPage/:id" element={<TripInfoPage />} />
-            <Route path="/TopicTravelPage/:id" element={<TopicTravelPage />} />
-            <Route path="/foodInfoPage/:id" element={<FoodInfoPage />} />
-            <Route path="/FoodFeaturedPage" element={<FoodFeaturedPage />} />
-            <Route
-              path="/TravelFeaturedPage"
-              element={<TravelFeaturedPage />}
-            />
-          </Routes>
+            <ScrollToTop />
+            <Routes>
+              <Route path="/" exact element={<HomePage />} />
+              <Route path="/searchingResult" element={<SearchingResult />} />
+              <Route
+                path="/searchingResult/:keywords"
+                element={<SearchingResult />}
+              />
+              <Route path="/tripInfoPage/:id" element={<TripInfoPage />} />
+              <Route
+                path="/TopicTravelPage/:id"
+                element={<TopicTravelPage />}
+              />
+              <Route path="/foodInfoPage/:id" element={<FoodInfoPage />} />
+              <Route path="/FoodFeaturedPage" element={<FoodFeaturedPage />} />
+              <Route
+                path="/TravelFeaturedPage"
+                element={<TravelFeaturedPage />}
+              />
+            </Routes>
           </RestaurantsContext.Provider>
         </LandscapesContext.Provider>
       </WeatherContext.Provider>

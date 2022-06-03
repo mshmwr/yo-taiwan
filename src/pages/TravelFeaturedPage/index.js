@@ -4,11 +4,11 @@ import Footer from "@components/Footer";
 import travelSection from "@asset/images/travelSection.png";
 import React, { useState } from "react";
 import SearchingResult from "./searchingResult";
-import { DistrictDatafromMOTC } from "@utils/axios";
+import { DISTRICT_DATA_FROM_MOTC } from "@utils/constants";
 import styles from "./style.module.scss";
 
 function TravelFeaturedPage() {
-  const [regionSelected, setregionSelected] = useState(0);
+  const [regionSelected, setRegionSelected] = useState(0);
   const [citySelected, setcitySelected] = useState([""]);
   const BreadCrumbColor = { color: "#74D1E7", fontWeight: "700" };
 
@@ -36,7 +36,7 @@ function TravelFeaturedPage() {
         </div>
         <div className={styles.location_menu}>
           <div className={styles.region_menu}>
-            {DistrictDatafromMOTC.map((d, index) =>
+            {DISTRICT_DATA_FROM_MOTC.map((d, index) =>
               +regionSelected === index ? (
                 <div
                   id={index}
@@ -49,7 +49,7 @@ function TravelFeaturedPage() {
                 <div
                   id={index}
                   key={d.cities[0] + index}
-                  onClick={(e) => setregionSelected(e.target.id)}
+                  onClick={(e) => setRegionSelected(e.target.id)}
                 >
                   {d.region}
                 </div>
@@ -57,7 +57,7 @@ function TravelFeaturedPage() {
             )}
           </div>
           <div className={styles.cities_menu}>
-            {DistrictDatafromMOTC.filter(
+            {DISTRICT_DATA_FROM_MOTC.filter(
               (d, index) => index === +regionSelected
             )[0].cities.map((c) =>
               citySelected[0] === c[0] ? (
