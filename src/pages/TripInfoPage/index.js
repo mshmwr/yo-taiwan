@@ -6,14 +6,14 @@ import TripInfoContent from "./TripInfoContent";
 import TripInfoMenu from "./TripInfoMenu";
 import { useParams } from "react-router-dom";
 import { doSearchTripId } from "@apis/searchApiTripId";
-import { getRestaurant, getRestaurantAll } from "@apis/restaurantApi";
-import { LandscapesContext } from "@contexts";
+import { LandscapesContext, RestaurantsContext } from "@contexts";
 
 function TripInfoPage() {
   const [showSearch, setshowSearch] = useState("hide");
   const [tripInfo, settripInfo] = useState();
   const { id } = useParams();
   const landscapes = useContext(LandscapesContext);
+  const restaurants = useContext(RestaurantsContext)
 
   useEffect(() => {
     setshowSearch("show");
@@ -38,8 +38,7 @@ function TripInfoPage() {
       <SpotsCarousel
         title="玩樂不忘來點美食！"
         page="foodInfoPage"
-        fetchSpot={getRestaurant}
-        fetchSpotAll={getRestaurantAll}
+        spotsData={restaurants}
         pathnameConfig={{ page: "foodInfoPage", spotID: "RestaurantID" }}
       />
       <Footer />

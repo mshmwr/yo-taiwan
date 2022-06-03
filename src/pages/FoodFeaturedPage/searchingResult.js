@@ -1,17 +1,28 @@
-import React, { useState, useEffect } from "react";
-import { getRestaurant } from "@apis/restaurantApi";
+import React, { useState, useEffect, useContext } from "react";
+import { RestaurantsContext } from "@contexts";
 import Spots from "@components/SpotsCarousel/Spots";
 import styles from "./style.module.scss";
 
 function SearchingResult({ searchCity }) {
   const [searchResult, setsearchResult] = useState([]);
-  let keyword = searchCity[1];
+  const restaurants = useContext(RestaurantsContext);
+  let keyword = searchCity[0];
+  const RESTAURANT_NUM = 10;
+
   useEffect(() => {
-    async function fetchData() {
-      setsearchResult(await getRestaurant(0, 10, keyword));
+    if (restaurants.length) {
+      const outputRestaurants = keyword
+        ? restaurants.filter((restaurant) =>
+            restaurant?.Address.includes(keyword)
+          )
+        : restaurants;
+      const result =
+        outputRestaurants.length > RESTAURANT_NUM
+          ? outputRestaurants.slice(0, RESTAURANT_NUM)
+          : outputRestaurants;
+      setsearchResult(result);
     }
-    fetchData();
-  }, [keyword]);
+  }, [keyword, restaurants]);
 
   return (
     <>

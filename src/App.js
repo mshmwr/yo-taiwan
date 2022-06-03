@@ -10,14 +10,16 @@ import SearchingResult from "@pages/SearchingResult";
 import "@styles/reset.css";
 import "@styles/style.css";
 import "@styles/variables.scss";
-import { WeatherContext, LandscapesContext } from "@contexts";
+import { WeatherContext, LandscapesContext, RestaurantsContext } from "@contexts";
 import weatherApi from "@apis/weatherApi";
 import getLandscapes from "@apis/getLandscapes";
+import getRestaurants from "@apis/getRestaurants";
 import ScrollToTop from "@components/ScrollToTop";
 
 function App() {
   const [weather, setWeather] = useState({});
   const [landscapes, setLandscapes] = useState({});
+  const [restaurants, setRestaurants] = useState({});
   useEffect(() => {
     async function fetchData() {
       const res = await weatherApi();
@@ -45,10 +47,21 @@ function App() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    async function fetchData() {
+      const res = await getRestaurants();
+      if (res) {
+        setRestaurants(res);
+      }
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className="wrapper">
       <WeatherContext.Provider value={weather}>
         <LandscapesContext.Provider value={landscapes}>
+          <RestaurantsContext.Provider value={restaurants}>
           <ScrollToTop />
           <Routes>
             <Route path="/" exact element={<HomePage />} />
@@ -66,6 +79,7 @@ function App() {
               element={<TravelFeaturedPage />}
             />
           </Routes>
+          </RestaurantsContext.Provider>
         </LandscapesContext.Provider>
       </WeatherContext.Provider>
     </div>
