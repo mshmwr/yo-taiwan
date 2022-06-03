@@ -5,7 +5,7 @@ import { ANY_CITY } from "@utils/constants";
 import styles from "./style.module.scss";
 
 function SearchingResult({ searchCity }) {
-  const [searchResult, setsearchResult] = useState([]);
+  const [searchResult, setSearchResult] = useState([]);
   const restaurants = useContext(RestaurantsContext);
   let keyword = searchCity[0];
   const RESTAURANT_NUM = 10;
@@ -21,7 +21,7 @@ function SearchingResult({ searchCity }) {
         outputRestaurants.length > RESTAURANT_NUM
           ? outputRestaurants.slice(0, RESTAURANT_NUM)
           : outputRestaurants;
-      setsearchResult(result);
+      setSearchResult(result);
     }
   }, [keyword, restaurants]);
 

@@ -9,14 +9,14 @@ import { doSearchTripId } from "@apis/getSearchedDataFromId";
 import { LandscapesContext, RestaurantsContext } from "@contexts";
 
 function TripInfoPage() {
-  const [showSearch, setshowSearch] = useState("hide");
+  const [showSearch, setShowSearch] = useState("hide");
   const [tripInfo, settripInfo] = useState();
   const { id } = useParams();
   const landscapes = useContext(LandscapesContext);
   const restaurants = useContext(RestaurantsContext);
 
   useEffect(() => {
-    setshowSearch("show");
+    setShowSearch("show");
     async function fetchData() {
       settripInfo(await doSearchTripId(id));
     }

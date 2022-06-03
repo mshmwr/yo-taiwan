@@ -8,7 +8,7 @@ import { DISTRICT_DATA_FROM_MOTC } from "@utils/constants";
 import styles from "./style.module.scss";
 
 function TravelFeaturedPage() {
-  const [regionSelected, setregionSelected] = useState(0);
+  const [regionSelected, setRegionSelected] = useState(0);
   const [citySelected, setcitySelected] = useState([""]);
   const BreadCrumbColor = { color: "#74D1E7", fontWeight: "700" };
 
@@ -49,7 +49,7 @@ function TravelFeaturedPage() {
                 <div
                   id={index}
                   key={d.cities[0] + index}
-                  onClick={(e) => setregionSelected(e.target.id)}
+                  onClick={(e) => setRegionSelected(e.target.id)}
                 >
                   {d.region}
                 </div>

@@ -10,16 +10,16 @@ import SpotsCarousel from "@components/SpotsCarousel";
 import { LandscapesContext, RestaurantsContext } from "@contexts";
 
 function FoodInfoPage() {
-  const [showSearch, setshowSearch] = useState("hide");
-  const [foodInfo, setfoodInfo] = useState();
+  const [showSearch, setShowSearch] = useState("hide");
+  const [foodInfo, setFoodInfo] = useState();
   const { id } = useParams();
   const landscapes = useContext(LandscapesContext);
   const restaurants = useContext(RestaurantsContext);
 
   useEffect(() => {
-    setshowSearch("show");
+    setShowSearch("show");
     async function fetchData() {
-      setfoodInfo(await doSearchRestaurantId(id));
+      setFoodInfo(await doSearchRestaurantId(id));
     }
     fetchData();
   }, [id]);

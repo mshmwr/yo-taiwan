@@ -3,12 +3,12 @@ import { doSearchTopic } from "@apis/getSearchedData";
 import Spots from "@components/SpotsCarousel/Spots";
 
 function SearchingResult({ searchTopic }) {
-  const [searchResult, setsearchResult] = useState([]);
+  const [searchResult, setSearchResult] = useState([]);
   let keyword = searchTopic.keywords;
 
   useEffect(() => {
     async function fetchData() {
-      setsearchResult(await doSearchTopic(keyword));
+      setSearchResult(await doSearchTopic(keyword));
     }
     fetchData();
   }, [keyword]);
