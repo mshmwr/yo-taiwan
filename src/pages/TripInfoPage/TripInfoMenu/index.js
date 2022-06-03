@@ -41,19 +41,6 @@ const TripInfoMenu = ({ tripInfo }) => {
                   {tripInfo ? `電話：${tripInfo[0].Phone}` : null}
                 </li>
                 <li>
-                  <img src={time} alt="time" />
-                  <span>
-                    開放時間:
-                    <div>
-                      <ul>
-                        {tripInfo?.[0].OpenTime.split("；").map((s) => {
-                          return <li key={s}>{s}</li>;
-                        })}
-                      </ul>
-                    </div>
-                  </span>
-                </li>
-                <li>
                   <img src={ticket} alt="ticket" />
                   {tripInfo
                     ? `票價資訊：${
@@ -79,6 +66,19 @@ const TripInfoMenu = ({ tripInfo }) => {
                       }
                     />
                     <a href={"https://www.cwb.gov.tw/V8/C/"}>(詳細天氣資訊)</a>
+                  </span>
+                </li>
+                <li>
+                  <img src={time} alt="time" />
+                  <span>
+                    開放時間:
+                    <div>
+                      <ul className={styles.opentime}>
+                        {tripInfo?.[0].OpenTime.split("；").map((s) => {
+                          return <li key={s}>{s}</li>;
+                        })}
+                      </ul>
+                    </div>
                   </span>
                 </li>
               </ul>
