@@ -5,7 +5,6 @@ import phone from "@asset/icon/phone.png";
 import time from "@asset/icon/time.png";
 import ticket from "@asset/icon/ticket.png";
 import weather from "@asset/icon/weather.png";
-import bus from "@asset/icon/bus.png";
 import BreadCrumb from "@components/BreadCrumb";
 import styles from "./style.module.scss";
 import Weather from "@components/Weather";
@@ -42,12 +41,6 @@ const TripInfoMenu = ({ tripInfo }) => {
                   {tripInfo ? `電話：${tripInfo[0].Phone}` : null}
                 </li>
                 <li>
-                  <img src={time} alt="time" />
-                  {tripInfo
-                    ? `開放時間:${tripInfo[0].OpenTime.replace(/星/g, "\n星")}`
-                    : null}
-                </li>
-                <li>
                   <img src={ticket} alt="ticket" />
                   {tripInfo
                     ? `票價資訊：${
@@ -76,8 +69,17 @@ const TripInfoMenu = ({ tripInfo }) => {
                   </span>
                 </li>
                 <li>
-                  <img src={bus} alt="bus" />
-                  公車路線：
+                  <img src={time} alt="time" />
+                  <span>
+                    開放時間:
+                    <div>
+                      <ul className={styles.opentime}>
+                        {tripInfo?.[0].OpenTime.split("；").map((s) => {
+                          return <li key={s}>{s}</li>;
+                        })}
+                      </ul>
+                    </div>
+                  </span>
                 </li>
               </ul>
             </div>
