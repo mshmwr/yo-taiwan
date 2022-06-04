@@ -3,7 +3,6 @@ import Header from "@components/Header";
 import Hero from "./Hero";
 import SpotsCarousel from "@components/SpotsCarousel";
 import Bus from "@components/Bus";
-import Footer from "@components/Footer";
 import { LandscapesContext } from "@contexts";
 
 function HomePage() {
@@ -18,7 +17,6 @@ function HomePage() {
         pathnameConfig={{ page: "tripInfoPage", spotID: "ScenicSpotID" }}
       />
       <Bus />
-      <Footer />
     </>
   );
 }

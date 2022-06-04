@@ -1,6 +1,5 @@
 import Header from "@components/Header";
 import BreadCrumb from "@components/BreadCrumb";
-import Footer from "@components/Footer";
 import travelSection from "@asset/images/travelSection.png";
 import React, { useState } from "react";
 import SearchingResult from "./searchingResult";
@@ -74,7 +73,6 @@ function TravelFeaturedPage() {
         </div>
       </div>
       <SearchingResult searchCity={citySelected} />
-      <Footer />
     </>
   );
 }
