@@ -70,10 +70,10 @@ const TopicTab = () => {
       <div className={styles.topic_tab}>
         {tabs.map((tab, index) => {
           return (
-            <div key={index}>
+            <div key={tab.name}>
               {index !== +selectedTab ? (
                 <div
-                  key={index}
+                  key={tab.name}
                   className={styles.default_tab}
                   id={index}
                   onClick={(e) => {
