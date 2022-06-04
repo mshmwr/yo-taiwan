@@ -30,6 +30,7 @@ function Spot({ spot, pathnameConfig }) {
       }}
       style={{ textDecoration: "none" }}
     >
+      {console.log(spot[pathnameConfig])}
       <div className="landscapeBlock">
         <div className="imageBlock">
           <img alt={spot.Name} src={spot.Picture.PictureUrl1} />
