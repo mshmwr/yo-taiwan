@@ -1,5 +1,4 @@
 import Header from "@components/Header";
-import Footer from "@components/Footer";
 import TripInfoContent from "./FoodInfoContent";
 import FoodInfoMenu from "../FoodInfoPage/FoodInfoMenu";
 import React, { useState, useEffect, useContext } from "react";
@@ -41,7 +40,6 @@ function FoodInfoPage() {
         spotsData={landscapes}
         pathnameConfig={{ page: "tripInfoPage", spotID: "ScenicSpotID" }}
       />
-      <Footer />
     </div>
   );
 }

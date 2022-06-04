@@ -91,12 +91,12 @@ const Bus = () => {
           <div className="tabGroup">
             {DistrictBusData.map((r, index) =>
               +selectRegion === index ? (
-                <div key={index} id={index} className="tabActive">
+                <div key={r.region} id={index} className="tabActive">
                   {r.region}
                 </div>
               ) : (
                 <div
-                  key={index}
+                  key={r.region}
                   id={index}
                   className="tab"
                   onClick={handleClick}

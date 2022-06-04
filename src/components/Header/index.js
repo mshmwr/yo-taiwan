@@ -6,6 +6,7 @@ import SelectBar from "../SelectBar";
 import { SelectBarTraffic } from "../SelectBar";
 import styles from "./style.module.scss";
 
+
 const Header = ({ showSearch }) => {
   return (
     <div className={styles.header}>

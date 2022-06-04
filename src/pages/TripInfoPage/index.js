@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import Header from "@components/Header";
 import SpotsCarousel from "@components/SpotsCarousel";
-import Footer from "@components/Footer";
 import TripInfoContent from "./TripInfoContent";
 import TripInfoMenu from "./TripInfoMenu";
 import { useParams } from "react-router-dom";
@@ -40,7 +39,6 @@ function TripInfoPage() {
         spotsData={restaurants}
         pathnameConfig={{ page: "foodInfoPage", spotID: "RestaurantID" }}
       />
-      <Footer />
     </>
   );
 }

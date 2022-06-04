@@ -80,10 +80,10 @@
 }
 
 .menuFair {
-  margin-right: 40px;
   position: relative;
   .menuFairLink {
     text-decoration: none;
+    margin-right: 40px;
     &:hover {
       color: $color-secondary-yellow-default;
     }
@@ -93,7 +93,7 @@
       content: url(../../asset/icon/wave_yellow.png);
       position: absolute;
       top: 20px;
-      right: 0;
+      right: 40px;
     }
     .menuDropdown1 {
       display: block;
@@ -117,9 +117,9 @@
 }
 
 .menuTraffic {
-  margin-right: 40px;
   position: relative;
   .menuTrafficLink {
+    margin-right: 40px;
     text-decoration: none;
     &:hover {
       color: $color-primary-default;
@@ -130,7 +130,7 @@
       content: url(../../asset/icon/wave_blue.png);
       position: absolute;
       top: 20px;
-      right: 0;
+      right: 40px;
     }
     .menuDropdown2 {
       display: block;
@@ -258,14 +258,16 @@
           }
         }
         .menuFair {
-          display: block;
-          border-bottom: 1px solid $color-greyscale-white;
-          margin-left: 24px;
-          padding-top: 24px;
-          padding-bottom: 24px;
-          &:hover {
-            &::after {
-              content: "";
+          .menuFairLink{
+            display: block;
+            border-bottom: 1px solid $color-greyscale-white;
+            margin-left: 24px;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            &:hover {
+              &::after {
+                content: "";
+              }
             }
           }
           .menuDropdown1 {
@@ -285,14 +287,16 @@
           }
         }
         .menuTraffic {
-          display: block;
-          border-bottom: 1px solid $color-greyscale-white;
-          margin-left: 24px;
-          padding-top: 24px;
-          padding-bottom: 24px;
-          &:hover {
-            &::after {
-              content: "";
+          .menuTrafficLink{
+            display: block;
+            border-bottom: 1px solid $color-greyscale-white;
+            margin-left: 24px;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            &:hover {
+              &::after {
+                content: "";
+              }
             }
           }
           .menuDropdown2 {
@@ -345,14 +349,16 @@
           }
         }
         .menuFair {
-          display: block;
-          border-bottom: 1px solid $color-greyscale-white;
-          margin-left: 24px;
-          padding-top: 24px;
-          padding-bottom: 24px;
-          &:hover {
-            &::after {
-              content: "";
+          .menuFairLink{
+            display: block;
+            border-bottom: 1px solid $color-greyscale-white;
+            margin-left: 24px;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            &:hover {
+              &::after {
+                content: "";
+              }
             }
           }
           .menuDropdown1 {
@@ -372,14 +378,16 @@
           }
         }
         .menuTraffic {
-          display: block;
-          border-bottom: 1px solid $color-greyscale-white;
-          margin-left: 24px;
-          padding-top: 24px;
-          padding-bottom: 24px;
-          &:hover {
-            &::after {
-              content: "";
+          .menuTrafficLink{
+            display: block;
+            border-bottom: 1px solid $color-greyscale-white;
+            margin-left: 24px;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            &:hover {
+              &::after {
+                content: "";
+              }
             }
           }
           .menuDropdown2 {
